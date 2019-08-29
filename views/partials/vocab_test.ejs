@@ -11,7 +11,7 @@
 	<tbody>
 		<tr>
 			<td class="popup" onclick="myFunction()">&nbsp; &nbsp; &nbsp;あじ
-					<span class="popuptext" id="myPopup">TestTest</span>
+				<span class="popuptext" id="myPopup">TestTest</span>
 			</td>
 			<td>a-ji</td>
 			<td>Taste/flavor; horse mackerel</td>
@@ -50,3 +50,11 @@
 	</tbody>
 
 </table>
+
+<script>
+	// When the user clicks on <div>, open the popup
+	function myFunction() {
+	  var popup = document.getElementById("myPopup");
+	  popup.classList.toggle("show");
+	}
+</script>
