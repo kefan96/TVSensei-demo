@@ -13,7 +13,9 @@ var subsJap = [];
 
 function initializeVid(x=[]){
 	
-	vid = document.getElementById("currentVideo");
+    vid = document.getElementById("currentVideo");
+    // intialize the volume to be 50%;
+    vid.volume = 0.5;
 	repeatButton = document.getElementById("repeatButtonVid");
     playButton = document.getElementById("playButton");
     playIcon = document.getElementById("playIcon");
@@ -91,9 +93,18 @@ function toggleRepeatVid(){
 		
 } 
 
+function volumeUp(){
+    if (vid.volume <= 0.9)
+    {
+        vid.volume += 0.1;
+    }
+}
 
-
-
+function volumeDown(){
+    if (vid.volume >= 0.1){
+        vid.volume -= 0.1;
+    }
+}
 
 
 function startEventHandler(){
