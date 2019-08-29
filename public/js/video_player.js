@@ -37,14 +37,16 @@ function playVid(){
 	
 	if(playStatus){
 		vid.pause();
-		playButton.className = "btn btn-success controlbutton";
+        playButton.className = "btn btn-success controlbutton";
+        playButton.title = 'play';
 		playIcon.className = "fas fa-play";
 		playStatus = false;
 		
 	}
 	else{
 		vid.play();
-		playButton.className = "btn btn-danger controlbutton";
+        playButton.className = "btn btn-danger controlbutton";
+        playButton.title = 'pause';
 		playIcon.className = "fas fa-pause";
 		playStatus = true;
 
