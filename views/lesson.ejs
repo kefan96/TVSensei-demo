@@ -4,7 +4,7 @@
 
 <html lang="en">
 <head>
-	<title>TV Sensei</title>
+	<title>TVSensei</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="">
@@ -38,7 +38,7 @@
 	<nav class="navbar navbar-expand-sm bg-dark text-white" id="navbar">
 	
 		<div class="navbar-header">
-			<a class="navbar-brand" id="title">TV-Sensei</a>
+			<a class="navbar-brand" id="title">TVSensei</a>
 		</div>
 		<ul class="navbar-nav">
 			<li class="nav-item">
@@ -76,7 +76,7 @@
         
                         <div class="d-flex justify-content-center bg-dark text-white">
                                             <!-- initializeVid takes specific time codes that Henry wanted to highlight. Ideally, this information will change to be a separate file.-->
-                                            <video onloadstart="initializeVid([[68,72.5],[77,86],[91,97],[138,147],[165,170]]);" id="currentVideo" width="100%" height="100%" class="video" controls>
+                                            <video onloadstart="initializeVid([[68,72.5],[77,86],[91,97],[138,147],[165,170]]);" id="currentVideo" width="100%" height="100%" class="video">
                                                 <source src="/media/growGoogle.mp4" type="video/mp4">
                                                 Unsupported browser video. 
                                             </video>
@@ -86,22 +86,24 @@
                         </div>
                         <p></p>
                         <div class="container">
-                        <nav class="navbar navbar-expand-sm bg-secondary justify-content-center" id="controlBar">
+                        <nav class="navbar navbar-expand-sm justify-content-center" id="controlBar">
                             <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <input onclick="playVid();" class="btn btn-success" type="button" id="playButton" value="Play"></input>
+                                <li class="nav-item pr-5">
+                                    <button onclick="playVid();" class="btn btn-success" type="button" id="playButton"><i class="fas fa-play"></i></input>
                                 </li>
-                                <li class="nav-tiem">
+                                <li class="nav-tiem pr-5">
                                     <button onclick="skipForwardVid();" class="btn btn-secondary" type="button">+10</button>
                                 </li>
-                                <li class="nav-tiem">
+                                <li class="nav-tiem pr-5">
                                     <button onclick="skipBackwardVid();" class="btn btn-secondary" type="button">-10</button>
                                 </li>
-                                <li class="nav-item">
-                                    <button onclick="restartVid();" class="btn btn-secondary" type="button">From Start</button>
+                                <li class="nav-item pr-5">
+                                    <button onclick="restartVid();" class="btn btn-secondary" type="button"><i class="fas fa-redo-alt"></i></button>
                                 </li>
                                 <li class="nav-item">
-                                    <button onclick="toggleRepeatVid();" class="btn btn-secondary" type="button" id="repeatButtonVid">Repeat</button>
+                                    <button onclick="toggleRepeatVid();" class="btn btn-secondary" type="button" id="repeatButtonVid"><i class="fas fa-reply-all"></i>
+
+                                    </button>
                                 </li>
                                 
                             </ul>
@@ -147,18 +149,20 @@
                                             <div class="container">
                                                 <div class="tab-content bg-dark text-white">
                                                         <div id="tab-vocab" class="tab-pane container bg-dark text-white active">
-                                                            <div tvs-include="tvs_vocab_test_1.html"></div>
+                                                            <% include partials/vocab_test %>
                                                         </div>
                                                         <div id="tab-speaking" class="tab-pane container bg-dark text-white fade"><br>
-                                                            <div tvs-include="tvs_targetVocab_test_1.html"></div>
+                                                            <% include partials/speaking_test %>
                                                         </div>
                                                         <div id="tab-grammar" class="tab-pane container bg-dark text-white fade"><br>
-                                                            <div tvs-include="tvs_grammar_test_1.html"></div>
+                                                            <% include partials/grammar_test %>
                                                         </div>
                                                         <div id="tab-quiz" class="tab-pane container bg-dark text-white fade"><br>
-                                                            <div tvs-include="tvs_quiz_test_1.html"></div>
+                                                            <% include partials/quiz_test %>
                                                         </div>
                                                         <div id="tab-notes" class="tab-pane container bg-dark text-white fade"><br>
+                                                            <h3>Notes</h3>
+                                                            <hr class="style-two">
                                                             <form>
                                                                 <div class="form-group">
                                                                   <textarea class="form-control" rows="10" id="comment"></textarea>
