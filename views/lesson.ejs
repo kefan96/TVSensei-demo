@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--CEO: Henry Aberle 
+	Lead Programmer January - June 2019: Peter Aguiar -->
+
+<html lang="en">
+<head>
+	<title>TV Sensei</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="">
+	<meta name="author" content="tvsensei co.">
+	
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	
+	
+	<!-- <script src="external_GET.js"></script> -->
+	<script src="/js/multi_test_check.js"></script>
+	<script src="/js/video_player.js"></script>
+	<script>
+			// When the user clicks on <div>, open the popup
+			function myFunction() {
+			  var popup = document.getElementById("myPopup");
+			  popup.classList.toggle("show");
+			}
+		</script>
+	<script>
+			function play(){				 
+			var audio = document.getElementById("audio");
+			audio.play();
+							   }
+		</script>
+	<script src="https://kit.fontawesome.com/4912714a0b.js"></script>
+
+</head>
+
+<body class="bg-dark">
+
+<!-- Top main nav bar-->
+
+<div class="container">
+	<nav class="navbar navbar-expand-sm bg-dark text-white" id="navbar">
+	
+		<div class="navbar-header">
+			<a class="navbar-brand" id="title">TV-Sensei</a>
+		</div>
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link text-warning" href="#">Browse</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-warning" href="#">Settings</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-warning" href="#">My Progress</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-warning" href="#">My Folders</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link text-info" href="#"> Sign Up</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-info" href="#"> Login</a></li>
+		</ul>
+	</nav>
+</div>
+<!-- end of top main navbar-->
+
+<!--  Body -->
+<div class="container-fluid">
+	<div class="row">
+	<div class="col-12 bg-dark"><!-- Center -->	
+		<div class="container">
+            <div class="row">
+                <div class="col-7">
+                    <div class="container">
+        
+                        <div class="d-flex justify-content-center bg-dark text-white">
+                                            <!-- initializeVid takes specific time codes that Henry wanted to highlight. Ideally, this information will change to be a separate file.-->
+                                            <video onloadstart="initializeVid([[68,72.5],[77,86],[91,97],[138,147],[165,170]]);" id="currentVideo" width="100%" height="100%" controls>
+                                                <source src="/video/growGoogle.mp4" type="video/mp4">
+                                                Unsupported browser video. 
+                                            </video>
+                                        
+                                        <br>
+                                </div>
+                        </div>
+                    <!-- The Subtitles, two stacked on top of each other. -->
+                    <div class="container">
+                                
+                                <br>
+                        <div class="card" style="width:100%;min-height:130px;"> <!-- Fixed height to avoid having the container shrink and expand often -->
+                            <div class="card-body bg-light">
+                                <div class="container">
+                                    <h2 name="subTestJapanese" id="videoText"></h2>
+                    
+                                    <h3 name="subTestEnglish" id="videoText"></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-5">
+                    <div id="accordion"> <!-- Collapsable -->
+                        <!-- Contains the rest of the tvs-includes -->
+                            
+                                <div class="card">
+                                    <div class="card-header bg-secondary py-0">
+                                            <div id="exercises" class="dropdown nav nav-tabs py-2" style="border-bottom:0;">
+                                                    <button class="btn btn-secondary dropdown-toggle" style="font-size: 25px" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Exercises
+                                                    </button>
+                                                    <div class="dropdown-menu aria-labelledby dropdownMenuButton" role = "tablist">
+                                                      <a class="dropdown-item nav-link" data-toggle="tab" href="#tab-vocab">Vocab</a>
+                                                      <a class="dropdown-item nav-link" data-toggle="tab" href="#tab-speaking">Speaking</a>
+                                                      <a class="dropdown-item nav-link" data-toggle="tab" href="#tab-grammar">Lesson/Grammar</a>
+                                                      <a class="dropdown-item nav-link" data-toggle="tab" href="#tab-quiz">Quiz</a>
+                                                      <a class="dropdown-item nav-link" data-toggle="tab" href="#tab-notes">Notes</a>
+                                                    </div>
+                                            </div>
+                                        
+                                    </div>
+                                        <div class="card-body bg-dark overflow-auto p-0" style="height: 400px">
+                                                
+                                            <div class="container">
+                                                <div class="tab-content bg-dark text-white">
+                                                        <div id="tab-vocab" class="tab-pane container bg-dark text-white active">
+                                                            <% include partials/vocab_test %>
+                                                        </div>
+                                                        <div id="tab-speaking" class="tab-pane container bg-dark text-white fade"><br>
+                                                            <% include partials/speaking_test %>
+                                                        </div>
+                                                        <div id="tab-grammar" class="tab-pane container bg-dark text-white fade"><br>
+                                                            <% include partials/grammar_test %>
+                                                        </div>
+                                                        <div id="tab-quiz" class="tab-pane container bg-dark text-white fade"><br>
+                                                            <% include partials/quiz_test %>
+                                                        </div>
+                                                        <div id="tab-notes" class="tab-pane container bg-dark text-white fade"><br>
+                                                            <form>
+                                                                <div class="form-group">
+                                                                  <textarea class="form-control" rows="10" id="comment"></textarea>
+                                                                </div>
+                                                                <button class="btn btn-secondary" type="submit">Save Notes</button>
+                                                              </form>
+                                                              
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                </div>
+                </div>
+            </div>
+        </div>
+        <!-- The Video. -->
+                
+                
+            
+        </div>
+        <br><br><br><br><br>
+		</div><!-- end of center-->
+	</div>	
+</div>
+
+
+
+</body>
+
+
+
+<script>
+/*This executes on load a js file that replaces all instances of 'tvs-include' 
+with the html file asked for.*/
+include_External();
+</script>
+
+</html>
+<!-- END OF FILE-->
