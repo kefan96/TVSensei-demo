@@ -34,7 +34,7 @@ function playVid(){
 	if(playStatus){
 		vid.pause();
 		playButton.className = "btn btn-success";
-		playButton.children.className = "fas fa-play";
+		playButton.value= "fas fa-play";
 		playStatus = false;
 		
 	}
