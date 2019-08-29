@@ -17,8 +17,8 @@ function initializeVid(x=[]){
 	repeatButton = document.getElementById("repeatButtonVid");
 	playButton = document.getElementById("playButton")
 	timecodes = x;
-	assToSubs("Hakone_Subbing.ass","eng");
-	assToSubs("Hakone_Jap_Subs.ass","jap");
+	assToSubs("/assets/test_subtitles.ass","eng");
+	// assToSubs("Hakone_Jap_Subs.ass","jap");
 	
 	startEventHandler();
 
@@ -34,20 +34,18 @@ function playVid(){
 	if(playStatus){
 		vid.pause();
 		playButton.className = "btn btn-success";
-		playButton.value = "Play";
+		playButton.children.className = "fas fa-play";
 		playStatus = false;
 		
 	}
 	else{
 		vid.play();
 		playButton.className = "btn btn-danger";
-		playButton.value = "Pause";
+		playButton.children.className = "fas fa-pause";
 		playStatus = true;
 
 	}
 
-	
-	
 
 }
 
@@ -103,9 +101,9 @@ function startEventHandler(){
 		for (var i = 0; i < timecodes.length; i++){
 			
 				
-			if((this.currentTime >= timecodes[i][1]) && (Math.floor(this.currentTime) == Math.floor(timecodes[i][1]))  && repeatVideo){ //Repeats the videoif button is active.
+			if((this.currentTime >= timecodes[i][1]) && (Math.floor(this.currentTime) == Math.floor(timecodes[i][1])) && repeatVideo){ //Repeats the video if button is active.
 				this.pause;
-				this.currentTime = timecodes[i][0];
+				this.currentTime = timecodes[0][0];
 				break;
 			}
 			}
