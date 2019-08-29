@@ -35,7 +35,11 @@ function playVid(){
 	if(playStatus){
 		vid.pause();
 		playButton.className = "btn btn-success";
+<<<<<<< HEAD
+		playButton.value= "fas fa-play";
+=======
 		playIcon.className = "fas fa-play";
+>>>>>>> 44f85828f3706a1c698cfe15a20745333f42d0c4
 		playStatus = false;
 		
 	}
