@@ -11,12 +11,15 @@ var vidLine = "vidLine";
 var subs = [];
 var subsJap = [];
 
+
+
 function initializeVid(x=[]){
 	
 	vid = document.getElementById("currentVideo");
 	repeatButton = document.getElementById("repeatButtonVid");
     playButton = document.getElementById("playButton");
-    playIcon = document.getElementById("playIcon");
+	playIcon = document.getElementById("playIcon");
+	var seekBar = document.getElementById("seek-bar");
 	timecodes = x;
 	assToSubs("/assets/test_subtitles.ass","eng");
 	// assToSubs("Hakone_Jap_Subs.ass","jap");
@@ -34,18 +37,14 @@ function playVid(){
 	
 	if(playStatus){
 		vid.pause();
-		playButton.className = "btn btn-success";
-<<<<<<< HEAD
-		playButton.value= "fas fa-play";
-=======
+		playButton.className = "btn btn-success controlbutton";
 		playIcon.className = "fas fa-play";
->>>>>>> 44f85828f3706a1c698cfe15a20745333f42d0c4
 		playStatus = false;
 		
 	}
 	else{
 		vid.play();
-		playButton.className = "btn btn-danger";
+		playButton.className = "btn btn-danger controlbutton";
 		playIcon.className = "fas fa-pause";
 		playStatus = true;
 
