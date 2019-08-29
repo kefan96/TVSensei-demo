@@ -83,14 +83,37 @@
         
                         <div class="d-flex justify-content-center bg-dark text-white">
                                             <!-- initializeVid takes specific time codes that Henry wanted to highlight. Ideally, this information will change to be a separate file.-->
-                                            <video onloadstart="initializeVid([[68,72.5],[77,86],[91,97],[138,147],[165,170]]);" id="currentVideo" width="100%" height="100%" controls>
-                                                <source src="/video/growGoogle.mp4" type="video/mp4">
+                                            <video onloadstart="initializeVid([[68,72.5],[77,86],[91,97],[138,147],[165,170]]);" id="currentVideo" width="100%" height="100%" class="video" controls>
+                                                <source src="growGoogle.mp4" type="video/mp4">
                                                 Unsupported browser video. 
                                             </video>
                                         
                                         <br>
                                 </div>
                         </div>
+                        <p></p>
+                        <div class="container">
+                        <nav class="navbar navbar-expand-sm bg-secondary justify-content-center" id="controlBar">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <input onclick="playVid();" class="btn btn-success" type="button" id="playButton" value="Play"></input>
+                                </li>
+                                <li class="nav-tiem">
+                                    <button onclick="skipForwardVid();" class="btn btn-secondary" type="button">+10</button>
+                                </li>
+                                <li class="nav-tiem">
+                                    <button onclick="skipBackwardVid();" class="btn btn-secondary" type="button">-10</button>
+                                </li>
+                                <li class="nav-item">
+                                    <button onclick="restartVid();" class="btn btn-secondary" type="button">From Start</button>
+                                </li>
+                                <li class="nav-item">
+                                    <button onclick="toggleRepeatVid();" class="btn btn-secondary" type="button" id="repeatButtonVid">Repeat</button>
+                                </li>
+                                
+                            </ul>
+                        </nav>
+                    </div>
                     <!-- The Subtitles, two stacked on top of each other. -->
                     <div class="container">
                                 
@@ -99,7 +122,6 @@
                             <div class="card-body bg-light">
                                 <div class="container">
                                     <h2 name="subTestJapanese" id="videoText"></h2>
-                    
                                     <h3 name="subTestEnglish" id="videoText"></h3>
                                 </div>
                             </div>
@@ -112,12 +134,12 @@
                         <!-- Contains the rest of the tvs-includes -->
                             
                                 <div class="card">
-                                    <div class="card-header bg-secondary py-0">
-                                            <div id="exercises" class="dropdown nav nav-tabs py-2" style="border-bottom:0;">
+                                    <div class="card-header bg-secondary">
+                                            <div id="exercises" class="dropdown nav nav-tabs">
                                                     <button class="btn btn-secondary dropdown-toggle" style="font-size: 25px" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Exercises
                                                     </button>
-                                                    <div class="dropdown-menu aria-labelledby dropdownMenuButton" role = "tablist">
+                                                    <div class="dropdown-menu aria-labelledby="dropdownMenuButton" role = "tablist">
                                                       <a class="dropdown-item nav-link" data-toggle="tab" href="#tab-vocab">Vocab</a>
                                                       <a class="dropdown-item nav-link" data-toggle="tab" href="#tab-speaking">Speaking</a>
                                                       <a class="dropdown-item nav-link" data-toggle="tab" href="#tab-grammar">Lesson/Grammar</a>
@@ -127,28 +149,28 @@
                                             </div>
                                         
                                     </div>
-                                        <div class="card-body bg-dark overflow-auto p-0" style="height: 400px">
+                                        <div class="card-body bg-dark overflow-auto p-0" style="height: 485px">
                                                 
                                             <div class="container">
                                                 <div class="tab-content bg-dark text-white">
                                                         <div id="tab-vocab" class="tab-pane container bg-dark text-white active">
-                                                            <% include partials/vocab_test %>
+                                                            <div tvs-include="tvs_vocab_test_1.html"></div>
                                                         </div>
                                                         <div id="tab-speaking" class="tab-pane container bg-dark text-white fade"><br>
-                                                            <% include partials/speaking_test %>
+                                                            <div tvs-include="tvs_targetVocab_test_1.html"></div>
                                                         </div>
                                                         <div id="tab-grammar" class="tab-pane container bg-dark text-white fade"><br>
-                                                            <% include partials/grammar_test %>
+                                                            <div tvs-include="tvs_grammar_test_1.html"></div>
                                                         </div>
                                                         <div id="tab-quiz" class="tab-pane container bg-dark text-white fade"><br>
-                                                            <% include partials/quiz_test %>
+                                                            <div tvs-include="tvs_quiz_test_1.html"></div>
                                                         </div>
                                                         <div id="tab-notes" class="tab-pane container bg-dark text-white fade"><br>
                                                             <form>
                                                                 <div class="form-group">
                                                                   <textarea class="form-control" rows="10" id="comment"></textarea>
                                                                 </div>
-                                                                <button class="btn btn-secondary" type="submit">Save Notes</button>
+                                                                <button type="submit">Save Notes</button>
                                                               </form>
                                                               
                                                         </div>
