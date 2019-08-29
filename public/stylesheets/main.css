@@ -1,5 +1,6 @@
 .dropdown-item.nav-link.active.show {
     background: blue;
+    color: white;
 }
 
 #exercises {
@@ -71,3 +72,12 @@
     
   }
  
+  h3 {
+    text-align: center;
+  }
+
+  hr.style-two {
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255), rgba(255, 255, 255, 0));
+}
