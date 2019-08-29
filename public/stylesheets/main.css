@@ -79,6 +79,12 @@
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255), rgba(255, 255, 255, 0));
 }
 
+  hr.style-three {
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  background: #999;
+}
+ 
   .controlbutton {
     border: 1px solid rgb(175, 172, 172);
   }

@@ -4,7 +4,7 @@
 	/* All the scripting for video */
 	
 var vid, repeatButton, timecodes, repeatEventListener, playStatus;
-var repeatVideo = false;
+var repeatVideo = true;
 var playStatus = false;
 var vidLine = "vidLine";
 
@@ -12,14 +12,16 @@ var subs = [];
 var subsJap = [];
 
 
-
 function initializeVid(x=[]){
 	
+	
+
 	vid = document.getElementById("currentVideo");
+    // intialize the volume to be 50%;
+    vid.volume = 0.5;
 	repeatButton = document.getElementById("repeatButtonVid");
     playButton = document.getElementById("playButton");
 	playIcon = document.getElementById("playIcon");
-	var seekBar = document.getElementById("seek-bar");
 	timecodes = x;
 	assToSubs("/assets/test_subtitles.ass","eng");
 	// assToSubs("Hakone_Jap_Subs.ass","jap");
@@ -62,7 +64,7 @@ function pauseVid(){
 function restartVid(){
 	
 	vid.currentTime = 0;
-	playVid();
+	vid.play();
 }
 
 function skipForwardVid(x = 10){
@@ -94,9 +96,18 @@ function toggleRepeatVid(){
 		
 } 
 
+function volumeUp(){
+    if (vid.volume <= 0.9)
+    {
+        vid.volume += 0.1;
+    }
+}
 
-
-
+function volumeDown(){
+    if (vid.volume >= 0.1){
+        vid.volume -= 0.1;
+    }
+}
 
 
 function startEventHandler(){
