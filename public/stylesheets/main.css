@@ -15,7 +15,7 @@
    overflow: hidden; 
  }
  
- .popup {
+.popup {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -70,3 +70,4 @@
   #audioHover:hover {
     
   }
+ 
