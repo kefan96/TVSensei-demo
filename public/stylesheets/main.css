@@ -1,5 +1,5 @@
 body {
-  background-color: #E3AFBC;
+  background-color: #efe2ba;
 }
 
 .dropdown-item.nav-link.active.show {
@@ -116,35 +116,37 @@ body {
   }
   
   .effect1{
-    -webkit-box-shadow: 0 10px 6px -6px #000;
-       -moz-box-shadow: 0 10px 6px -6px #000;
-            box-shadow: 0 10px 6px -6px #000;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
 
   #navbar {
-    background-color: #9A1750;
+    background-color: #4056a1;
   }
 
   #title {
-    color: #E3E2DF;
+    color: #efe2ba;
     font-weight: bold;
   }
 
+  #title:hover {
+    color: #c5cbe3;
+  }
+
   .nav-link {
-    color: #E3E2DF;
+    color: #efe2ba;
   }
 
   .nav-link:hover {
-    color: #E3AFBC;
+    color: #c5cbe3;
   }
 
   #subtitle {
-    background: #E3E2DF;
+    background: white;
   }
   
   #dropdownMenuButton {
     width: 100%;
-    color: #E3E2DF;
+    color: #efe2ba;
   }
   .btn:focus, .btn:active:focus, .btn.active:focus{
     outline:none;
@@ -152,21 +154,30 @@ body {
   }
 
   #exercise-header {
-    background: #9A1750;
+    background: #4056a1;
   }
 
   #dropdown-menu {
-    background: #5D001E;;
+    background: #f13c20;
     position: relative;
     right: 0px;
   }
 
   #exercise-body {
-    background: #EE4C7C;
+    background: #c5cbe3;
     color: #E3E2DF;
   }
 
   .card {
     border: none;
     outline: none;
+  }
+
+  #button-li {
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
   }

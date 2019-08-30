@@ -40,7 +40,7 @@ function playVid(){
 	if(playStatus){
 		console.log(playButton.title);
 		vid.pause();
-        playButton.className = "btn btn-success controlbutton";
+        playButton.className = "btn btn-success controlbutton my-2";
 		playButton.setAttribute("title", "Play");
 		playIcon.className = "fas fa-play";
 		playStatus = false;
@@ -49,7 +49,7 @@ function playVid(){
 	else{
 		console.log(playButton.title);
 		vid.play();
-        playButton.className = "btn btn-danger controlbutton";
+        playButton.className = "btn btn-danger controlbutton my-2";
 		playButton.setAttribute("title", "Pause");
 		playIcon.className = "fas fa-pause";
 		playStatus = true;
