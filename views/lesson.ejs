@@ -11,17 +11,11 @@
     <meta name="author" content="tvsensei co.">
     
 	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light|Yanone+Kaffeesatz:400,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
 	
 	
-	<!-- <script src="external_GET.js"></script> -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- <script src="external_GET.js"></script> -->
 	<script src="/js/video_player.js"></script>
 	<script>
 			function play(){				 
@@ -30,6 +24,7 @@
 							   }
 	</script>
     <script src="https://kit.fontawesome.com/4912714a0b.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
@@ -38,45 +33,43 @@
 
 </head>
 
-<body class="bg-dark">
+<body>
 
 <!-- Top main nav bar-->
 
-<div class="container">
-	<nav class="navbar navbar-expand-sm bg-dark text-white" id="navbar">
+<nav class="navbar navbar-expand-sm mb-5" id="navbar">
 	
 		<div class="navbar-header">
 			<a class="navbar-brand" id="title">TVSensei</a>
 		</div>
 		<ul class="navbar-nav">
 			<li class="nav-item">
-				<a class="nav-link text-warning" href="#">Browse</a>
+				<a class="nav-link" href="#">Browse</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-warning" href="#">Settings</a>
+				<a class="nav-link" href="#">Settings</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-warning" href="#">My Progress</a>
+				<a class="nav-link" href="#">My Progress</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-warning" href="#">My Folders</a>
+				<a class="nav-link" href="#">My Folders</a>
 			</li>
 		</ul>
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a class="nav-link text-info" href="#"> Sign Up</a>
+				<a class="nav-link" href="#"> Sign Up</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-info" href="#"> Login</a></li>
+				<a class="nav-link" href="#"> Login</a></li>
 		</ul>
-	</nav>
-</div>
+</nav>
 <!-- end of top main navbar-->
 
 <!--  Body -->
 <div class="container-fluid">
 	<div class="row">
-	<div class="col-12 bg-dark"><!-- Center -->	
+	<div class="col-12"><!-- Center -->	
 		<div class="container">
             <div class="row">
                 <div class="col-7">
@@ -95,28 +88,28 @@
                         <p></p>
                         <div class="container">
                         <!-- <hr class="style-three"> -->
-                        <nav class="navbar navbar-expand-sm justify-content-center effect1" id="controlBar" style="background: black; border: none;">
-                            <ul class="navbar-nav">
-                                <li class="nav-item pr-2">
+                        <nav class="navbar navbar-expand-sm effect1 justify-content-center" id="controlBar" style="background: black; border: none">
+                            <ul class="navbar-nav justify-content-around" style="width: 60%;">
+                                <li class="nav-item">
                                     <button onclick="playVid();" class="btn btn-success controlbutton" type="button" id="playButton" data-toggle="tooltip"><i id="playIcon" class="fas fa-play"></i></button>
                                 </li>
-                                <li class="nav-item pr-2">
-                                        <button onclick="volumeDown();" class="btn btn-secondary controlbutton" data-toggle="tooltip" title="Volume Down"><i class="fas fa-volume-down"></i></button>
+                                <li class="nav-item">
+                                        <button onclick="volumeDown();" class="btn btn-secondary controlbutton" data-toggle="tooltip" title="Volume Down" data-placement="top"><i class="fas fa-volume-down"></i></button>
                                     </li>
-                                <li class="nav-item pr-2">
-                                            <button onclick="volumeUp();" class="btn btn-secondary controlbutton" data-toggle="tooltip" title="Volume Up"><i class="fas fa-volume-up"></i></button>
+                                <li class="nav-item">
+                                            <button onclick="volumeUp();" class="btn btn-secondary controlbutton" data-toggle="tooltip" title="Volume Up" data-placement="top"><i class="fas fa-volume-up"></i></button>
                                     </li>
-                                <li class="nav-tiem pr-2">
-                                    <button onclick="skipForwardVid();" class="btn btn-secondary controlbutton" type="button" data-toggle="tooltip" title="Add 10s"><i class="fas fa-forward"></i></button>
+                                <li class="nav-tiem">
+                                    <button onclick="skipForwardVid();" class="btn btn-secondary controlbutton" type="button" data-toggle="tooltip" title="Forward 10s" data-placement="top"><i class="fas fa-forward"></i></button>
                                 </li>
-                                <li class="nav-tiem pr-2">
-                                    <button onclick="skipBackwardVid();" class="btn btn-secondary controlbutton" type="button" data-toggle="tooltip" title="Back 10s"><i class="fas fa-backward"></i></button>
+                                <li class="nav-tiem">
+                                    <button onclick="skipBackwardVid();" class="btn btn-secondary controlbutton" type="button" data-toggle="tooltip" title="Back 10s" data-placement="top"><i class="fas fa-backward"></i></button>
                                 </li>
-                                <li class="nav-item pr-2">
-                                    <button onclick="restartVid();" class="btn btn-secondary controlbutton" type="button" data-toggle="tooltip" title="From Start"><i class="fas fa-redo-alt"></i></button>
+                                <li class="nav-item">
+                                    <button onclick="restartVid();" class="btn btn-secondary controlbutton" type="button" data-toggle="tooltip" title="From Start" data-placement="top"><i class="fas fa-redo-alt"></i></button>
                                 </li>
-                                <li class="nav-item pr-2">
-                                    <button onclick="toggleRepeatVid();" class="btn btn-info controlbutton" type="button" id="repeatButtonVid" data-toggle="tooltip" title="Toggle Repeat"><i class="fas fa-sync"></i></button>
+                                <li class="nav-item">
+                                    <button onclick="toggleRepeatVid();" class="btn btn-info controlbutton" type="button" id="repeatButtonVid" data-toggle="tooltip" title="Toggle Repeat" data-placement="top"><i class="fas fa-sync"></i></button>
                                 </li>
                                 
                                 
@@ -126,7 +119,7 @@
                     <div class="container my-3">
                                 
                         <div class="card effect1" style="width:100%;min-height:130px;"> <!-- Fixed height to avoid having the container shrink and expand often -->
-                            <div class="card-body bg-light">
+                            <div class="card-body" id="subtitle">
                                 <div class="container">
                                     <h2 name="subTestJapanese" id="videoText"></h2>
                                     <h3 name="subTestEnglish" id="videoText"></h3>
@@ -141,12 +134,12 @@
                         <!-- Contains the rest of the tvs-includes -->
                             
                                 <div class="card effect1">
-                                    <div class="card-header bg-secondary">
+                                    <div class="card-header" id="exercise-header">
                                             <div id="exercises" class="dropdown nav nav-tabs">
-                                                    <button class="btn btn-secondary dropdown-toggle" style="font-size: 20px; height: 40px" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <button class="btn dropdown-toggle" style="font-size: 20px; height: 40px" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Exercises
                                                     </button>
-                                                    <div class="dropdown-menu aria-labelledby="dropdownMenuButton" role = "tablist">
+                                                    <div class="dropdown-menu effect" aria-labelledby="dropdownMenuButton" role = "tablist" id="dropdown-menu"> 
                                                       <a class="dropdown-item nav-link" data-toggle="tab" href="#tab-vocab">Vocab</a>
                                                       <a class="dropdown-item nav-link" data-toggle="tab" href="#tab-speaking">Speaking</a>
                                                       <a class="dropdown-item nav-link" data-toggle="tab" href="#tab-grammar">Lesson/Grammar</a>
@@ -154,38 +147,35 @@
                                                       <a class="dropdown-item nav-link" data-toggle="tab" href="#tab-notes">Notes</a>
                                                     </div>
                                             </div>
-                                        
                                     </div>
-                                        <div class="card-body bg-dark overflow-auto p-0" style="height: 502px">
-                                                
-                                            <div class="container">
-                                                <div class="tab-content bg-dark text-white">
-                                                        <div id="tab-vocab" class="tab-pane container bg-dark text-white active">
+                                        <div class="card-body overflow-auto p-0 m-0" id="exercise-body" style="height: 502px">
+                                            
+                                                <div class="tab-content">
+                                                        <div id="tab-vocab" class="tab-pane container text-white active">
                                                             <% include partials/vocab_test %>
                                                         </div>
-                                                        <div id="tab-speaking" class="tab-pane container bg-dark text-white fade"><br>
+                                                        <div id="tab-speaking" class="tab-pane container text-white fade"><br>
                                                             <% include partials/speaking_test %>
                                                         </div>
-                                                        <div id="tab-grammar" class="tab-pane container bg-dark text-white fade"><br>
+                                                        <div id="tab-grammar" class="tab-pane container text-white fade"><br>
                                                             <% include partials/grammar_test %>
                                                         </div>
-                                                        <div id="tab-quiz" class="tab-pane container bg-dark text-white fade"><br>
+                                                        <div id="tab-quiz" class="tab-pane container text-white fade"><br>
                                                             <% include partials/quiz_test %>
                                                         </div>
-                                                        <div id="tab-notes" class="tab-pane container bg-dark text-white fade"><br>
+                                                        <div id="tab-notes" class="tab-pane container text-white fade"><br>
                                                             <h3>Notes</h3>
                                                             <hr class="style-two">
-                                                            <form>
+                                                            <form class="text-center">
                                                                 <div class="form-group">
-                                                                  <textarea class="form-control" rows="10" id="comment"></textarea>
+                                                                  <textarea class="form-control" rows="10" id="comment" style="background: #E3E2DF; outline: none;"></textarea>
                                                                 </div>
-                                                                <button type="submit">Save Notes</button>
+                                                                <button class="btn" type="submit" style="background: #E3E2DF; color: #5D001E;">Save Notes</button>
                                                               </form>
                                                               
                                                         </div>
                                                 </div>
                                             </div>
-                                        </div>
                                     
                                 </div>
                 </div>
@@ -202,7 +192,9 @@
 </div>
 
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -1,15 +1,24 @@
+body {
+  background-color: #E3AFBC;
+}
+
 .dropdown-item.nav-link.active.show {
-    background: steelblue;
-    color: white;
+    background: #E3AFBC;
+    color: #5D001E;
+}
+
+.dropdown-item.nav-link.focus {
+  background: #E3AFBC;
+  color: #5D001E;
 }
 
 #exercises {
-  border-bottom: 0px;
+    border-bottom: 0px;
  }
  
  #controlBar {
-   border-radius: 30%;
- }
+  border-radius: 5px;
+}
  
  .video{
    border-radius: 5px; 
@@ -84,28 +93,80 @@
   border-bottom: 1px dashed #ccc;
   background: #999;
 }
+ 
+
 
   #progress-bar {
     width: 100%;
   }
 
-li .btn.controlbutton {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-}
+  li .btn.controlbutton {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+  }
+  
+  li .btn.controlbutton:hover {
+    border-radius: 20%;
+  }
+  
+  #videoText {
+    font-family: 'Roboto Mono', monospace;
+  }
+  
+  .effect1{
+    -webkit-box-shadow: 0 10px 6px -6px #000;
+       -moz-box-shadow: 0 10px 6px -6px #000;
+            box-shadow: 0 10px 6px -6px #000;
+  }
 
-li .btn.controlbutton:hover {
-  border-radius: 20%;
-}
+  #navbar {
+    background-color: #9A1750;
+  }
 
-#videoText {
-  font-family: 'Roboto Mono', monospace;
-}
+  #title {
+    color: #E3E2DF;
+    font-weight: bold;
+  }
 
-.effect1{
-	-webkit-box-shadow: 0 10px 6px -6px #000;
-	   -moz-box-shadow: 0 10px 6px -6px #000;
-	        box-shadow: 0 10px 6px -6px #000;
-}
+  .nav-link {
+    color: #E3E2DF;
+  }
+
+  .nav-link:hover {
+    color: #E3AFBC;
+  }
+
+  #subtitle {
+    background: #E3E2DF;
+  }
+  
+  #dropdownMenuButton {
+    width: 100%;
+    color: #E3E2DF;
+  }
+  .btn:focus, .btn:active:focus, .btn.active:focus{
+    outline:none;
+    box-shadow:none;
+  }
+
+  #exercise-header {
+    background: #9A1750;
+  }
+
+  #dropdown-menu {
+    background: #5D001E;;
+    position: relative;
+    right: 0px;
+  }
+
+  #exercise-body {
+    background: #EE4C7C;
+    color: #E3E2DF;
+  }
+
+  .card {
+    border: none;
+    outline: none;
+  }

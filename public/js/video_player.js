@@ -42,7 +42,6 @@ function playVid(){
 		vid.pause();
         playButton.className = "btn btn-success controlbutton";
 		playButton.setAttribute("title", "Play");
-		$('#playButton').tooltip();
 		playIcon.className = "fas fa-play";
 		playStatus = false;
 		
@@ -52,7 +51,6 @@ function playVid(){
 		vid.play();
         playButton.className = "btn btn-danger controlbutton";
 		playButton.setAttribute("title", "Pause");
-		$('#playButton').tooltip();
 		playIcon.className = "fas fa-pause";
 		playStatus = true;
 
