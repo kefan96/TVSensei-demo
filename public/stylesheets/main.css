@@ -1,5 +1,5 @@
 .dropdown-item.nav-link.active.show {
-    background: blue;
+    background: steelblue;
     color: white;
 }
 
@@ -92,3 +92,9 @@
   #progress-bar {
     width: 100%;
   }
+
+li .btn.controlbutton {
+  width: 50px;
+  height: 40px;
+  text-align: center;
+}
