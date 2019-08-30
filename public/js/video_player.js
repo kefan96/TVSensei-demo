@@ -38,17 +38,21 @@ function jumpVideoTime(x){
 function playVid(){
 	
 	if(playStatus){
+		console.log(playButton.title);
 		vid.pause();
         playButton.className = "btn btn-success controlbutton";
-        playButton.title = 'play';
+		playButton.setAttribute("title", "Play");
+		$('#playButton').tooltip();
 		playIcon.className = "fas fa-play";
 		playStatus = false;
 		
 	}
 	else{
+		console.log(playButton.title);
 		vid.play();
         playButton.className = "btn btn-danger controlbutton";
-        playButton.title = 'pause';
+		playButton.setAttribute("title", "Pause");
+		$('#playButton').tooltip();
 		playIcon.className = "fas fa-pause";
 		playStatus = true;
 

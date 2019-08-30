@@ -8,8 +8,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="">
-	<meta name="author" content="tvsensei co.">
-	
+    <meta name="author" content="tvsensei co.">
+    
+	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light|Yanone+Kaffeesatz:400,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
@@ -18,14 +19,16 @@
 	
 	
 	<!-- <script src="external_GET.js"></script> -->
-	<script src="/js/multi_test_check.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="/js/video_player.js"></script>
 	<script>
 			function play(){				 
 			var audio = document.getElementById("audio");
 			audio.play();
 							   }
-		</script>
+	</script>
     <script src="https://kit.fontawesome.com/4912714a0b.js"></script>
     <script>
         $(function () {
@@ -79,10 +82,10 @@
                 <div class="col-7">
                         <div class="container">
         
-                        <div class="d-flex justify-content-center bg-dark text-white">
+                        <div class="d-flex justify-content-center text-white effect1">
                                             <!-- initializeVid takes specific time codes that Henry wanted to highlight. Ideally, this information will change to be a separate file.-->
                                             <video onloadstart="initializeVid([[68,72.5],[77,86],[91,97],[138,147],[165,170]]);" id="currentVideo" width="100%" height="100%" class="video">
-                                                <source src="/media/growGoogle.mp4" type="video/mp4">
+                                                <source src="/media/video_Test.mp4" type="video/mp4">
                                                 Unsupported browser video. 
                                             </video>
                                         
@@ -92,10 +95,10 @@
                         <p></p>
                         <div class="container">
                         <!-- <hr class="style-three"> -->
-                        <nav class="navbar navbar-expand-sm justify-content-center border border-secondary" id="controlBar">
+                        <nav class="navbar navbar-expand-sm justify-content-center effect1" id="controlBar" style="background: black; border: none;">
                             <ul class="navbar-nav">
                                 <li class="nav-item pr-2">
-                                    <button onclick="playVid();" class="btn btn-success controlbutton" type="button" id="playButton" data-toggle="tooltip" title="Play"><i id="playIcon" class="fas fa-play"></i></button>
+                                    <button onclick="playVid();" class="btn btn-success controlbutton" type="button" id="playButton" data-toggle="tooltip"><i id="playIcon" class="fas fa-play"></i></button>
                                 </li>
                                 <li class="nav-item pr-2">
                                         <button onclick="volumeDown();" class="btn btn-secondary controlbutton" data-toggle="tooltip" title="Volume Down"><i class="fas fa-volume-down"></i></button>
@@ -104,28 +107,25 @@
                                             <button onclick="volumeUp();" class="btn btn-secondary controlbutton" data-toggle="tooltip" title="Volume Up"><i class="fas fa-volume-up"></i></button>
                                     </li>
                                 <li class="nav-tiem pr-2">
-                                    <button onclick="skipForwardVid();" class="btn btn-secondary controlbutton" type="button" data-toggle="tooltip" title="Add 10s">+10</button>
+                                    <button onclick="skipForwardVid();" class="btn btn-secondary controlbutton" type="button" data-toggle="tooltip" title="Add 10s"><i class="fas fa-forward"></i></button>
                                 </li>
                                 <li class="nav-tiem pr-2">
-                                    <button onclick="skipBackwardVid();" class="btn btn-secondary controlbutton" type="button" data-toggle="tooltip" title="Back 10s">-10</button>
+                                    <button onclick="skipBackwardVid();" class="btn btn-secondary controlbutton" type="button" data-toggle="tooltip" title="Back 10s"><i class="fas fa-backward"></i></button>
                                 </li>
                                 <li class="nav-item pr-2">
                                     <button onclick="restartVid();" class="btn btn-secondary controlbutton" type="button" data-toggle="tooltip" title="From Start"><i class="fas fa-redo-alt"></i></button>
                                 </li>
                                 <li class="nav-item pr-2">
-                                    <button onclick="toggleRepeatVid();" class="btn btn-info controlbutton" type="button" id="repeatButtonVid" data-toggle="tooltip" title="Toggle Repeat"><i class="fas fa-reply-all"></i>
-
-                                    </button>
+                                    <button onclick="toggleRepeatVid();" class="btn btn-info controlbutton" type="button" id="repeatButtonVid" data-toggle="tooltip" title="Toggle Repeat"><i class="fas fa-sync"></i></button>
                                 </li>
                                 
                                 
                         </nav>
                     </div>
                     <!-- The Subtitles, two stacked on top of each other. -->
-                    <div class="container">
+                    <div class="container my-3">
                                 
-                                <br>
-                        <div class="card" style="width:100%;min-height:130px;"> <!-- Fixed height to avoid having the container shrink and expand often -->
+                        <div class="card effect1" style="width:100%;min-height:130px;"> <!-- Fixed height to avoid having the container shrink and expand often -->
                             <div class="card-body bg-light">
                                 <div class="container">
                                     <h2 name="subTestJapanese" id="videoText"></h2>
@@ -140,7 +140,7 @@
                     <div id="accordion"> <!-- Collapsable -->
                         <!-- Contains the rest of the tvs-includes -->
                             
-                                <div class="card">
+                                <div class="card effect1">
                                     <div class="card-header bg-secondary">
                                             <div id="exercises" class="dropdown nav nav-tabs">
                                                     <button class="btn btn-secondary dropdown-toggle" style="font-size: 20px; height: 40px" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -204,14 +204,6 @@
 
 
 </body>
-
-
-
-<script>
-/*This executes on load a js file that replaces all instances of 'tvs-include' 
-with the html file asked for.*/
-include_External();
-</script>
 
 </html>
 <!-- END OF FILE-->
