@@ -26,7 +26,12 @@
 			audio.play();
 							   }
 		</script>
-	<script src="https://kit.fontawesome.com/4912714a0b.js"></script>
+    <script src="https://kit.fontawesome.com/4912714a0b.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 
 </head>
 
@@ -93,10 +98,10 @@
                                     <button onclick="playVid();" class="btn btn-success controlbutton" type="button" id="playButton" data-toggle="tooltip" title="Play"><i id="playIcon" class="fas fa-play"></i></button>
                                 </li>
                                 <li class="nav-item pr-2">
-                                        <button onclick="volumeDown();" class="btn btn-secondary controlbutton" data-toggle="tooltip" title="Volume Up"><i class="fas fa-volume-down"></i></button>
+                                        <button onclick="volumeDown();" class="btn btn-secondary controlbutton" data-toggle="tooltip" title="Volume Down"><i class="fas fa-volume-down"></i></button>
                                     </li>
                                 <li class="nav-item pr-2">
-                                            <button onclick="volumeUp();" class="btn btn-secondary controlbutton" data-toggle="tooltip" title="Volume Down"><i class="fas fa-volume-up"></i></button>
+                                            <button onclick="volumeUp();" class="btn btn-secondary controlbutton" data-toggle="tooltip" title="Volume Up"><i class="fas fa-volume-up"></i></button>
                                     </li>
                                 <li class="nav-tiem pr-2">
                                     <button onclick="skipForwardVid();" class="btn btn-secondary controlbutton" type="button" data-toggle="tooltip" title="Add 10s">+10</button>
