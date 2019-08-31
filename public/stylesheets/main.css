@@ -1,3 +1,19 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.col-1 {
+  padding-right: 0;
+  padding-left: 5px
+}
+
+.col-11 {
+  padding: 0;
+}
+
 body {
   background-color: #efe2ba;
 }
@@ -101,10 +117,24 @@ body {
   }
 
   li .btn.controlbutton {
+    display: flex;
     border-radius: 50%;
     width: 35px;
     height: 35px;
     text-align: center;
+    position: relative;
+  }
+
+  .btn i {
+    top: 50%;
+    left: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: relative;
+    line-height: 20px;
   }
   
   li .btn.controlbutton:hover {
