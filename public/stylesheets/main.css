@@ -6,8 +6,7 @@
 }
 
 .col-1 {
-  padding-right: 0;
-  padding-left: 5px
+  padding: 5px
 }
 
 .col-11 {
@@ -34,6 +33,11 @@ body {
  
  #controlBar {
   border-radius: 5px;
+}
+
+.video:hover #controlBar {
+  opacity: 0;
+  transition: all .5s;
 }
  
  .video{
@@ -136,6 +140,7 @@ body {
     position: relative;
     line-height: 20px;
   }
+
   
   li .btn.controlbutton:hover {
     border-radius: 20%;
@@ -150,7 +155,7 @@ body {
   }
 
   #navbar {
-    background-color: #4056a1;
+    background-color: #000a17;
   }
 
   #title {
@@ -210,4 +215,8 @@ body {
     margin-inline-start: 0;
     margin-inline-end: 0;
     padding-inline-start: 0;
+    width: 100%; margin: 0;  
+    padding: 20px; 
+    background-color: #000a17;
+    border-radius: 5px;
   }
