@@ -13,6 +13,12 @@
   padding: 0;
 }
 
+.col-4 {
+  padding: 5px;
+  margin: 0;
+  padding-top: 0;
+}
+
 body {
   background-color: #efe2ba;
 }
@@ -155,7 +161,7 @@ body {
   }
 
   #navbar {
-    background-color: #000a17;
+    background-color: #4056a1;
   }
 
   #title {
@@ -181,7 +187,7 @@ body {
   
   #dropdownMenuButton {
     width: 100%;
-    color: #efe2ba;
+    color: white;
   }
   .btn:focus, .btn:active:focus, .btn.active:focus{
     outline:none;
@@ -189,7 +195,7 @@ body {
   }
 
   #exercise-header {
-    background: #4056a1;
+    background: #000a17;
   }
 
   #dropdown-menu {
