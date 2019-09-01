@@ -26,6 +26,18 @@ myPlayer.ready(function() {
   });
 
   function jumpVideoTime(x){
-    repeatVideo = !repeatVideo;
-	myPlayer.currentTime(x);
+    if (!myPlayer.paused()) {
+        myPlayer.currentTime(x);
+        $('#loop-message').removeClass('message-hide');  
+        if (!repeatVideo) {
+            repeatVideo = true; 
+        }
+    }
 }
+
+$('#unloop').on('click', () => {
+    $('#loop-message').addClass('message-hide');
+    if (repeatVideo) {
+        repeatVideo = false;
+    }
+});

@@ -20,17 +20,12 @@
 }
 
 body {
-  background-color: #efe2ba;
+  background-image: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
 }
 
 .dropdown-item.nav-link.active.show {
-    background: #E3AFBC;
-    color: #5D001E;
-}
-
-.dropdown-item.nav-link.focus {
-  background: #E3AFBC;
-  color: #5D001E;
+    background: #b4d5ff;
+    color: #020017;
 }
 
 #exercises {
@@ -106,13 +101,15 @@ body {
  
   h3 {
     text-align: center;
+    font-size: 1.4rem;
+    margin: 0;
   }
 
   hr.style-two {
     border: 0;
-    height: 3px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255), rgba(255, 255, 255, 0));
-}
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255), rgb(59, 68, 75), rgba(255, 255, 255));
+  }
 
   hr.style-three {
   border: 0;
@@ -161,28 +158,32 @@ body {
   }
 
   #navbar {
-    background-color: #4056a1;
+    background-color: #000a17;
   }
 
   #title {
-    color: #efe2ba;
+    color: white;
     font-weight: bold;
   }
 
   #title:hover {
-    color: #c5cbe3;
+    color: #b4d5ff;
   }
 
   .nav-link {
-    color: #efe2ba;
+    color: white;
   }
 
   .nav-link:hover {
-    color: #c5cbe3;
+    color: #b4d5ff;
+  }
+
+  .dropdown-item.nav-link:hover {
+    color: #020017;
   }
 
   #subtitle {
-    background: white;
+    background: #fff;
   }
   
   #dropdownMenuButton {
@@ -199,14 +200,14 @@ body {
   }
 
   #dropdown-menu {
-    background: #f13c20;
+    background: #020017;
     position: relative;
     right: 0px;
   }
 
   #exercise-body {
-    background: #c5cbe3;
-    color: #E3E2DF;
+    background: white;
+    color: #000a17;
   }
 
   .card {
@@ -239,4 +240,24 @@ body {
 
   .btn.btn-link.speak-task:focus {
     color: red;
+  }
+
+  .message-show {
+    height: 100%;
+  }
+
+  .message-hide {
+    height: 0;
+    display: none;
+    transition: all 1s;
+  }
+
+  #loop-message {
+    color: #F0FFF0;
+    transition: all 1s;
+  }
+
+  #unloop {
+    color: white;
+    text-transform: uppercase;
   }

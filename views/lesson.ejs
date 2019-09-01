@@ -124,7 +124,7 @@
                         <!-- Contains the rest of the tvs-includes -->
                             
                                 <div class="card effect1">
-                                    <div class="card-header" id="exercise-header">
+                                    <div class="card-header p-0" id="exercise-header">
                                             <div id="exercises" class="dropdown nav nav-tabs">
                                                     <button class="btn dropdown-toggle" style="font-size: 20px; height: 40px" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Exercises
@@ -139,28 +139,28 @@
                                             </div>
                                     </div>
                                         <div class="card-body overflow-auto p-0 m-0" id="exercise-body" style="height: 502px">
-                                            
-                                                <div class="tab-content">
-                                                        <div id="tab-vocab" class="tab-pane container text-white active">
+                                                <div class="bg-success text-center message-hide py-2" id="loop-message">Video is looping. <a href='#' id="unloop">Click Here</a> to undo</div>
+                                                <div class="tab-content" style="padding: 0;">
+                                                        <div id="tab-vocab" class="tab-pane container text-dark active p-0">
                                                             <% include partials/vocab_test %>
                                                         </div>
-                                                        <div id="tab-speaking" class="tab-pane container text-white fade"><br>
+                                                        <div id="tab-speaking" class="tab-pane container text-dark fade"><br>
                                                             <% include partials/speaking_test %>
                                                         </div>
-                                                        <div id="tab-grammar" class="tab-pane container text-white fade"><br>
+                                                        <div id="tab-grammar" class="tab-pane container text-dark fade"><br>
                                                             <% include partials/grammar_test %>
                                                         </div>
-                                                        <div id="tab-quiz" class="tab-pane container text-white fade"><br>
+                                                        <div id="tab-quiz" class="tab-pane container text-dark fade"><br>
                                                             <% include partials/quiz_test %>
                                                         </div>
-                                                        <div id="tab-notes" class="tab-pane container text-white fade"><br>
+                                                        <div id="tab-notes" class="tab-pane container text-dark fade"><br>
                                                             <h3>Notes</h3>
                                                             <hr class="style-two">
                                                             <form class="text-center">
                                                                 <div class="form-group">
                                                                   <textarea class="form-control" rows="10" id="comment" style="outline: none;"></textarea>
                                                                 </div>
-                                                                <button class="btn" type="submit" style="background: white; color: #4056a1;">Save Notes</button>
+                                                                <button class="btn" type="submit" style="background: #020017; color: white;">Save Notes</button>
                                                               </form>
                                                               
                                                         </div>
