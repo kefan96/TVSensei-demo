@@ -63,10 +63,14 @@
 		</ul>
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a class="nav-link" href="#"> Sign Up</a>
+				<a class="nav-link" href="#" data-toggle="tooltip" title="Sign up"><i class="fas fa-user-plus"></i></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#"> Login</a></li>
+				<a class="nav-link" href="#" data-toggle="tooltip" title="Log in"><i class="fas fa-sign-in-alt"></i></a></li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" data-toggle="tooltip" title="Log out"><i class="fas fa-sign-out-alt"></i></a></li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" data-toggle="tooltip" title="User"><i class="fas fa-user"></i></a></li>
 		</ul>
 </nav>
 <!-- end of top main navbar-->
@@ -105,7 +109,7 @@
                                     <source src="/media/video_Test.mp4" type="video/mp4">
                                     Unsupported browser video. 
                                 </video> -->
-                                <video class="video-js vjs-big-play-centered" id="currentVideo" onloadstart="initializeVid([[68,72.5],[77,86],[91,97],[138,147],[165,170]]);" style="width: 100%; height: 400px; border-radius: 5px; margin-bottom: 5px;">
+                                <video class="video-js vjs-big-play-centered" id="currentVideo" onloadstart="initializeVid([[68,72.5],[77,86],[91,97],[138,147],[165,170]]);" style="border-radius: 5px; margin-bottom: 5px;">
                                     <source src="/media/video_Test.mp4" type="video/mp4">
                                 </video>
                                 <div class="card effect1" style="width:100%;min-height:130px;"> <!-- Fixed height to avoid having the container shrink and expand often -->
@@ -138,10 +142,10 @@
                                                     </div>
                                             </div>
                                     </div>
-                                        <div class="card-body overflow-auto p-0 m-0" id="exercise-body" style="height: 502px">
+                                        <div class="card-body overflow-auto p-0 m-0" id="exercise-body" style="height: 90vh">
                                                 <div class="bg-success text-center message-hide py-2" id="loop-message">Video is looping. <a href='#' id="unloop">Click Here</a> to undo</div>
                                                 <div class="tab-content" style="padding: 0;">
-                                                        <div id="tab-vocab" class="tab-pane container text-dark active p-0">
+                                                        <div id="tab-vocab" class="tab-pane container text-dark">
                                                             <% include partials/vocab_test %>
                                                         </div>
                                                         <div id="tab-speaking" class="tab-pane container text-dark fade"><br>

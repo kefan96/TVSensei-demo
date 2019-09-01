@@ -4,23 +4,60 @@
         <title>TVSensei</title>
         <link rel="stylesheet" href="/stylesheets/index.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+        <script src="https://kit.fontawesome.com/4912714a0b.js"></script>
+        <script>
+          $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+          });
+        </script>
     </head>
     <body>
-    
+      <nav class="navbar navbar-expand-sm" id="navbar">
+	
+        <div class="navbar-header">
+          <a class="navbar-brand" id="title" href="/">TVSensei</a>
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Browse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Progress</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Folders</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="tooltip" title="Sign up"><i class="fas fa-user-plus"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="tooltip" title="Log in"><i class="fas fa-sign-in-alt"></i></a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="tooltip" title="Log out"><i class="fas fa-sign-out-alt"></i></a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="tooltip" title="User"><i class="fas fa-user"></i></a></li>
+        </ul>
+    </nav>
     <div id="landing-header">
       <h1>Welcome to TVSensei!</h1>
-      <p>Language learning, now entertaining.</p>
+      <p>言語学習、今面白い</p>
 		<a id="btn" href="/lesson">View Lesson</a>
     </div>
     
-    <ul class="slideshow">
+    <!-- <ul class="slideshow">
       <li></li>
       <li></li>
       <li></li>
       <li></li>
       <li></li>
-    </ul>
+    </ul> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
