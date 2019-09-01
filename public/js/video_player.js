@@ -4,7 +4,7 @@
 	/* All the scripting for video */
 	
 var vid, repeatButton, timecodes, repeatEventListener, playStatus;
-var repeatVideo = true;
+var repeatVideo = false;
 var playStatus = false;
 var vidLine = "vidLine";
 
@@ -18,10 +18,10 @@ function initializeVid(x=[]){
 
 	vid = document.getElementById("currentVideo");
     // intialize the volume to be 50%;
-    vid.volume = 0.5;
-	repeatButton = document.getElementById("repeatButtonVid");
-    playButton = document.getElementById("playButton");
-	playIcon = document.getElementById("playIcon");
+    // vid.volume = 0.5;
+	// repeatButton = document.getElementById("repeatButtonVid");
+    // playButton = document.getElementById("playButton");
+	// playIcon = document.getElementById("playIcon");
 	timecodes = x;
 	assToSubs("/assets/test_subtitles.ass","eng");
 	// assToSubs("Hakone_Jap_Subs.ass","jap");
@@ -30,10 +30,6 @@ function initializeVid(x=[]){
 
 }
 
-function jumpVideoTime(x){
-
-	vid.currentTime=x;
-}
 
 function playVid(){
 	
@@ -122,10 +118,10 @@ function startEventHandler(){
 				
 			if((this.currentTime >= timecodes[i][1]) && (Math.floor(this.currentTime) == Math.floor(timecodes[i][1])) && repeatVideo){ //Repeats the video if button is active.
 				this.pause;
-				this.currentTime = timecodes[0][0];
+				this.currentTime = timecodes[i][0];
 				break;
 			}
-			}
+		}
 			
 		/* Tiny subs is short hand for native lanuage, in this case English.
 		The big subs is the target learning language, in this case Japanese.*/

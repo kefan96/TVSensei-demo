@@ -21,5 +21,11 @@ myPlayer.ready(function() {
     this.seekButtons({
         forward: 10,
         back: 10
-    })
+    });
+    this.replayButton();
   });
+
+  function jumpVideoTime(x){
+    repeatVideo = !repeatVideo;
+	myPlayer.currentTime(x);
+}
