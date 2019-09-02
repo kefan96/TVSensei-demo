@@ -41,7 +41,7 @@ myPlayer.ready(function() {
         enableModifiersForNumbers: false,
     });
 
-    this.poster('https://i1.wp.com/tvsensei.com/wp-content/uploads/2019/05/cropped-TVSenseilogo-1.png?fit=260%2C250&ssl=1');
+    this.poster('/media/tvsensei_logo.png');
     this.seekButtons({
         forward: 10,
         back: 10
