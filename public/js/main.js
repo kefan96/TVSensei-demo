@@ -65,3 +65,8 @@ $('#unloop').on('click', () => {
         repeatVideo = false;
     }
 });
+
+$('#submit_note').on('click', () => {
+    $('#notes').append("<li>"+ $('#note_input').val()+"</li>")
+    $('#note_input').val('');
+});

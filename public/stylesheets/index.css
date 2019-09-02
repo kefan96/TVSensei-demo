@@ -152,7 +152,6 @@ top: 6px;
 p {
   cursor: pointer;
   padding: 0;
-  text-transform: uppercase;
 }
 
 p:hover {

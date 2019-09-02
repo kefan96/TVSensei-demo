@@ -78,7 +78,7 @@
 <!--  Body -->
 <div class="container-fluid">
 	<div class="row">
-                <div class="col-8">
+                <div class="col-md-8 col-12">
                         <div class="row">
                             <!-- <div class="col-1">
                                     <ul class="navbar-nav flex-column justify-content-center align-items-center" id="button-li">
@@ -104,15 +104,17 @@
                                             <button onclick="toggleRepeatVid();" class="btn btn-info controlbutton my-2" type="button" id="repeatButtonVid" data-toggle="tooltip" title="Toggle Repeat" data-placement="right"><i class="fas fa-sync fa-xs"></i></button>
                                         </li>
                             </div> -->
-                            <div class="col-12" style="padding: 0; padding-left: 5px;">
+                            <div class="col-12">
                                 <!-- <video onloadstart="initializeVid([[68,72.5],[77,86],[91,97],[138,147],[165,170]]);" id="currentVideo" class="video" style="width:100%">
                                     <source src="/media/video_Test.mp4" type="video/mp4">
                                     Unsupported browser video. 
                                 </video> -->
-                                <video class="video-js vjs-big-play-centered" id="currentVideo" onloadstart="initializeVid([[68,72.5],[77,86],[91,97],[138,147],[165,170]]);" style="border-radius: 5px; margin-bottom: 5px;">
-                                    <source src="/media/video_Test.mp4" type="video/mp4">
-                                </video>
-                                <div class="card effect1" style="width:100%;min-height:130px;"> <!-- Fixed height to avoid having the container shrink and expand often -->
+                                <div>
+                                    <video class="video-js vjs-big-play-centered effect1" id="currentVideo" onloadstart="initializeVid([[68,72.5],[77,86],[91,97],[138,147],[165,170]]);" style="margin-bottom: 5px;">
+                                        <source src="/media/video_Test.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="card effect1" style="width:100%;min-height:20vh;"> <!-- Fixed height to avoid having the container shrink and expand often -->
                                     <div class="card-body text-center" id="subtitle">
                                             <h2 name="subTestJapanese" id="videoText">Lesson 1</h2>
                                             <h3 name="subTestEnglish" id="videoText">Lesson 1</h3>
@@ -123,7 +125,7 @@
                         </div>
                 </div>
         
-                <div class="col-4">
+                <div class="col-md-4 col-12">
                     <div id="accordion"> <!-- Collapsable -->
                         <!-- Contains the rest of the tvs-includes -->
                             
@@ -176,13 +178,13 @@
                                                         <div id="tab-notes" class="tab-pane container text-dark fade"><br>
                                                             <h3>Notes</h3>
                                                             <hr class="style-two">
-                                                            <form class="text-center">
-                                                                <div class="form-group">
-                                                                  <textarea class="form-control" rows="10" id="comment" style="outline: none;"></textarea>
-                                                                </div>
-                                                                <button class="btn" type="submit" style="background: #020017; color: white;">Save Notes</button>
-                                                              </form>
-                                                              
+                                                            <div class="container">
+                                                                <ul id="notes">My Notes:</ul>
+                                                            </div>
+                                                            <div class="text-center">
+                                                                <textarea class="form-control" rows="10" id="note_input" style="outline: none;"></textarea>
+                                                                <button id="submit_note" class="btn my-2" type="submit" style="background: #020017; color: white;">Save Notes</button>
+                                                            </div>
                                                         </div>
                                                 </div>
                                             </div>

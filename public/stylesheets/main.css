@@ -5,19 +5,14 @@
   box-sizing: border-box;
 }
 
-.col-1 {
-  padding: 5px
-}
 
-.col-11 {
-  padding: 0;
-}
-
-.col-4 {
-  padding: 5px;
+.col-md-4.col-12, .col-md-8.col-12 {
+  padding-left: 5px;
+  padding-right: 0;
   margin: 0;
   padding-top: 0;
 }
+
 
 body {
   background-image: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
@@ -184,6 +179,8 @@ body {
 
   #subtitle {
     background: #fff;
+    border-radius: 5px;
+    padding-bottom: 5px;
   }
   
   #dropdownMenuButton {
@@ -197,17 +194,20 @@ body {
 
   #exercise-header {
     background: #000a17;
+    padding: 0;
   }
 
   #dropdown-menu {
     background: #00152e;
     position: relative;
     right: 0px;
+    transform: translateX(5px);
   }
 
   #exercise-body {
     background: white;
     color: #000a17;
+    font-family: 'Roboto Mono', monospace;
   }
 
   .card {
@@ -304,3 +304,25 @@ body {
   height: 16px;
 }
 
+.table.table-striped thead {
+  background: #000a17;
+  margin: 0;
+}
+
+.table.table-striped tbody tr:nth-child(odd) {
+  background: #001531;
+  margin: 0;
+}
+
+.table.table-striped tbody tr:nth-child(even) {
+  background: #000a17;
+  margin: 0;
+}
+
+.table.table-striped tbody tr:hover {
+  color: #b4d5ff;
+}
+
+table {
+  border-spacing: 0;
+}
