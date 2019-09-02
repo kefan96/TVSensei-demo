@@ -111,6 +111,7 @@ margin: 0 auto;
 letter-spacing: 2px;
 border-radius: 20px;
 box-shadow: 0 6px #020017;
+text-align: center;
 }
 
 #btn:hover {
@@ -142,4 +143,18 @@ top: 6px;
 
 .nav-link:hover {
   color: #b4d5ff;
+}
+
+.hide {
+  display: none;
+}
+
+p {
+  cursor: pointer;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+p:hover {
+  text-decoration: underline;
 }

@@ -260,6 +260,7 @@ body {
   #unloop {
     color: white;
     text-transform: uppercase;
+    cursor: pointer;
   }
 
   .vjs-paused .vjs-big-play-button,
