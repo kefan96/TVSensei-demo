@@ -69,6 +69,6 @@ $('#unloop').on('click', () => {
 });
 
 $('#submit_note').on('click', () => {
-    $('#notes').append("<li>"+ $('#note_input').val()+"</li>")
+    $('#notes').append("<li>" + $('#note_input').val()+"</li>")
     $('#note_input').val('');
 });
