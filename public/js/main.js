@@ -4,32 +4,34 @@ var myPlayer = videojs('currentVideo', {
     autoplay: false,
     preload: 'auto',
     controlBar: {
-        fullscreenToggle: false,
         pictureInPictureToggle: false,
-        fullscreenToggle: true
+        fullscreenToggle: true,
+        volumePanel: {
+            inline: false
+        }
     },
     playbackRates: [.5, 1, 1.5, 2, 2.5]
 }, function() {
-    var controlBar,
-    newElement = document.createElement('div'),
-    newLink = document.createElement('a'),
-    newImage = document.createElement('img');
-    // Assign id and classes to div for icon
-    newElement.id = 'downloadButton';
-    newElement.className = 'downloadStyle vjs-control';
-    // Assign properties to elements and assign to parents
-    newImage.setAttribute('src','http://solutions.brightcove.com/bcls/brightcove-player/download-video/file-download.png');
-    newLink.setAttribute('href','#');
-    newLink.appendChild(newImage);
-    newElement.appendChild(newLink);
-    // Get control bar and insert before elements
-    // Remember that getElementsByClassName() returns an array
-    controlBar = document.getElementsByClassName('vjs-control-bar')[0];
-    // Change the class name here to move the icon in the controlBar
-    insertBeforeNode = document.getElementsByClassName('vjs-fullscreen-control')[0];
-    // Insert the icon div in proper location
-    controlBar.insertBefore(newElement,insertBeforeNode);
-    //controlBar.appendChild(newElement);
+    // var controlBar,
+    // newElement = document.createElement('div'),
+    // newLink = document.createElement('a'),
+    // newImage = document.createElement('img');
+    // // Assign id and classes to div for icon
+    // newElement.id = 'downloadButton';
+    // newElement.className = 'downloadStyle vjs-control';
+    // // Assign properties to elements and assign to parents
+    // newImage.setAttribute('src','http://solutions.brightcove.com/bcls/brightcove-player/download-video/file-download.png');
+    // newLink.setAttribute('href','#');
+    // newLink.appendChild(newImage);
+    // newElement.appendChild(newLink);
+    // // Get control bar and insert before elements
+    // // Remember that getElementsByClassName() returns an array
+    // controlBar = document.getElementsByClassName('vjs-control-bar')[0];
+    // // Change the class name here to move the icon in the controlBar
+    // insertBeforeNode = document.getElementsByClassName('vjs-fullscreen-control')[0];
+    // // Insert the icon div in proper location
+    // controlBar.insertBefore(newElement,insertBeforeNode);
+    // //controlBar.appendChild(newElement);
 
 });
 
