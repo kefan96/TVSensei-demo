@@ -178,7 +178,7 @@ body {
   }
 
   #subtitle {
-    background: #fff;
+    background: #f0f0f0;
     border-radius: 5px;
     padding-bottom: 5px;
   }
@@ -205,7 +205,7 @@ body {
   }
 
   #exercise-body {
-    background: white;
+    background: #f0f0f0;
     color: #000a17;
   }
 
