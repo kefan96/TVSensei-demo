@@ -11,6 +11,7 @@ section p {
   font-family: 'Roboto Mono', monospace;
 }
 
+
 #landing-header {
   z-index: 1;
   position: relative;
@@ -163,6 +164,10 @@ top: 6px;
 
 #landing-header p:hover {
   text-decoration: underline;
+}
+
+section {
+  background: #f0f0f0;
 }
 
 section:not(#landing-header) {
