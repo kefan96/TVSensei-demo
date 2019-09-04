@@ -49,11 +49,36 @@
 
     <section id="introduction">
       <div class="container">
+        <div class="row">
+        <div class="col-8">
           <h3 class="pb-2">Learn language in a new way.</h3>
-          <p>Hi! We’re TVSensei (<em>tee-vee-sen-say-ee</em>).</p>
+          <p></p>Hi! We’re TVSensei (<em>tee-vee-sen-say-ee</em>).</p>
           <p>We’re out to <strong>revolutionize</strong> language learning as we know it!</p>
           <p>TVSensei teaches users to speak foreign languages in the context seen on screen—engaging learners with popular TV shows as both audience and actor using <strong>lessons designed by us</strong>.</p>
           <p>Scroll down to learn about our mission and our product. And if you're interested, <a href="#">Sign up</a> to see our wonderful contents!</p>
+        </div>
+        <!-- ROOM FOR IMAGE -->
+      </div>
+      </div>
+    </section>
+
+    <section id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+          <img class="sectionPic" src="/media/brain.jpg">
+          </div>
+        <div class="col-8 float-right">
+        <h3 class="pb-2">OUR RAISON D’ÊTRE (WHY WE EXIST)</h3>
+        <p>Right now we have two main options for learning a language:</p>
+        <p>1. Take a class</p> <p></p>
+        <p>2. Use a program like Rosetta Stone, Duolingo, or Babbel</p>
+        <p>Option 1 works… if you have the time and money. You’ll interact with your teacher and other students in the target language and build your fluency.</p>
+        <p>Option 2 works… if you’re diligent and consistently practice for 10 minutes or more a day until the end of time. </p>
+        <p>The reality is that like most new tech, “gamified” learning is only fun while it’s new. Once you’ve done your hundredth round of “tap the words to create the sentence,” the game has lost its charm.</p>
+        <p>What is missing from both options is this: real world content that’s both <strong>entertaining</strong> and <strong>educational</strong> that will drive you to engage with the target language every day. And we’re talking about a big one: foreign television. </p>
+      </div>
+      </div>
       </div>
     </section>
 
@@ -67,7 +92,7 @@
           </div>
           <div class="col-6">
             <form action="#">
-              <div class="form-group">
+              <div class="form-group">  
                 <label for="name">Full Name: <span style="color: red;">*</span></label>
                 <input type="text" class="form-control mb-1" id="name" placeholder="First Last" require>
                 <label for="email">Email Address: <span style="color: red;">*</span></label>
@@ -106,7 +131,7 @@
       // Initialize and add the map
       function initMap() {
         // The location of Uluru
-        var uluru = {lat: -25.344, lng: 131.036};
+        var uluru = {lat: 40.6782, lng: 73.9442};
         // The map, centered at Uluru
         var map = new google.maps.Map(
             document.getElementById('map'), {zoom: 4, center: uluru});
