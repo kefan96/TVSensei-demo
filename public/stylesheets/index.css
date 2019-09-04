@@ -2,10 +2,13 @@
 
 
 
-
 h1 {
   font-family: 'Roboto Mono', monospace;
   font-weight: 700;
+}
+
+section p {
+  font-family: 'Roboto Mono', monospace;
 }
 
 #landing-header {
