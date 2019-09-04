@@ -177,9 +177,9 @@ section:not(#landing-header):nth-child(even) {
 
 /* footer section */
 footer {
-	background-color: #607d8b;
+	background-color: black;
 	color: #fff;
-	padding: 20px 0;
+	padding: 20px 0 0 0;
 }
 
 footer ul {
