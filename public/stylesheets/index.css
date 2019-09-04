@@ -296,3 +296,12 @@ font-weight: normal;
   padding-bottom: 19px;
   color: #A44DD8;
 }
+
+.form-group .btn {
+  background: #000a17;
+  color: white;
+}
+
+.form-group .btn:hover {
+  color: #b4d5ff;
+}
