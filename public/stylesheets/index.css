@@ -178,7 +178,7 @@ section:not(#landing-header) {
 section:not(#landing-header):nth-child(even) {
   background-color: #000a17;
   color: #f0f0f0;
-  text-align: end;
+  text-align: start;
 }
 
 .sectionPic {
