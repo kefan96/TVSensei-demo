@@ -138,6 +138,7 @@ function checkout(tab) {
     $('#tab-' + tab).addClass('active show');
     $('#exercise-header .dropdown-menu .active.show').removeClass('active show');
     $('#' + tab + '-dropdown').addClass('active show');
+    $('#dropdownMenuButton').text(tab);
 }
 
 // Overriding dropdown menu
@@ -146,4 +147,5 @@ $('#exercise-header .dropdown-menu a.dropdown-item').on('click', function(){
     $(this).addClass('active show');
     $('#exercise-body .active.show').removeClass('active show');
     $($(this).attr('href')).addClass('active show');
+    $('#dropdownMenuButton').text($(this).text());
 });

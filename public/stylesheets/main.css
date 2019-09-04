@@ -190,6 +190,7 @@ body {
   #dropdownMenuButton {
     width: 100%;
     color: white;
+    text-transform: capitalize;
   }
   .btn:focus, .btn:active:focus, .btn.active:focus{
     outline:none;

@@ -127,11 +127,11 @@
                                     <div class="card-header p-0" id="exercise-header">
                                             <div id="exercises" class="dropdown nav nav-tabs">
                                                     <button class="btn dropdown-toggle" style="font-size: 20px; height: 40px" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Exercises
+                                                        Instruction
                                                     </button>
                                                     <div class="dropdown-menu effect1" aria-labelledby="dropdownMenuButton" role = "tablist" id="dropdown-menu"> 
                                                         <a id="instruction-dropdown" class="dropdown-item nav-link active show" data-toggle="tab" href="#tab-instruction">Instruction</a>
-                                                        <a id="vocab-dropdown" class="dropdown-item nav-link" data-toggle="tab" href="#tab-vocab">Vocab</a>
+                                                        <a id="vocabulary-dropdown" class="dropdown-item nav-link" data-toggle="tab" href="#tab-vocabulary">Vocabulary</a>
                                                         <a id="speaking-dropdown" class="dropdown-item nav-link" data-toggle="tab" href="#tab-speaking">Speaking</a>
                                                         <a id="grammar-dropdown" class="dropdown-item nav-link" data-toggle="tab" href="#tab-grammar">Lesson/Grammar</a>
                                                         <a id="quiz-dropdown" class="dropdown-item nav-link" data-toggle="tab" href="#tab-quiz">Quiz</a>
@@ -148,7 +148,7 @@
                                                                     <hr class="style-two">
                                                                     <p>Bacon ipsum dolor amet doner ham shankle pig venison bresaola. Short ribs rump pork belly, ground round fatback chuck leberkas. Frankfurter swine chicken prosciutto bresaola pork chop fatback tri-tip. Pork loin beef ribs short ribs, pork chop cupim andouille alcatra chicken. Sirloin t-bone turkey strip steak kielbasa shoulder chuck. Shoulder hamburger bresaola ham, boudin meatloaf chicken t-bone filet mignon.</p>
                                                                     <ul>
-                                                                        <li onclick="checkout('vocab')">Vocabulary</li>
+                                                                        <li onclick="checkout('vocabulary')">Vocabulary</li>
                                                                         <li onclick="checkout('speaking')">Speaking</li>
                                                                         <li onclick="checkout('grammar')">Grammar</li>
                                                                         <li onclick="checkout('quiz')">Quiz</li>
@@ -157,7 +157,7 @@
                                                                     <p>Cow boudin pork turkey. Shank biltong bacon t-bone. Landjaeger bacon tenderloin, frankfurter hamburger ham hock buffalo beef salami pig meatball leberkas brisket capicola prosciutto. Pork belly shankle kevin doner.</p>
                                                             </div>
                                                         </div>
-                                                        <div id="tab-vocab" class="tab-pane container text-dark">
+                                                        <div id="tab-vocabulary" class="tab-pane container text-dark">
                                                             <% include partials/vocab_test %>
                                                         </div>
                                                         <div id="tab-speaking" class="tab-pane container text-dark fade"><br>
@@ -170,8 +170,6 @@
                                                             <% include partials/quiz_test %>
                                                         </div>
                                                         <div id="tab-notes" class="tab-pane container text-dark fade"><br>
-                                                            <h3>Notes</h3>
-                                                            <hr class="style-two">
                                                             <div class="container">
                                                                 <ul id="notes">My Notes:</ul>
                                                             </div>
