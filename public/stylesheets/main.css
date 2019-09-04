@@ -365,3 +365,13 @@ textarea:focus {
 .note-record:hover {
     text-decoration: underline;
 }
+
+#tab-instruction li {
+  color: #00152e;
+  cursor: pointer;
+}
+
+#tab-instruction li:hover {
+  color: #73859f;
+  text-decoration: underline;
+}
