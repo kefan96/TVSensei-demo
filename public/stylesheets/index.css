@@ -11,6 +11,7 @@ section p {
   font-family: 'Roboto Mono', monospace;
 }
 
+
 #landing-header {
   z-index: 1;
   position: relative;
@@ -165,6 +166,10 @@ top: 6px;
   text-decoration: underline;
 }
 
+section {
+  background: #f0f0f0;
+}
+
 section:not(#landing-header) {
   padding: 100px;
   width: 100%;
@@ -295,4 +300,13 @@ font-weight: normal;
   border-bottom: 1px solid #ddd;
   padding-bottom: 19px;
   color: #A44DD8;
+}
+
+.form-group .btn {
+  background: #000a17;
+  color: white;
+}
+
+.form-group .btn:hover {
+  color: #b4d5ff;
 }
