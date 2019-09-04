@@ -68,7 +68,24 @@ $('#unloop').on('click', () => {
     }
 });
 
+function toDigits(num) {
+    if (num < 10) {
+        return "0" + num;
+    }
+    else {
+        return num;
+    }
+}
+
 $('#submit_note').on('click', () => {
-    $('#notes').append("<li>" + $('#note_input').val()+"</li>")
+    let currentTime = myPlayer.currentTime();
+    $('#notes').append("<li class=\"note-record\"><a onclick='toNoteTime("+currentTime+");'>" + Math.floor(currentTime/3600) + ":" + toDigits(Math.floor(currentTime/60)) + ":" + toDigits(Math.floor(currentTime % 60)) + "\t-\t" + $('#note_input').val()+"</a></li>");
     $('#note_input').val('');
 });
+
+function toNoteTime(time) {
+    myPlayer.currentTime(time);
+    $('#ensub').text('');
+    // $('#jpsub').text('');
+    myPlayer.pause();
+}
