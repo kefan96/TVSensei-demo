@@ -89,3 +89,45 @@ function toNoteTime(time) {
     // $('#jpsub').text('');
     myPlayer.pause();
 }
+
+function addRow() {
+    if (checkInput()) {
+        var table = document.getElementById("vocabTable");
+
+        var row= document.createElement("tr");
+        var def1 = document.createElement("td");
+        var def2 = document.createElement("td");
+        var def3 = document.createElement("td");
+
+        def1.innerHTML = document.getElementById("def1").value;
+        def2.innerHTML = document.getElementById("def2").value;
+        def3.innerHTML = document.getElementById("def3").value;
+
+        row.appendChild(def1);
+        row.appendChild(def2);
+        row.appendChild(def3);
+
+        table.children[1].appendChild(row);
+
+        document.getElementById("errormsg").innerHTML = ""
+
+        $('#def1').val('');
+        $('#def2').val('');
+        $('#def3').val('');
+    }
+    else {
+        document.getElementById("errormsg").innerHTML = "Please fill out all areas"
+    }
+    
+}
+
+function checkInput(){
+    var input1 = document.forms['vForm'].Hiragana.value;
+    var input2 = document.forms['vForm'].Romaji.value;
+    var input3 = document.forms['vForm'].Definition.value;
+
+    if ((input1 == null || input1 == "") || (input2 == null || input2 == "") || (input3 == null || input3 == "")) {
+        return false;
+    }
+    return true;
+}
