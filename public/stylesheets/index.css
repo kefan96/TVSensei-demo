@@ -173,6 +173,17 @@ section:not(#landing-header) {
 section:not(#landing-header):nth-child(even) {
   background-color: #000a17;
   color: #f0f0f0;
+  text-align: end;
+}
+
+.sectionPic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  height: auto;
+  width: 300px;
+
 }
 
 /* footer section */
