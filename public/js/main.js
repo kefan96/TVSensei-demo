@@ -133,74 +133,22 @@ function checkInput(){
     return true;
 }
 
-$('#exercise-next').on('click', function(){
-    checkout('vocabulary');
-});
 
 // function for link in instruction
 function checkout(tab) {
-        // for back and next links
-        let back = '';
-        let next = '';
-        if (tab == 'notes') {
-            next = '';
-            back = 'quiz'
-        } else if (tab == 'instruction') {
-            back = '';
-            next = 'vocabulary'
-        } else {
-            let index = exercises.indexOf(tab);
-            next = exercises[index + 1];
-            back = exercises[index - 1];
-        }
-        $('#exercise-back').text(back);
-        $('#exercise-next').text(next);
-        $('#exercise-back').on('click', function(){
-            checkout(back);
-        });
-        if (next != '') {
-            $('#exercise-next').on('click', function(){
-                checkout(next);
-            });
-        } else {
-            $('#exercise-next').off();
-        }
-        // switch tab
-        $('#exercise-body .active.show').removeClass('active show');
-        $('#tab-' + tab).addClass('active show');
-        $('#exercise-header .dropdown-menu .active.show').removeClass('active show');
-        $('#' + tab + '-dropdown').addClass('active show');
-        $('#dropdownMenuButton').text(tab);
-
+    // switch tab
+    $('#exercise-body .active.show').removeClass('active show');
+    $('#tab-' + tab).addClass('active show');
+    $('#exercise-header .dropdown-menu .active.show').removeClass('active show');
+    $('#' + tab + '-dropdown').addClass('active show');
+    $('#dropdownMenuButton').text(tab);
 }
 
 // Overriding dropdown menu
 $('#exercise-header .dropdown-menu a.dropdown-item').on('click', function(){
-    let back = '';
-    let next = '';
-    if ($(this).text() == 'notes') {
-        next = '';
-        back = 'quiz'
-    } else if ($(this).text() == 'instruction') {
-        back = '';
-        next = 'vocabulary'
-    } else {
-        let index = exercises.indexOf($(this).text());
-        next = exercises[index + 1];
-        back = exercises[index - 1];
-    }
     $('#exercise-header .dropdown-menu .active.show').removeClass('active show');
     $(this).addClass('active show');
     $('#exercise-body .active.show').removeClass('active show');
     $($(this).attr('href')).addClass('active show');
     $('#dropdownMenuButton').text($(this).text());
-    // for back and next links
-    $('#exercise-back').text(back);
-    $('#exercise-next').text(next);
-    $('#exercise-back').on('click', function(){
-        checkout(back);
-    });
-    $('#exercise-next').on('click', function(){
-        checkout(next);
-    });
 });

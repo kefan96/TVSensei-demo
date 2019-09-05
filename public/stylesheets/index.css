@@ -111,7 +111,7 @@ display: block;
 position: relative;
 width: 21%;
 background: #000a17;
-padding: 20px 60px;
+padding: 10px 45px;
 color: white;
 font-size: 16px;
 font-weight: 300px;
@@ -123,7 +123,7 @@ text-align: center;
 }
 
 #smallbtn {
-  outline: none;
+outline: none;
 border: none;
 cursor: pointer;
 display: block;
@@ -140,7 +140,6 @@ border-radius: 20px;
 box-shadow: 0 6px #020017;
 text-align: center;
 }
-}
 
 #btn:hover {
 box-shadow: 0 4px #020017;
@@ -151,6 +150,16 @@ top: 2px;
 box-shadow: none;
 top: 6px;
 }
+
+#smallbtn:hover {
+  box-shadow: 0 4px #020017;
+  top: 2px;
+  }
+  
+  #smallbtn:active {
+  box-shadow: none;
+  top: 6px;
+  }
 
 #navbar {
   background-color: #000a17;
@@ -182,6 +191,10 @@ top: 6px;
   padding: 0;
 }
 
+#landing-header a:hover {
+  text-decoration: none;
+}
+
 #landing-header p:hover {
   text-decoration: underline;
 }
@@ -195,7 +208,7 @@ section:not(#landing-header) {
   width: 100%;
 }
 
-section:not(#landing-header):nth-child(even) {
+section:not(#landing-header):nth-child(odd) {
   background-color: #000a17;
   color: #f0f0f0;
   text-align: start;
