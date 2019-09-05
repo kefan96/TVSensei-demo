@@ -38,8 +38,47 @@
       <h1>Welcome to TVSensei!</h1>
       <p id="slogan-jp">言語学習、今面白い</p>
       <p id="slogan-en" class="hide">Language learning, now entertaining</p>
-		<a id="btn" href="lesson">Try Me!</a>
+      <a id="btn" href="lesson">Try a Demo!</a> <p></p>
+
+        <!-- Button trigger modal -->
+      <button id="smallbtn" type="button" data-toggle="modal" data-target="#loginModal">Log In</button>
+  
+
+  <p></p>
+  <a href=""  style="color: white;">Don't have an account? Sign up here!</a>
+
     </section>
+
+      <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModal">Log into TVSensei</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <form>
+                  <div class="form-group">
+                    <label for="loginEmail">Email address</label>
+                    <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                  </div>
+                </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-dark">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section id="introduction">
       <div class="container">

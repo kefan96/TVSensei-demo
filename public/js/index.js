@@ -7,3 +7,4 @@ $('#slogan-jp').on('click', () => {
     $('#slogan-jp').addClass('hide');
     $('#slogan-en').removeClass('hide');
 });
+
