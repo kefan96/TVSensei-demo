@@ -189,7 +189,7 @@ body {
     cursor: pointer;
   }
 
-  #exercise-back:hover, #exercise-next:hover {
+  #exercise-back, #exercise-next:hover {
     text-decoration: underline;
   }
 

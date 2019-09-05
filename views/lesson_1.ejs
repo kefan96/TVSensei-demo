@@ -141,12 +141,12 @@
                                     </div>
                                         <div class="card-body p-0 m-0 overflow-auto" id="exercise-body" style="height: 90vh">
                                                 <div class="bg-success text-center message-hide py-2" id="loop-message">Video is looping. <a href='#' id="unloop">Click Here</a> to undo</div>
-                                                <div class="d-flex justify-content-between mx-1">
-                                                        <small>← <span id="exercise-back"></span></small>
-                                                        <small><span id="exercise-next">vocabulary</span> →</small>
-                                                </div>
                                                 <div class="tab-content" style="padding: 0;">
                                                         <div id="tab-instruction" class="tab-pane container text-dark active show text-center"><br>
+                                                            <div class="d-flex justify-content-between mx-1">
+                                                                    <small><span id="exercise-back"></span></small>
+                                                                    <small onclick="checkout('vocabulary')"><span id="exercise-next">vocabulary</span> →</small>
+                                                            </div>
                                                             <div class="container">
                                                                     <h3>Welcome to this lesson!</h3>
                                                                     <hr>
@@ -161,7 +161,7 @@
                                                                     <p>Cow boudin pork turkey. Shank biltong bacon t-bone. Landjaeger bacon tenderloin, frankfurter hamburger ham hock buffalo beef salami pig meatball leberkas brisket capicola prosciutto. Pork belly shankle kevin doner.</p>
                                                             </div>
                                                         </div>
-                                                        <div id="tab-vocabulary" class="tab-pane container text-dark mt-3">
+                                                        <div id="tab-vocabulary" class="tab-pane container text-dark fade">
                                                             <% include partials/vocab_test %>
                                                         </div>
                                                         <div id="tab-speaking" class="tab-pane container text-dark fade"><br>
@@ -174,6 +174,10 @@
                                                             <% include partials/quiz_test %>
                                                         </div>
                                                         <div id="tab-notes" class="tab-pane container text-dark fade"><br>
+                                                            <div class="d-flex justify-content-between mx-1 mb-4">
+                                                                    <small onclick="checkout('quiz')">← <span id="exercise-back">quiz</span></small>
+                                                                    <small><span id="exercise-next"></span></small>
+                                                            </div>
                                                             <div class="container">
                                                                 <ul id="notes">My Notes:</ul>
                                                             </div>
