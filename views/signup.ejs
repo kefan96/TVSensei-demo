@@ -8,10 +8,12 @@
     
 	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light|Yanone+Kaffeesatz:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/lessonlist.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/signup.css">
 
     <script src="https://kit.fontawesome.com/4912714a0b.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+    <script src="https://kit.fontawesome.com/4912714a0b.js"></script>
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
@@ -36,7 +38,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="tooltip" title="Sign up"><i class="fas fa-user-plus"></i></a>
+                        <a class="nav-link" href="/signup" data-toggle="tooltip" title="Sign up"><i class="fas fa-user-plus"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="tooltip" title="Log in"><i class="fas fa-sign-in-alt"></i></a></li>
@@ -47,38 +49,53 @@
                 </ul>
         </nav>
         <!-- end of top main navbar-->
+        <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Sign Up for TVSensei</h5>
+                  <form>
+                        <div class="form-row">
+                          <div class="form-group col-md-6 req">
+                            <label for="firstname">First Name</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
+                          </div>
+                          <div class="form-group col-md-6 req">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="Last Name" required>
+                          </div>
+                        </div>
 
-        <!-- body -->
-        <div class="container text-center">
-            <h1 class="display-4">Welcome to Lessons</h1>
-            <p>View all lessons we have and learn language!</p>
-        </div>
-        <hr>
-        <div class="container" id="lesson-list">
-            <div class="col">
-                <a href="/lesson/1"><img src="https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt=""></a>
-                <a href="/lesson/1"><h5 class="my-1">Visit Bayside Place in Hakata with Rina</h5></a>
-                <p>Learn basic vocab and grammar while enjoying authentic japanese food and culture.</p>
-            </div>
-            <div class="col">
-                <a href="/lesson/1"><img src="https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt=""></a>
-                <a href="/lesson/1"><h5 class="my-1">Visit Bayside Place in Hakata with Rina</h5></a>
-                <p>Learn basic vocab and grammar while enjoying authentic japanese food and culture.</p>
-            </div>
-            <div class="col">
-                <a href="/lesson/1"><img src="https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt=""></a>
-                <a href="/lesson/1"><h5 class="my-1">Visit Bayside Place in Hakata with Rina</h5></a>
-                <p>Learn basic vocab and grammar while enjoying authentic japanese food and culture.</p>
-            </div>
-            <div class="col">
-                <a href="/lesson/1"><img src="https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt=""></a>
-                <a href="/lesson/1"><h5 class="my-1">Visit Bayside Place in Hakata with Rina</h5></a>
-                <p>Learn basic vocab and grammar while enjoying authentic japanese food and culture.</p>
-            </div>
-            <div class="col">
-                <a href="/lesson/1"><img src="https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt=""></a>
-                <a href="/lesson/1"><h5 class="my-1">Visit Bayside Place in Hakata with Rina</h5></a>
-                <p>Learn basic vocab and grammar while enjoying authentic japanese food and culture.</p>
-            </div>
-        </div>
+                        <div class="form-group req">
+                          <label for="signupEmail">Email Address</label>
+                          <input type="email" class="form-control" id="signupEmail" placeholder="Enter email address" required>
+                        </div>
+
+                        <div class="form-row">
+                        <div class="form-group col-md-6 req">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                        </div>
+                        </div>
+
+                        <div class="form-row">
+                        <div class="form-group col-md-6 req">
+                            <label for="confirmpassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmpassword" placeholder="Enter password" required>
+                        </div>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-dark">Sign Up!</button>
+                        </div>
+                        
+                      </form>        
+                </div>
+              </div>
+              
+
+
+        
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </body>
+
+</html>
