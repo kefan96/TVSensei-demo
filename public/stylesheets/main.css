@@ -104,10 +104,10 @@ body {
     text-align: center;
   }
 
-  hr.style-two {
+  hr{
     border: 0;
     height: 2px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255), rgb(59, 68, 75), rgba(255, 255, 255));
+    background-image: linear-gradient(to right, rgba(240, 240, 240), rgb(59, 68, 75), rgba(240, 240, 240));
   }
 
   hr.style-three {
@@ -179,6 +179,18 @@ body {
 
   .dropdown-item.nav-link:hover {
     color: #020017;
+  }
+
+  .dropdown-item.nav-link {
+    text-transform: capitalize;
+  }
+
+  #exercise-back, #exercise-next {
+    cursor: pointer;
+  }
+
+  #exercise-back:hover, #exercise-next:hover {
+    text-decoration: underline;
   }
 
   #subtitle {
