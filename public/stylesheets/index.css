@@ -191,6 +191,10 @@ top: 6px;
   padding: 0;
 }
 
+#landing-header a:hover {
+  text-decoration: none;
+}
+
 #landing-header p:hover {
   text-decoration: underline;
 }
