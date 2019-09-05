@@ -16,6 +16,10 @@ app.get("/lesson/1", (req, res) => {
     res.render("lesson_1");
 });
 
+app.get("/signup", (req, res) => {
+    res.render("signup");
+});
+
 app.listen(3000, () => {
     console.log("TVSensei Listen on Port 3000");
   });
