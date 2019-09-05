@@ -111,7 +111,7 @@ display: block;
 position: relative;
 width: 21%;
 background: #000a17;
-padding: 25px 80px;
+padding: 20px 60px;
 color: white;
 font-size: 16px;
 font-weight: 300px;
@@ -120,6 +120,26 @@ letter-spacing: 2px;
 border-radius: 20px;
 box-shadow: 0 6px #020017;
 text-align: center;
+}
+
+#smallbtn {
+  outline: none;
+border: none;
+cursor: pointer;
+display: block;
+position: relative;
+width: 21%;
+background: #000a17;
+padding: 10px 45px;
+color: white;
+font-size: 16px;
+font-weight: 300px;
+margin: 0 auto;
+letter-spacing: 2px;
+border-radius: 20px;
+box-shadow: 0 6px #020017;
+text-align: center;
+}
 }
 
 #btn:hover {
