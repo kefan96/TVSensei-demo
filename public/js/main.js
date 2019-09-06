@@ -97,8 +97,11 @@ function addRow() {
 
         var row= document.createElement("tr");
         var def1 = document.createElement("td");
+        def1.setAttribute("class", "created");
         var def2 = document.createElement("td");
+        def2.setAttribute("class", "created");
         var def3 = document.createElement("td");
+        def3.setAttribute("class", "created");
 
         def1.innerHTML = document.getElementById("def1").value;
         def2.innerHTML = document.getElementById("def2").value;
@@ -118,8 +121,7 @@ function addRow() {
     }
     else {
         document.getElementById("errormsg").innerHTML = "Please fill out all areas"
-    }
-    
+    }   
 }
 
 function checkInput(){
@@ -151,4 +153,19 @@ $('#exercise-header .dropdown-menu a.dropdown-item').on('click', function(){
     $('#exercise-body .active.show').removeClass('active show');
     $($(this).attr('href')).addClass('active show');
     $('#dropdownMenuButton').text($(this).text());
+});
+
+$('tbody').on('click', 'td.created', function(){
+    $(this).html('<input type="text" style="width: 60px;">');
+    $(this).removeClass('created');
+    $(this).addClass('editing');
+});
+
+$('tbody').on('keypress', 'td.editing', function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+        $(this).html(($(this).children().val()));
+        $(this).removeClass('editing');
+        $(this).addClass('created');
+    }
 });
