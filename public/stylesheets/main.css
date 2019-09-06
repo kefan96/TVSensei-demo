@@ -244,6 +244,10 @@ body {
     border-radius: 5px;
   }
 
+  .red {
+    background: red;
+  }
+
   .vjs-ass {
     position: absolute;
     top: 0;
@@ -387,4 +391,12 @@ textarea:focus {
 #tab-instruction li:hover {
   color: #73859f;
   text-decoration: underline;
+}
+
+td {
+  cursor: default;
+}
+
+.created {
+  cursor: auto;
 }
