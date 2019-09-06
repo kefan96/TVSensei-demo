@@ -94,14 +94,26 @@ function toNoteTime(time) {
 function addRow() {
     if (checkInput()) {
         var table = document.getElementById("vocabTable");
-
+        // data-toggle="tooltip" title="Sign up"
         var row= document.createElement("tr");
         var def1 = document.createElement("td");
         def1.setAttribute("class", "created");
+        def1.setAttribute("data-toggle", "tooltip");
+        def1.setAttribute("data-placement", "left");
+        def1.setAttribute("title", "Edit");
         var def2 = document.createElement("td");
         def2.setAttribute("class", "created");
+        def2.setAttribute("data-toggle", "tooltip");
+        def2.setAttribute("data-placement", "left");
+        def2.setAttribute("title", "Edit");
         var def3 = document.createElement("td");
         def3.setAttribute("class", "created");
+        def3.setAttribute("data-toggle", "tooltip");
+        def3.setAttribute("data-placement", "left");
+        def3.setAttribute("title", "Edit");
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
 
         def1.innerHTML = document.getElementById("def1").value;
         def2.innerHTML = document.getElementById("def2").value;

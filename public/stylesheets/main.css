@@ -392,3 +392,11 @@ textarea:focus {
   color: #73859f;
   text-decoration: underline;
 }
+
+td {
+  cursor: default;
+}
+
+.created {
+  cursor: auto;
+}
