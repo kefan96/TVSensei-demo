@@ -18,7 +18,9 @@ var confirmpassword = document.getElementById("confirmpassword");
 function submission() {
     if (validatePSW()) {
         if (password.value == confirmpassword.value) {
+            $("#loginModal").modal('show');
             window.location.href = '/lesson';
+            
             return true;
       }
         else {
