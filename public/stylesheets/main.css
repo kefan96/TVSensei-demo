@@ -14,9 +14,9 @@
 }
 
 
-body {
+/* body {
   background-image: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
-}
+} */
 
 .dropdown-item.nav-link.active.show {
     background: #b4d5ff;
@@ -98,6 +98,10 @@ body {
     text-align: center;
     font-size: 1.4rem;
     margin: 0;
+  }
+
+  span.nav-link {
+    cursor: pointer;
   }
 
   h5 {
@@ -189,7 +193,7 @@ body {
     cursor: pointer;
   }
 
-  #exercise-back, #exercise-next:hover {
+  #exercise-back:hover, #exercise-next:hover {
     text-decoration: underline;
   }
 

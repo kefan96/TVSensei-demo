@@ -41,27 +41,32 @@
                         <a class="nav-link" href="/signup" data-toggle="tooltip" title="Sign up"><i class="fas fa-user-plus"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="tooltip" title="Log in"><i class="fas fa-sign-in-alt"></i></a></li>
+                        <span class="nav-link" data-toggle="tooltip" title="Log in"><i data-toggle="modal" data-target="#loginModal" class="fas fa-sign-in-alt"></i></span></li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="tooltip" title="Log out"><i class="fas fa-sign-out-alt"></i></a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="tooltip" title="User"><i class="fas fa-user"></i></a></li>
                 </ul>
         </nav>
+        <% include partials/loginmodal %>
         <!-- end of top main navbar-->
         <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Sign Up for TVSensei</h5>
-                  <form>
+                  <form id="signupform" onsubmit="submission()">
                         <div class="form-row">
-                          <div class="form-group col-md-6 req">
+                          <div class="form-group col-md-5 req">
                             <label for="firstname">First Name</label>
                             <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
                           </div>
-                          <div class="form-group col-md-6 req">
+                          <div class="form-group col-md-5 req">
                             <label for="lastname">Last Name</label>
                             <input type="text" class="form-control" id="lastname" placeholder="Last Name" required>
                           </div>
+                          <div class="form-group col-md-2 req">
+                              <label for="age">Age</label>
+                              <input type="number" class="form-control" id="age" placeholder="Age" required>
+                            </div>
                         </div>
 
                         <div class="form-group req">
@@ -74,6 +79,16 @@
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" placeholder="Enter password" required>
                         </div>
+                        <div class="form-group col-md-6">
+                            <h6><b>Password Requirements</b></h6>
+                              <ul>
+                                <li>6 - 20 characters</li>
+                                <li>at least ONE uppercase letter</li>
+                                <li>at least ONE lowercase letter</li>
+                                <li>at least ONE number</li>
+                              </ul>
+                            
+                        </div>
                         </div>
 
                         <div class="form-row">
@@ -81,21 +96,28 @@
                             <label for="confirmpassword">Confirm Password</label>
                             <input type="password" class="form-control" id="confirmpassword" placeholder="Enter password" required>
                         </div>
+                        <div class="form-group col-md-6">
+                            <h6 id="errormsg" class="hide" style="color: red; text-align: center" style="margin-top: 10px">
+                            </h6>
+                        </div>
                         </div>
 
                         <div>
                             <button type="submit" class="btn btn-dark">Sign Up!</button>
+                            <p</p>
+
                         </div>
                         
+
                       </form>        
                 </div>
               </div>
               
-
-
-        
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="/js/signup.js"></script>
 </body>
 
 </html>

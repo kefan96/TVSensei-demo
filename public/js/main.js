@@ -38,6 +38,15 @@ var myPlayer = videojs('currentVideo', {
 
 myPlayer.ready(function() {
 
+    var settings = this.textTrackSettings;
+    settings.setValues({
+        "backgroundColor": "#555", 
+        "backgroundOpacity": "0.5",
+        "edgeStyle": "uniform",
+        "fontPercent": "0.75"
+    });
+    settings.updateDisplay();
+
     this.hotkeys({
         volumeStep: 0.1,
         seekStep: 10,

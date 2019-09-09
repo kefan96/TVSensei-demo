@@ -55,14 +55,16 @@
 				<a class="nav-link" href="/signup" data-toggle="tooltip" title="Sign up"><i class="fas fa-user-plus"></i></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#" data-toggle="tooltip" title="Log in"><i class="fas fa-sign-in-alt"></i></a></li>
-			<li class="nav-item">
+                <span class="nav-link" data-toggle="tooltip" title="Log in"><i data-toggle="modal" data-target="#loginModal" class="fas fa-sign-in-alt"></i></span></li>
+                <li class="nav-item">
 				<a class="nav-link" href="#" data-toggle="tooltip" title="Log out"><i class="fas fa-sign-out-alt"></i></a></li>
 			<li class="nav-item">
 				<a class="nav-link" href="#" data-toggle="tooltip" title="User"><i class="fas fa-user"></i></a></li>
 		</ul>
 </nav>
+<% include partials/loginmodal %>
 <!-- end of top main navbar-->
+
 
 <!--  Body -->
 <div class="container-fluid">
@@ -100,10 +102,16 @@
                                 </video> -->
                                 <div>
                                     <video class="video-js vjs-big-play-centered effect1" id="currentVideo" onloadstart="initializeVid([[68,72.5],[77,86],[91,97],[138,147],[165,170]]);" style="margin-bottom: 5px;">
-                                        <source src="/media/video_Test.mp4" type="video/mp4">
+                                        <source src="/media/video_Test.mp4" type="video/mp4" />
+                                        <track kink="captions" src="/assets/text_subtitle.vtt" srclang="en" label="English" default>
                                     </video>
                                 </div>
-                                <div class="card effect1" style="width:100%;min-height:20vh;"> <!-- Fixed height to avoid having the container shrink and expand often -->
+                                <nav class="navbar navbar-expand-sm mb-1" id="navbar" style="height: 5vh;">
+                                    <div class="navbar-header">
+                                        <a class="navbar-brand" id="title" href="#">りなぽんの散歩道</a>
+                                    </div>
+                                </nav>
+                                <div class="card effect1" style="width:100%;min-height:20vh;">
                                     <div class="card-body text-center" id="subtitle">
                                             <h2 name="subTestJapanese" class="videoText" id="jpsub">Lesson 1</h2>
                                             <h3 name="subTestEnglish" class="videoText" id="ensub">Lesson 1</h3>
@@ -121,7 +129,7 @@
                                 <div class="card effect1">
                                     <div class="card-header p-0" id="exercise-header">
                                             <div id="exercises" class="dropdown nav nav-tabs">
-                                                    <button class="btn dropdown-toggle" style="font-size: 20px; height: 40px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <button class="btn dropdown-toggle" style="font-size: 20px; height: 6vh;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                         Instruction
                                                     </button>
                                                     <div class="dropdown-menu effect1" aria-labelledby="dropdownMenuButton" role = "tablist" id="dropdown-menu"> 
@@ -134,7 +142,7 @@
                                                     </div>
                                             </div>
                                     </div>
-                                        <div class="card-body p-0 m-0 overflow-auto" id="exercise-body" style="height: 90vh">
+                                        <div class="card-body p-0 m-0 overflow-auto" id="exercise-body" style="height: 84vh">
                                                 <div class="bg-success text-center message-hide py-2" id="loop-message">Video is looping. <a href='#' id="unloop">Click Here</a> to undo</div>
                                                 <div class="tab-content" style="padding: 0;">
                                                         <div id="tab-instruction" class="tab-pane container text-dark active show text-center"><br>
