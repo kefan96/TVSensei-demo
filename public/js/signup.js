@@ -7,9 +7,9 @@
 
 
 
-$("#signupform").submit(function(e) {
-    e.preventDefault();
-});
+// $("#signupform").submit(function(e) {
+//     e.preventDefault();
+// });
 
 var fname = document.getElementById("firstname")
 var password = document.getElementById("password");
@@ -19,7 +19,21 @@ function submission() {
     if (validatePSW()) {
         if (password.value == confirmpassword.value) {
             $("#loginModal").modal('show');
-            window.location.href = '/lesson';
+            let data = 
+                {
+                    firstname: $('#firstname').val(),
+                    lastname: $('#lastname').val(),
+                    email: $('#signupEmail').val(),
+                    age: $('#age').val(),
+                    password: $('#password').val()
+                };
+            fetch("/signup", {
+                method: 'POST',
+                body: JSON.stringify(data)
+            }).then((req, res) => {
+                console.log("Request complete! response:", res);
+                res.redirect("/lesson");
+            });
             
             return true;
       }
