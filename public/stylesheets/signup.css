@@ -124,3 +124,58 @@ h6 {
     margin-left: 40px;
     margin-bottom: -45px;
 }
+
+.modal-title {
+    text-align: center;
+    
+}
+
+input.form-sentence {
+    display: inline-block;
+}
+
+.modal-lg {
+  max-width: 60%;
+}
+
+.modal-header {
+  display: block;
+}
+
+.modal-body {
+  margin-right: 30px;
+  margin-left: 30px;
+
+}
+
+h3.modal-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+h5.bodytext {
+  padding-bottom: 10px;
+  display: inline;
+
+}
+
+h5.modal-title {
+  font-size: 20px;
+}
+
+/* IDs for Mad Libs Inputs */
+
+#pronouns {
+  max-width: 150px;
+}
+
+#countries {
+  max-width: 150px;
+}
+
+#language {
+  max-width: 230px;
+}
+
+/*  */
+
