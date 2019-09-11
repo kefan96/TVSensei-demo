@@ -208,7 +208,7 @@ section:not(#landing-header) {
   width: 100%;
 }
 
-section:not(#landing-header, .flash):nth-child(even) {
+section:not(#landing-header):nth-of-type(odd) {
   background-color: #000a17;
   color: #f0f0f0;
   text-align: start;
