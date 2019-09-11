@@ -9,6 +9,11 @@ hr{
   background-image: linear-gradient(to right, rgba(240, 240, 240), rgb(59, 68, 75), rgba(240, 240, 240));
 }
 
+.inv {
+  border-color: white;
+  margin: none;
+}
+
 .effect1{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
