@@ -4,15 +4,16 @@
   <h1>Welcome to TVSensei!</h1>
   <p id="slogan-jp">言語学習、今面白い</p>
   <p id="slogan-en" class="hide">Language learning, now entertaining</p>
+  <% if (currentUser) { %>
   <a class="mb-3" id="btn" href="lesson">Try a Demo!</a>
-
+  <% } else { %>
   <!-- Button trigger modal -->
   <button id="smallbtn" type="button" data-toggle="modal" data-target="#loginModal">Log In</button>
 
 
   <p></p>
   <a href="/signup" style="color: white;">Don't have an account? Sign up here!</a>
-
+  <% } %>
 </section>
 
 
