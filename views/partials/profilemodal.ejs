@@ -1,20 +1,85 @@
-<div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalTitle" aria-hidden="true">
+<link rel="stylesheet" type="text/css" href="/stylesheets/signup.css">
+<div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="profileModalTitle">Welcome to the TVSensei Family!</h3>
-          <h5 class="modal-title">You're only a few steps away from personalizing your account.</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center" id="profileModalTitle">Welcome to the TVSensei Family!</h3>
+                <h5 class="modal-title text-center">We know that first introductions can be awkward and frankly just boring, so let's try something fun!</h5>
+                <h5 class="modal-title text-center">Ever play Mad Libs?</h5>
+            </div>
+            <div class="modal-body">
+
+                <form id="madlibs">
+                    <span class="form-sentence form-group"> 
+                        <h5 class="bodytext"> 
+                            Hi TVSensei! My name is ### ### and I use 
+                        </h5 class="bodytext">
+                            <select id="pronouns" required>
+                                <option value="">---</option>
+                                <option value="he">He/Him/His</option>
+                                <option value="she">She/Her/Hers</option>
+                                <option value="they">They/them/theirs</option>
+                            </select>
+                        <h5 class="bodytext">   
+                            pronouns. 
+                        </h5>
+                    </span>
+
+                    <span class="form-sentence form-group"> 
+                            <h5 class="bodytext"> 
+                                I am originally from 
+                            </h5>
+                            <% include countries %>
+                            <h5 class="bodytext">
+                                and I would say that my native languages are 
+                            </h5>
+                    </span>
+
+                    <span class="form-sentence form-group"> 
+                            <input id="language" type="text" class="form-control form-sentence" placeholder="Ex. English/Spanish/Catalan" required> 
+                            <h5 class="bodytext"> 
+                                . Personally, given my experience with the English language, I believe I have a(n)
+                            </h5>
+                    </span>
+
+                    <span class="form-sentence form-group"> 
+                                <select id="english" required>
+                                    <option value="">---</option>
+                                    <option value="he">Beginner</option>
+                                    <option value="he">Between Beginner and Intermediate</option>
+                                    <option value="he">Intermediate</option>
+                                    <option value="he">Between Intermediate and Advanced</option>
+                                    <option value="she">Advanced</option>
+                                    <option value="they">Fluent</option>
+                                </select>
+                            <h5 class="bodytext">   
+                                grasp of the language. 
+                            </h5>
+                        </span>
+
+
+                    </span>
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal" data-toggle="tooltip" title="You can update your profile later in your account settings">Skip this Step</button>
+                <button type="submit" form="madlibs" class="btn btn-dark">Save changes</button>
+            </div>
         </div>
-        <div class="modal-body">
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-dark">Save changes</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+
+<!-- Preferred pronouns
+Profile picture
+Nationality and native language(s)
+Past learning experience with English
+Goals for using TVSensei
+Favorite TV genres
+Ending up with something like:
+Hi! My name is [NAME]. I go by [PREFERRED PRONOUNS]. I’m from [COUNTRY OF ORIGIN] and grew up speaking [NATIVE LANGUAGE(S)].
+In the past I studied English [PAST EXPERIENCE(S)].
+Using TVSensei, I aim to [GOALS FOR USING TVSENSEI].
+My favorite TV shows tend to be [FAVORITE TV GENRES]. -->
