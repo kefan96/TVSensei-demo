@@ -42,23 +42,23 @@ passport.use(new localStrategy({
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use(function(req, res, next){
+app.use(function (req, res, next) {
     res.locals.currentUser = req.user;
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success");
     next();
-  });
+});
 
 
 app.get("/", (req, res) => {
     res.render("index");
 });
 
-app.get("/lesson", (req, res) => {
+app.get("/lesson", isLoggedIn, (req, res) => {
     res.render("lesson");
 });
 
-app.get("/lesson/1", (req, res) => {
+app.get("/lesson/1", isLoggedIn, (req, res) => {
     res.render("lesson_1");
 });
 
@@ -91,9 +91,25 @@ app.post("/login", passport.authenticate("local", {
     successRedirect: "/lesson",
     failureRedirect: "/",
     failureFlash: true
-  }), (req, res) => {
+}), (req, res) => {});
+
+// log out route
+app.get("/logout", (req, res) => {
+    req.logout();
+    req.flash("success", "Logged you out!")
+    res.redirect("/");
 });
 
 app.listen(PORT, () => {
     console.log("TVSensei Listen on Port " + PORT);
 });
+
+// middleware
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    req.flash("error", "You should be logged in do that!")
+    res.redirect("/");
+}

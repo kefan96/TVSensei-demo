@@ -75,7 +75,7 @@
 				<span class="nav-link" data-toggle="tooltip" title="Log in"><i data-toggle="modal"
 						data-target="#loginModal" class="fas fa-sign-in-alt"></i></span></li>
 			<li class="nav-item">
-				<a class="nav-link" href="#" data-toggle="tooltip" title="Log out"><i
+				<a class="nav-link" href="/logout" data-toggle="tooltip" title="Log out"><i
 						class="fas fa-sign-out-alt"></i></a></li>
 			<li class="nav-item">
 				<a class="nav-link" href="#" data-toggle="tooltip" title="User"><i class="fas fa-user"></i></a></li>
@@ -84,10 +84,10 @@
 	<% include loginmodal %>
 
 		<% if(error && error.length > 0){ %>
-		<div class="alert alert-danger"><%= error %></div>
+		<div class="alert alert-danger" style="margin-bottom: 0;"><%= error %></div>
 		<% } %>
 		<% if(success && success.length > 0){ %>
-		<div class="alert alert-success"><%= success %></div>
+		<div class="alert alert-success" style="margin-bottom: 0;"><%= success %></div>
 		<% } %>
 
 	<!-- end of top main navbar-->
