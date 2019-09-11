@@ -87,6 +87,13 @@ app.post("/signup", (req, res) => {
         });
 });
 
+app.post("/login", passport.authenticate("local", {
+    successRedirect: "/lesson",
+    failureRedirect: "/",
+    failureFlash: true
+  }), (req, res) => {
+});
+
 app.listen(PORT, () => {
     console.log("TVSensei Listen on Port " + PORT);
 });

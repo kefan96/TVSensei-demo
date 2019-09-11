@@ -9,21 +9,21 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="/login" method="POST">
                         <div class="form-group">
                           <label for="loginEmail">Email address</label>
-                          <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
+                          <input type="email" class="form-control" name="email" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
                           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
                           <label for="loginPassword">Password</label>
-                          <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                          <input type="password" class="form-control" name="password" id="loginPassword" placeholder="Password" required>
+                        </div>
+                        <div class="modal-footer">
+                          <input type="submit" class="btn btn-dark" value="Continue">
+                          <button type="button" class="btn" data-dismiss="modal">Close</button>
                         </div>
                       </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-dark">Continue</button>
                 </div>
               </div>
             </div>
