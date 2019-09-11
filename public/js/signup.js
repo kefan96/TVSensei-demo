@@ -2,6 +2,10 @@ $("#signupform").submit(function (e) {
     e.preventDefault();
 });
 
+$("#madlibs").submit(function (e) {
+    e.preventDefault();
+});
+
 var inputfname = document.getElementById("firstname").value;
 localStorage.setItem("fname", inputfname);
 
@@ -58,6 +62,20 @@ function loadProfileModal() {
         $('#profileModal').modal('show');
     }
     sessionStorage.clear();
+}
+
+function openContinueModal(){
+    $('#profileModal').modal('hide');
+    $('#continueModal').modal('show');
+}
+
+function closeContinueModal() {
+    $('#continueModal').modal('hide');
+
+}
+
+function openTextbox() {
+    $('#textboxModal').modal('show');
 }
 
 
