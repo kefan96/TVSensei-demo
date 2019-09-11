@@ -1,0 +1,13 @@
+.flash-close {
+    cursor: pointer;
+}
+
+.flash-close:hover {
+    font-weight: bold;
+}
+
+.flash {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}

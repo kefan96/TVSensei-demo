@@ -89,6 +89,7 @@ app.post("/signup", (req, res) => {
 
 app.post("/login", passport.authenticate("local", {
     successRedirect: "/lesson",
+    successFlash: "Logged you in!",
     failureRedirect: "/",
     failureFlash: true
 }), (req, res) => {});

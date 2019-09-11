@@ -25,6 +25,7 @@
 		rel="stylesheet">
 	<link href="https://vjs.zencdn.net/7.6.0/video-js.css" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/videojs-seek-buttons/dist/videojs-seek-buttons.css" rel="stylesheet">
+	<link rel="stylesheet" href="/stylesheets/header.css">
 	<!--  -->
 
 
@@ -84,10 +85,16 @@
 	<% include loginmodal %>
 
 		<% if(error && error.length > 0){ %>
-		<div class="alert alert-danger" style="margin-bottom: 0;"><%= error %></div>
+		<div class="alert alert-danger flash">
+			<span><%= error %></span>
+			<span><i class="far fa-times-circle flash-close" onclick="$('.flash').hide();"></i><span>
+		</div>
 		<% } %>
 		<% if(success && success.length > 0){ %>
-		<div class="alert alert-success" style="margin-bottom: 0;"><%= success %></div>
+		<div class="alert alert-success flash">
+			<%= success %>
+			<span><i class="far fa-times-circle flash-close" onclick="$('.flash').hide();"></i><span></span>
+		</div>
 		<% } %>
 
 	<!-- end of top main navbar-->
