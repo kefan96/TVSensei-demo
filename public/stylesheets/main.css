@@ -277,12 +277,11 @@
   }
 
   #loop-message {
-    color: #F0FFF0;
     transition: all 1s;
   }
 
   #unloop {
-    color: white;
+    color: #155724;
     text-transform: uppercase;
     cursor: pointer;
   }

@@ -11,3 +11,11 @@
     display: flex;
     justify-content: space-between;
 }
+
+#welcome-msg {
+    cursor: default;
+}
+
+#welcome-msg:hover {
+    color: white;
+}
