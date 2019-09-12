@@ -60,14 +60,16 @@
             document.getElementById("navbar").style.padding = "1rem 1rem";
             document.getElementById("navbar").style.backgroundColor = "#001531";
             $("#lesson").removeClass("mt-1");
-            $("#exercise-header").css("background", "#001531");
+            $("#exercise-header").css("background", "#f0f0f0");
             $("#exercise-header").css("border-radius", "0");
+            $("#exercise-header button").css("color", "#000a17");
         } else {
             document.getElementById("navbar").style.padding = ".5rem 1rem";
             document.getElementById("navbar").style.backgroundColor = "#000a17";
             $("#lesson").addClass("mt-1");
             $("#exercise-header").css("background", "#000a17");
             $("#exercise-header").css("border-radius", "5px");
+            $("#exercise-header button").css("color", "#f0f0f0");
         }
     }
 </script>
