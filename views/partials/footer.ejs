@@ -1,5 +1,6 @@
 <!-- APIs -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6j0fk3Dz0p5OSfPUYkp6E5Ll8xvL8T4g&callback=initMap"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6j0fk3Dz0p5OSfPUYkp6E5Ll8xvL8T4g&callback=initMap"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!--  -->
 
@@ -26,13 +27,22 @@
 <script>
     // Initialize and add the map
     function initMap() {
-      // The location of Uluru
-      var uluru = {lat: 40.6782, lng: 73.9442};
-      // The map, centered at Uluru
-      var map = new google.maps.Map(
-          document.getElementById('map'), {zoom: 4, center: uluru});
-      // The marker, positioned at Uluru
-      var marker = new google.maps.Marker({position: uluru, map: map});
+        // The location of Uluru
+        var uluru = {
+            lat: 40.6782,
+            lng: 73.9442
+        };
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+            });
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
     }
 </script>
 
@@ -40,6 +50,26 @@
     $(function () {
         $('[data-toggle="tooltip"]').tooltip();
     });
+
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").style.padding = "1rem 1rem";
+            document.getElementById("navbar").style.backgroundColor = "#001531";
+            $("#lesson").removeClass("mt-1");
+            $("#exercise-header").css("background", "#001531");
+            $("#exercise-header").css("border-radius", "0");
+        } else {
+            document.getElementById("navbar").style.padding = ".5rem 1rem";
+            document.getElementById("navbar").style.backgroundColor = "#000a17";
+            $("#lesson").addClass("mt-1");
+            $("#exercise-header").css("background", "#000a17");
+            $("#exercise-header").css("border-radius", "5px");
+        }
+    }
 </script>
 <!--  -->
 

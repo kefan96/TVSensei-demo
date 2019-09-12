@@ -19,3 +19,7 @@
 #welcome-msg:hover {
     color: white;
 }
+
+#navbar {
+    transition: all 0.4s;
+}

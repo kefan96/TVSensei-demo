@@ -216,13 +216,13 @@
   #exercise-header {
     background: #000a17;
     padding: 0;
+    margin-right: 5px;
   }
 
   #dropdown-menu {
     background: #00152e;
     position: relative;
     right: 0px;
-    transform: translateX(5px);
   }
 
   #exercise-body {
@@ -402,4 +402,8 @@ td {
 
 .created {
   cursor: auto;
+}
+
+#exercise-header {
+  transition: all 0.4s;
 }
