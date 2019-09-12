@@ -1,6 +1,6 @@
-$("#signupform").submit(function (e) {
-    e.preventDefault();
-});
+// $("#signupform").submit(function (e) {
+//     e.preventDefault();
+// });
 
 // $("#signupform").submit(function(e) {
 //     e.preventDefault();
@@ -24,7 +24,6 @@ function submission() {
         if (password.value == confirmpassword.value) {
             document.getElementById("confirmpassword").style.border = "1px solid green";
             sessionStorage.loadModal = 'true';
-            window.location.href = '/lesson';
             return true;
         }
         else {
@@ -58,7 +57,7 @@ function strongPassword() {
 
 function loadProfileModal() {
     // DELETE LINE BELOW, SOLELY FOR TESTING
-    $('#profileModal').modal('show');
+    // $('#profileModal').modal('show');
     // 
     if (sessionStorage.loadModal == 'true') {
         $('#profileModal').modal('show');
