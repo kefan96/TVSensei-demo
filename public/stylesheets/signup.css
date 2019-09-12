@@ -147,9 +147,14 @@ input.form-sentence {
   display: block;
 }
 
+.modal-header.text {
+  display: flex;
+}
+
 .modal-body {
   margin-right: 30px;
   margin-left: 30px;
+  text-align: center;
 
 }
 
@@ -159,8 +164,9 @@ h3.modal-title {
 }
 
 h5.bodytext {
-  padding-bottom: 10px;
   display: inline;
+  line-height: 5em;
+  
 
 }
 
@@ -186,5 +192,12 @@ h5.modal-title {
   max-width: 230px;
 }
 
+#goalsdescription {
+  max-width: 230px;
+}
+
+#genre {
+  max-width: 230px;
+}
 /*  */
 
