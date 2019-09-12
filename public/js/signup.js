@@ -1,16 +1,16 @@
-// $("#signupform").submit(function (e) {
-//     e.preventDefault();
-// });
+$("#madlibs").submit(function (e) {
+    e.preventDefault();
+});
 
-// $("#signupform").submit(function(e) {
-//     e.preventDefault();
-// });
+$("#englishform").submit(function(e) {
+    e.preventDefault();
+});
 
-var inputfname = document.getElementById("firstname").value;
-localStorage.setItem("fname", inputfname);
+$("#goalsform").submit(function(e) {
+    e.preventDefault();
+});
 
-var password = document.getElementById("password");
-var confirmpassword = document.getElementById("confirmpassword");
+
 
 function passReqs() {
     var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
@@ -75,10 +75,24 @@ function closeContinueModal() {
 
 }
 
-function openTextbox() {
-    $('#textboxModal').modal('show');
+function openEnglishbox() {
+    $('#englishModal').modal('show');
 }
 
+function closeEnglishModal() {
+    var text = document.getElementById("englishtext").value;
+    document.getElementById("englishdescription").value = text;
+    $('#englishModal').modal('hide');
 
-// TODO: Potentially personalize Welcome message with first name from input
-// document.getElementById("profileModalTitle").innerHTML = "Welcome to the TVSensei Family " + localStorage.getItem("fname") + "!";
+}
+
+function openGoalsbox() {
+    $('#goalsModal').modal('show');
+}
+
+function closeGoalsModal() {
+    var text = document.getElementById("goalstext").value;
+    document.getElementById("goalsdescription").value = text;
+    $('#goalsModal').modal('hide');
+
+}
