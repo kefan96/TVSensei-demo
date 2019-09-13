@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema({
     age: Number,
     email: String,
     password: String,
+    registered: {type: Date, default: Date.now},
     profile: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Profile"
