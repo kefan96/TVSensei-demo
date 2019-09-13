@@ -6,6 +6,8 @@ const ProfileSchema = new mongoose.Schema({
     native_language: String,
     language_level: String,
     language_history: String,
+    goal: String,
+    favorite_genre: String,
     author: {
         id: {
             type: mongoose.Schema.Types.ObjectId,

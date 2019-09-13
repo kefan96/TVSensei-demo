@@ -354,3 +354,7 @@ footer ul {
 .form-group .btn:hover {
   color: #b4d5ff;
 }
+
+.forgot {
+  margin-left: 2px;
+}
