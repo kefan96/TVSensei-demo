@@ -126,6 +126,17 @@ app.post("/profile", isLoggedIn, (req, res) => {
     });
 });
 
+app.get("/user/:id", isLoggedIn, (req, res) => {
+    let id = req.params.id;
+    User.findById(id).populate("profile").exec((err, foundUser) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("user", {user: foundUser});
+        }
+    })
+});
+
 app.listen(PORT, () => {
     console.log("TVSensei Listen on Port " + PORT);
 });

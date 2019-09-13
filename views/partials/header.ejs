@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--CEO: Henry Aberle 
     Lead Programmer January - June 2019: Peter Aguiar 
-    Continued Development by: Nikita Lilichenko, Kefan Yang
+    Continued Developmening: Nikita Lilichenko, Kefan Yang
     (September 2019)-->
 
 <html lang="en">
@@ -68,7 +68,7 @@
 			</li>
 		</ul>
 		<ul class="navbar-nav ml-auto">
-			<% if (!currentUser){ %>
+			<% if (!currentUser) { %>
 			<li class="nav-item">
 				<a class="nav-link" href="/signup" data-toggle="tooltip" title="Sign up"><i
 						class="fas fa-user-plus"></i></a>
@@ -78,18 +78,15 @@
 						data-target="#loginModal" class="fas fa-sign-in-alt"></i></span></li>
 			<% } else { %>
 			<li class="nav-item">
-				<span class="nav-link" id="welcome-msg">Welcome, <%= currentUser.firstname %></span>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#" data-toggle="tooltip" title="User"><i class="fas fa-user"></i></a></li>
-			<li class="nav-item">
 				<a class="nav-link" href="/logout" data-toggle="tooltip" title="Log out"><i
 						class="fas fa-sign-out-alt"></i></a></li>
+			<li class="nav-item">
+				<a class="nav-link" href="/user/<%= currentUser._id %>" data-toggle="tooltip" title="User"><i
+						class="fas fa-user"></i></a></li>
 			<% } %>
 		</ul>
 	</nav>
 	<% include loginmodal %>
-
 	<% if(error && error.length > 0){ %>
 	<div class="alert alert-danger flash">
 		<span><%= error %></span>
@@ -102,5 +99,4 @@
 		<span><i class="far fa-times-circle flash-close" onclick="$('.flash').hide();"></i><span></span>
 	</div>
 	<% } %>
-
 	<!-- end of top main navbar-->

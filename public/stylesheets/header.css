@@ -22,4 +22,13 @@
 
 #navbar {
     transition: all 0.4s;
+    background-color: #000a17;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #b4d5ff;
 }
