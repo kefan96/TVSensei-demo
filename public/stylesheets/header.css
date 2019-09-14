@@ -32,3 +32,12 @@
 .nav-link:hover {
     color: #b4d5ff;
 }
+
+#title {
+    color: white;
+    font-weight: bold;
+}
+
+#title:hover {
+    color: #b4d5ff;
+}
