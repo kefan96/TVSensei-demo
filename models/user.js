@@ -7,7 +7,12 @@ const UserSchema = new mongoose.Schema({
     lastname: String,
     age: Number,
     email: String,
-    password: String
+    password: String,
+    registered: {type: Date, default: Date.now},
+    profile: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Profile"
+    }
 });
 
 UserSchema.plugin(passportLocalMongoose);

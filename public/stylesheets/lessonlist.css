@@ -73,3 +73,41 @@ p {
 h5, p {
     line-height: 1rem;
 }
+
+div.item {
+  position: relative;
+  background-color: #34495e;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+div.item i {
+  color: #34495e;
+}
+
+div.item:hover img {
+  opacity: 0.3;
+  filter: grayscale(100%);
+}
+
+div.item * {
+  transition: all .5s ease-in-out;
+}
+
+div.item:hover i {
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+div.item i {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+div.item i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 20px;
+  color: #f0f0f0;
+}

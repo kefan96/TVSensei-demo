@@ -1,6 +1,4 @@
-$("#madlibs").submit(function (e) {
-    e.preventDefault();
-});
+
 
 $("#englishform").submit(function(e) {
     e.preventDefault();

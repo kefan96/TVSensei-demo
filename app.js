@@ -6,6 +6,7 @@ const localStrategy = require("passport-local");
 const flash = require('connect-flash');
 const env = require('dotenv');
 const User = require("./models/user");
+const Profile = require("./models/profile")
 const mongoose = require("mongoose");
 env.config();
 
@@ -23,10 +24,7 @@ mongoose.connect("mongodb+srv://admin:tvsenseiadmin@cluster0-jyosx.mongodb.net/t
 });
 
 app.use(flash());
-app.use(bodyParser.urlencoded({
-    extended: false
-})); //For body parser
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(require("express-session")({
@@ -48,6 +46,8 @@ app.use(function (req, res, next) {
     res.locals.success = req.flash("success");
     next();
 });
+
+seedDB();
 
 
 app.get("/", (req, res) => {
@@ -101,6 +101,42 @@ app.get("/logout", (req, res) => {
     res.redirect("/");
 });
 
+// upload profile
+app.post("/profile", isLoggedIn, (req, res) => {
+    User.findById(req.user._id, (err, foundUser) => {
+        if (err) {
+            req.flash("error", err.message);
+        } else {
+            Profile.create(req.body.profile, (err, profile) => {
+                if (err) {
+                    console.log(req.body.profile)
+                    console.log(err.message)
+                    req.flash("error", err.message);
+                } else {
+                    profile.author.id = req.user._id;
+                    profile.author.username = req.user.username;
+                    profile.save();
+                    foundUser.profile = profile._id;
+                    foundUser.save();
+                    req.flash("success", "Profile updated!");
+                    res.redirect("/lesson");
+                }
+            });
+        }
+    });
+});
+
+app.get("/user/:id", isLoggedIn, (req, res) => {
+    let id = req.params.id;
+    User.findById(id).populate("profile").exec((err, foundUser) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("user", {user: foundUser});
+        }
+    })
+});
+
 app.listen(PORT, () => {
     console.log("TVSensei Listen on Port " + PORT);
 });
@@ -113,4 +149,21 @@ function isLoggedIn(req, res, next) {
     }
     req.flash("error", "You should be logged in do that!")
     res.redirect("/");
+}
+
+function seedDB() {
+    User.deleteMany({}, err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("removed users!!!");
+        }
+    });
+    Profile.deleteMany({}, err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("removed profiles!!!")
+        }
+    })
 }
