@@ -404,9 +404,14 @@ td {
   cursor: auto;
 }
 
+#exercise-card {
+  width: 33vw;
+}
+
 #exercise-header {
   transition: all 0.4s;
 }
+
 
 .darkblue {
   background-color: #000a17;
