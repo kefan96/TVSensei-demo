@@ -1,7 +1,9 @@
 <% include partials/header %>
 
-<h1>Hello, <%= user.firstname %> <%= user.lastname %></h1>
+<div class="container text-center">
+    <h1>Hello, <%= user.firstname %> <%= user.lastname %></h1>
 
-<p>On <%= user.registered %>, you met TVSensei. You were <%= user.age %> that year, an age that you start enjoying English learning.  </p>
+    <p>Remember That? On <%= user.registered %>, <%= user.firstname %> met TVSensei. <%= user.profile.pronouns %> were <%= user.age %> that year, an age that <%= user.profile.pronouns %> start enjoying English learning. <%= user.firstname %>'s hometown is in <%= user.profile.nationality%>, and <%= user.profile.pronouns %> use <%= user.profile.native_language %> as native language. But <%= user.firstname %> enjoyed English learning, so TVSensei was here to help. With TVSensei, <%= user.firstname %> wanted to achieve one goal: <%= user.profile.goal %>.  </p>
 
+</div>
 <% include partials/footer %>
