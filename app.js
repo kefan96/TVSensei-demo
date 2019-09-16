@@ -47,7 +47,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-seedDB();
+// seedDB();
 
 
 app.get("/", (req, res) => {

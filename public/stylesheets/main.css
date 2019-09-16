@@ -407,3 +407,16 @@ td {
 #exercise-header {
   transition: all 0.4s;
 }
+
+.darkblue {
+  background-color: #000a17;
+}
+
+.text-warning {
+  color: #001531 !important;
+}
+
+.grammar-input {
+  width: 8rem;
+  height: 1.8rem;
+}
