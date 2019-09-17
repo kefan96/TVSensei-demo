@@ -425,3 +425,20 @@ td {
   width: 8rem;
   height: 1.8rem;
 }
+
+.nav-link:active {
+  color: #000a17;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #000a17;
+  background-color: #f0f0f0;
+  border-color: transparent;
+}
+
+#myTabContent {
+  padding: 10rem;
+  padding-top: 5rem;
+  min-height: 90vh;
+  background: #f0f0f0;
+}
