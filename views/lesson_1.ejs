@@ -1,4 +1,4 @@
-<% include partials/header %>
+<% include ./partials/header %>
 <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
 <!--  Body -->
 <div class="container-fluid mt-1" id="lesson">
@@ -128,16 +128,16 @@
                                 </div>
                             </div>
                             <div id="tab-vocabulary" class="tab-pane container text-dark fade">
-                                <% include tests/vocab_test %>
+                                <% include ./tests/vocab_test %>
                             </div>
                             <div id="tab-speaking" class="tab-pane container text-dark fade"><br>
-                                <% include tests/speaking_test %>
+                                <% include ./tests/speaking_test %>
                             </div>
                             <div id="tab-grammar" class="tab-pane container text-dark fade"><br>
-                                <% include tests/grammar_test %>
+                                <% include ./tests/grammar_test %>
                             </div>
                             <div id="tab-quiz" class="tab-pane container text-dark fade"><br>
-                                <% include tests/quiz_test %>
+                                <% include ./tests/quiz_test %>
                             </div>
                             <div id="tab-notes" class="tab-pane container text-dark fade"><br>
                                 <div class="d-flex justify-content-between mx-1 mb-4">
@@ -167,4 +167,4 @@
 
     </div>
 </div>
-<% include partials/footer %>
+<% include ./partials/footer %>
