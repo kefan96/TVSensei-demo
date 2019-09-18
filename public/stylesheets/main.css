@@ -217,6 +217,7 @@
     background: #000a17;
     padding: 0;
     margin-right: 5px;
+    border-radius: 5px 5px 0 0;
   }
 
   #dropdown-menu {
@@ -439,4 +440,8 @@ td {
   padding-top: 5rem;
   min-height: 90vh;
   background: #f0f0f0;
+}
+
+#myTab {
+  border-radius: 5px 5px 0 0;
 }

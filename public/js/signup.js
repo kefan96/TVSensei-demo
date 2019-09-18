@@ -55,7 +55,7 @@ function strongPassword() {
 
 function loadProfileModal() {
     // DELETE LINE BELOW, SOLELY FOR TESTING
-    $('#profileModal').modal('show');
+    // $('#profileModal').modal('show');
     // 
     if (sessionStorage.loadModal == 'true') {
         $('#profileModal').modal('show');
