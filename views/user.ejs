@@ -1,9 +1,15 @@
 <% include partials/header %>
+<link rel="stylesheet" href="/stylesheets/profile.css">
 
 <div class="container text-center">
     <h1>Hello, <%= user.firstname %> <%= user.lastname %></h1>
     <% if (user.profile) { %>
-    <p>Remember That? On <%= user.registered %>, <%= user.firstname %> met TVSensei. <%= user.profile.pronouns %> were <%= user.age %> that year, an age that <%= user.profile.pronouns %> start enjoying English learning. <%= user.firstname %>'s hometown is in <%= user.profile.nationality%>, and <%= user.profile.pronouns %> use <%= user.profile.native_language %> as native language. But <%= user.firstname %> enjoyed English learning, so TVSensei was here to help. With TVSensei, <%= user.firstname %> wanted to achieve one goal: <%= user.profile.goal %>.  </p>
+        <p class="profile-link" data-toggle="modal" data-target="#profileModal">Want to edit your profile? Play matlib again!</p>
+        <% include partials/updateprofilemodal %>
+        <p>Remember That? On <%= user.registered %>, <%= user.firstname %> met TVSensei. <%= user.profile.pronouns %> were <%= user.age %> that year, an age that <%= user.profile.pronouns %> start enjoying English learning. <%= user.firstname %>'s hometown is in <%= user.profile.nationality%>, and <%= user.profile.pronouns %> use <%= user.profile.native_language %> as native language. But <%= user.firstname %> enjoyed English learning, so TVSensei was here to help. With TVSensei, <%= user.firstname %> wanted to achieve one goal: <%= user.profile.goal %>.  </p>
+    <% } else { %>
+        <p class="profile-link" data-toggle="modal" data-target="#profileModal">Haven't uploaded your profile? Do it right now!</p>
+        <% include partials/profilemodal %>
     <% } %>
 </div>
 <% include partials/footer %>

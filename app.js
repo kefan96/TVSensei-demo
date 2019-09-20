@@ -8,6 +8,7 @@ const env = require('dotenv');
 const User = require("./models/user");
 const Profile = require("./models/profile")
 const mongoose = require("mongoose");
+const methodOverride = require("method-override");
 env.config();
 
 var PORT = process.env.PORT || 3000;
@@ -27,6 +28,7 @@ app.use(flash());
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
 app.use(require("express-session")({
     secret: "Jake wins cutest dog!",
     resave: false,
@@ -119,9 +121,21 @@ app.post("/profile", isLoggedIn, (req, res) => {
                     foundUser.profile = profile._id;
                     foundUser.save();
                     req.flash("success", "Profile updated!");
-                    res.redirect("/lesson");
+                    res.redirect("back");
                 }
             });
+        }
+    });
+});
+
+app.put("/profile/:id", isLoggedIn, (req, res) => {
+    Profile.findByIdAndUpdate(req.params.id, req.body.profile, (err, updatedProfile) => {
+        if (err) {
+            req.flash("error", err.message);
+            res.redirect("back");
+        } else {
+            req.flash("success", "Profile updated!");
+            res.redirect("back");
         }
     });
 });
@@ -165,5 +179,5 @@ function seedDB() {
         } else {
             console.log("removed profiles!!!")
         }
-    })
+    });
 }

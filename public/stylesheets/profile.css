@@ -1,0 +1,7 @@
+.profile-link {
+    cursor: pointer;
+}
+
+.profile-link:hover {
+    text-decoration: underline;
+}
