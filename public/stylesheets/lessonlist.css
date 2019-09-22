@@ -38,6 +38,11 @@ hr{
     color: #b4d5ff;
   }
 
+  #lesson-list {
+    display: flex;
+    align-items: flex-start;
+  }
+
   #lesson-list .col {
     display: inline-block;
     width: 16.66667%;
