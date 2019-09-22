@@ -17,16 +17,16 @@ section p {
   background-image: url(https://trello-attachments.s3.amazonaws.com/5d141ce010119b0c8d02ddd1/5d657819665097410f3916a0/4733c43f588904510c0b8f1622b38b40/tv-3774381_1920.jpg);
   background-size: cover;
   background-position: 60% 40%;
-  background-blend-mode: darken;
+  filter: grayscale(50%);
 }
 
 #landing-header h1 {
-  color: #fff;
+  color: #f0f0f0;
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
 #landing-header p {
-  color: #fff;
+  color: #f0f0f0;
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
   font-family: 'Roboto Mono', monospace;
   font-weight: 700;
