@@ -7,17 +7,33 @@ section p {
   font-family: 'Roboto Mono', monospace;
 }
 
+.cover {
+  z-index: 0;
+  background-color: black;
+  position: absolute;
+  width: 100vw;
+  height: 90vh;
+}
+
+.background {
+  position: absolute;
+  z-index: 1;
+  height: 90vh;
+  background-image: url(https://trello-attachments.s3.amazonaws.com/5d141ce010119b0c8d02ddd1/5d657819665097410f3916a0/4733c43f588904510c0b8f1622b38b40/tv-3774381_1920.jpg);
+  background-size: cover;
+  background-position: 60% 40%;
+  width: 100vw;
+  opacity: 0.7;
+}
 
 #landing-header {
-  z-index: 1;
+  z-index: 2;
   position: relative;
   text-align: center;
   padding-top: 40vh;
   padding-bottom: 30vh;
-  background-image: url(https://trello-attachments.s3.amazonaws.com/5d141ce010119b0c8d02ddd1/5d657819665097410f3916a0/4733c43f588904510c0b8f1622b38b40/tv-3774381_1920.jpg);
-  background-size: cover;
-  background-position: 60% 40%;
-  filter: grayscale(50%);
+  height: 90vh;
+  background: transparent;
 }
 
 #landing-header h1 {
