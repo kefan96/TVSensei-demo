@@ -216,14 +216,14 @@
   #exercise-header {
     background: #000a17;
     padding: 0;
-    margin-right: 5px;
     border-radius: 5px 5px 0 0;
   }
 
   #dropdown-menu {
     background: #00152e;
     position: relative;
-    right: 0px;
+    width: 100%;
+    transform: translate3d(0px, 41px, 0px) !important;
   }
 
   #exercise-body {
@@ -233,6 +233,7 @@
 
   .card {
     border: none;
+    border-radius: 5px;
     outline: none;
   }
 
