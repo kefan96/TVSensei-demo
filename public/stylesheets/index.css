@@ -242,7 +242,7 @@ section:not(#landing-header):nth-of-type(odd) {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 8px;
+  border-radius: 50%;
   height: auto;
   width: 300px;
 }

@@ -406,6 +406,7 @@ td {
 
 #exercise-card {
   width: 33vw;
+  position: fixed;
 }
 
 #exercise-header {
@@ -445,4 +446,36 @@ td {
 
 #myTab {
   border-radius: 5px 5px 0 0;
+}
+
+#quiz1 .modal-content {
+  padding: 0;
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+  transform: translate3d(0, 15vh, 0) !important;
+}
+
+#quiz1 .modal-header {
+  background-color: #000a17;
+  width: 100%;
+  border: none;
+}
+
+button.close {
+  color: #f0f0f0;
+  opacity: 0.9;
+}
+
+button.close:hover {
+  color: #999;
+}
+
+#quiz1 .card {
+  border: 2px solid #000a17;
+}
+
+#quiz1 .card-header {
+  background: #c0c0c0;
+  color: #000a17;
+  border-bottom: 2px solid #000a17;
 }
