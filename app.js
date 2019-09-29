@@ -9,6 +9,13 @@ const User = require("./models/user");
 const Profile = require("./models/profile")
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
+const LanguageTranslatorV3 = require('ibm-watson/language-translator/v3');
+const languageTranslator = new LanguageTranslatorV3({
+    version: '2018-05-01',
+    iam_apikey: 'cyzh50CogKZUJqrWtOrQ68PUINkMjp7v0pwVjNjku5VQ',
+    url: 'https://gateway.watsonplatform.net/language-translator/api',
+    disable_ssl_verification: true,
+  });
 env.config();
 
 var PORT = process.env.PORT || 3000;
@@ -152,8 +159,18 @@ app.get("/user/:id", isLoggedIn, (req, res) => {
 });
 
 app.get("/apitest", (req, res) => {
-    res.render("apitest");
-})
+    res.render("apitest", {translation: false});
+});
+
+app.post("/apitest", (req, res) => {
+    languageTranslator.translate(req.body.input)
+        .then(translationResult => {
+            res.render("apitest", {translation: translationResult});
+            console.log(JSON.stringify(translationResult, null, 2));
+        }).catch(err => {
+            console.log('error:', err.message);
+        });
+});
 
 app.listen(PORT, () => {
     console.log("TVSensei Listen on Port " + PORT);
