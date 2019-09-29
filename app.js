@@ -151,6 +151,10 @@ app.get("/user/:id", isLoggedIn, (req, res) => {
     })
 });
 
+app.get("/apitest", (req, res) => {
+    res.render("apitest");
+})
+
 app.listen(PORT, () => {
     console.log("TVSensei Listen on Port " + PORT);
 });
