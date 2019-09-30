@@ -9,10 +9,57 @@ const User = require("./models/user");
 const Profile = require("./models/profile")
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
+const fs = require('fs');
+
+// IBM watson language translator API
+const LanguageTranslatorV3 = require('ibm-watson/language-translator/v3');
+const languageTranslator = new LanguageTranslatorV3({
+    version: '2018-05-01',
+    iam_apikey: 'cyzh50CogKZUJqrWtOrQ68PUINkMjp7v0pwVjNjku5VQ',
+    url: 'https://gateway.watsonplatform.net/language-translator/api',
+    disable_ssl_verification: true,
+});
+
+// IBM watson speech to text API
+const SpeechToTextV1 = require('ibm-watson/speech-to-text/v1');
+
+
+const speechToText = new SpeechToTextV1({
+    iam_apikey: 'MA0UI5-iqOGSU1t0McSEuKyyy9nIqpIsEQcDvjBUxBd1',
+    url: 'https://stream.watsonplatform.net/speech-to-text/api',
+    disable_ssl_verification: true,
+});
+
+const params = {
+    content_type: 'audio/flac',
+    objectMode: true
+};
+
+var recognizeStream = speechToText.recognizeUsingWebSocket(params);
+
+fs.createReadStream('public/media/audio-file.flac').pipe(recognizeStream);
+
+/*
+// these two lines of code will only work if `objectMode` is `false`
+// pipe out the transcription to a file
+recognizeStream.pipe(fs.createWriteStream('transcription.txt'));
+// get strings instead of Buffers from `data` events
+recognizeStream.setEncoding('utf8');
+*/
+
+recognizeStream.on('data', function(event) { onEvent('Data:', event); });
+recognizeStream.on('error', function(event) { onEvent('Error:', event); });
+recognizeStream.on('close', function(event) { onEvent('Close:', event); });
+
+function onEvent(name, event) {
+    console.log(name, JSON.stringify(event, null, 2));
+};
+
 env.config();
 
 var PORT = process.env.PORT || 3000;
 
+// mongoDB connect
 mongoose.connect("mongodb+srv://admin:tvsenseiadmin@cluster0-jyosx.mongodb.net/test?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -25,7 +72,9 @@ mongoose.connect("mongodb+srv://admin:tvsenseiadmin@cluster0-jyosx.mongodb.net/t
 });
 
 app.use(flash());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
@@ -146,9 +195,26 @@ app.get("/user/:id", isLoggedIn, (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            res.render("user", {user: foundUser});
+            res.render("user", {
+                user: foundUser
+            });
         }
     })
+});
+
+app.get("/apitest", (req, res) => {
+    res.render("apitest");
+});
+
+app.post("/apitest", (req, res) => {
+    languageTranslator.translate(req.body.input)
+        .then(translationResult => {
+            res.status(200).send({
+                translation: translationResult
+            });
+        }).catch(err => {
+            console.log('error:', err.message);
+        });
 });
 
 app.listen(PORT, () => {
