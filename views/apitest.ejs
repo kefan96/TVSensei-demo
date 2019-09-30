@@ -1,10 +1,28 @@
 <% include partials/header %>
+<style>
+    textarea:disabled {
+        background-color: #fff;
+    }
+    textarea {
+        background-color: #fff;
+        border-radius: 7px;
+        padding: 1rem;
+    }
+    .btn.btn-primary {
+        background-color: #020017 !important;
+        border: none;
+        color: #f0f0f0;
+    }
+    .btn.btn-primary:hover {
+        color: #c0c0c0;
+    }
+</style>
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10">
         <div class="container mt-5">
-            <h1>APItest!</h1>
-            <form action="/apitest" method="POST">
+            <h1>Translate!</h1>
+            <form action="/apitest" method="POST" id="translate-form">
                 <div class="row">
                     <div class="col-5">
                         <select name="input[source]" id="source-language" style="display: block; margin-bottom: 1.5rem;"
@@ -53,10 +71,8 @@
                             required>
                             <option value="" disabled selected>Choose your language</option>
                         </select>
-                        <% if (translation) {%>
-                        <textarea rows="10" disabled
-                            style="width: 100%;"><%= translation.translations[0].translation %></textarea>
-                        <% } %>
+                        <textarea id="translate-result" rows="10" disabled
+                            style="width: 100%;">Your translation goes here</textarea>
                     </div>
                 </div>
             </form>
@@ -68,7 +84,8 @@
 <script>
     function changeTarget() {
         if ($("#source-language").val() == 'en') {
-            $("#target-language").html("<option value='' disabled selected>Choose your language</option><option value='ar'>Arabic</option>" +
+            $("#target-language").html(
+                "<option value='' disabled selected>Choose your language</option><option value='ar'>Arabic</option>" +
                 "<option value='ar'>Arabic</option>" +
                 "<option value='bg'>Bulgarian</option>" +
                 "<option value='ca'>Catalan</option>" +
@@ -102,28 +119,53 @@
                 "<option value='tr'>Turkish</option>"
             );
         } else if ($("#source-language").val() == 'fr') {
-            $("#target-language").html("<option value='' disabled selected>Choose your language</option><option value='de'>German</option>" +
+            $("#target-language").html(
+                "<option value='' disabled selected>Choose your language</option><option value='de'>German</option>" +
                 "<option value='en'>English</option>" +
                 "<option value='es'>Spanish</option>"
             );
         } else if ($("#source-language").val() == 'de') {
-            $("#target-language").html("<option value='' disabled selected>Choose your language</option><option value='en'>English</option>" +
+            $("#target-language").html(
+                "<option value='' disabled selected>Choose your language</option><option value='en'>English</option>" +
                 "<option value='fr'>Franch</option>" +
                 "<option value='it'>Italian</option>"
             );
         } else if ($("#source-language").val() == 'it') {
-            $("#target-language").html("<option value='' disabled selected>Choose your language</option><option value='de'>German</option>" +
+            $("#target-language").html(
+                "<option value='' disabled selected>Choose your language</option><option value='de'>German</option>" +
                 "<option value='en'>English</option>"
             );
         } else if ($("#source-language").val() == 'es') {
-            $("#target-language").html("<option value='' disabled selected>Choose your language</option><option value='en'>English</option>" +
+            $("#target-language").html(
+                "<option value='' disabled selected>Choose your language</option><option value='en'>English</option>" +
                 "<option value='ca'>Catalan</option>" +
                 "<option value='fr'>Franch</option>"
             );
         } else {
-            $("#target-language").html("<option value='' disabled selected>Choose your language</option><option value='en'>English</option>");
+            $("#target-language").html(
+                "<option value='' disabled selected>Choose your language</option><option value='en'>English</option>"
+            );
         }
     }
+
+    $("#translate-form").submit(function (event) {
+        event.preventDefault();
+        var post_url = $(this).attr("action");
+        var method = $(this).attr("method");
+        var form_data = $(this).serialize();
+
+        $.ajax({
+            url: post_url,
+            type: method,
+            data: form_data,
+            success: function (data) {
+                $('#translate-result').html(data.translation.translations[0].translation);
+            },
+            error: function (xhr, textStatus, error) {
+                console.log(error.message);
+            }
+        });
+    });
 </script>
 
 <% include ./partials/footer %>

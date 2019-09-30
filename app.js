@@ -159,14 +159,13 @@ app.get("/user/:id", isLoggedIn, (req, res) => {
 });
 
 app.get("/apitest", (req, res) => {
-    res.render("apitest", {translation: false});
+    res.render("apitest");
 });
 
 app.post("/apitest", (req, res) => {
     languageTranslator.translate(req.body.input)
         .then(translationResult => {
-            res.render("apitest", {translation: translationResult});
-            console.log(JSON.stringify(translationResult, null, 2));
+            res.status(200).send({translation: translationResult});
         }).catch(err => {
             console.log('error:', err.message);
         });
