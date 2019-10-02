@@ -323,6 +323,7 @@ ga('send', 'pageview');
         $('#recordingsList .result').removeClass('result');
       } else if (this.status != 200) {
         $('#recordingsList .result').html(JSON.parse(xhr.response).message);
+        $('#recordingsList .result').removeClass('result');
       }
     };
     var fd = new FormData();
