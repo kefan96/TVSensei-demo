@@ -11,6 +11,20 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const fs = require('fs');
 
+// file uploading
+const multer = require('multer');
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/uploads');
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + '.wav');
+    }
+})
+const upload = multer({
+    storage: storage
+});
+
 // IBM watson language translator API
 const LanguageTranslatorV3 = require('ibm-watson/language-translator/v3');
 const languageTranslator = new LanguageTranslatorV3({
@@ -29,27 +43,6 @@ const speechToText = new SpeechToTextV1({
     url: 'https://stream.watsonplatform.net/speech-to-text/api',
     disable_ssl_verification: true,
 });
-
-const params = {
-    content_type: 'audio/flac',
-    objectMode: true
-};
-
-var recognizeStream = speechToText.recognizeUsingWebSocket(params);
-
-fs.createReadStream('public/media/audio-file.flac').pipe(recognizeStream);
-
-/*
-// these two lines of code will only work if `objectMode` is `false`
-// pipe out the transcription to a file
-recognizeStream.pipe(fs.createWriteStream('transcription.txt'));
-// get strings instead of Buffers from `data` events
-recognizeStream.setEncoding('utf8');
-*/
-
-recognizeStream.on('data', function(event) { onEvent('Data:', event); });
-recognizeStream.on('error', function(event) { onEvent('Error:', event); });
-recognizeStream.on('close', function(event) { onEvent('Close:', event); });
 
 function onEvent(name, event) {
     console.log(name, JSON.stringify(event, null, 2));
@@ -215,6 +208,42 @@ app.post("/apitest", (req, res) => {
         }).catch(err => {
             console.log('error:', err.message);
         });
+});
+
+app.get("/apitest/speech-to-text", (req, res) => {
+    res.render("apitest_speech2text");
+});
+
+app.post("/apitest/speech-to-text", upload.single('audio'), (req, res) => {
+
+    const params = {
+        content_type: 'audio/wav',
+        objectMode: true
+    };
+    var recognizeStream = speechToText.recognizeUsingWebSocket(params);
+    fs.createReadStream('public/uploads/' + req.file.filename).pipe(recognizeStream);
+    /*
+    // these two lines of code will only work if `objectMode` is `false`
+    // pipe out the transcription to a file
+    recognizeStream.pipe(fs.createWriteStream('transcription.txt'));
+    // get strings instead of Buffers from `data` events
+    recognizeStream.setEncoding('utf8');
+    */
+
+    recognizeStream.on('data', function (event) {
+        onEvent('Data:', event);
+        if (event.results.length > 0){
+            res.status(200).json(event.results[0].alternatives[0]);
+        } else {
+            console.log("something went wrong");
+        }
+    });
+    recognizeStream.on('error', function (event) {
+        onEvent('Error:', event);
+    });
+    recognizeStream.on('close', function (event) {
+        onEvent('Close:', event);
+    });
 });
 
 app.listen(PORT, () => {

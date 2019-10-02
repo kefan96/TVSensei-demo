@@ -1,0 +1,336 @@
+<% include partials/header %>
+
+<!-- <style type='text/css'>
+  ul {
+    list-style: none;
+  }
+
+  #recordingslist audio {
+    display: block;
+    margin-bottom: 10px;
+  }
+</style>
+
+<h1>Recording!</h1>
+
+<p>Make sure you are using a recent version of Google Chrome.</p>
+<p>Also before you enable microphone input either plug in headphones or turn the volume down if you want to avoid ear
+  splitting feedback!</p>
+
+<button onclick="startRecording(this);">record</button>
+<button onclick="stopRecording(this);" disabled>stop</button>
+
+<h2>Recordings</h2>
+<ul id="recordingslist"></ul>
+
+<h2>Log</h2>
+<pre id="log"></pre> -->
+
+<!-- <script>
+  function __log(e, data) {
+    log.innerHTML += "\n" + e + " " + (data || '');
+  }
+  var audio_context;
+  var recorder;
+
+  function startUserMedia(stream) {
+    var input = audio_context.createMediaStreamSource(stream);
+    __log('Media stream created.');
+    // Uncomment if you want the audio to feedback directly
+    //input.connect(audio_context.destination);
+    //__log('Input connected to audio context destination.');
+
+    recorder = new Recorder(input);
+    __log('Recorder initialised.');
+  }
+
+  function startRecording(button) {
+    recorder && recorder.record();
+    button.disabled = true;
+    button.nextElementSibling.disabled = false;
+    __log('Recording...');
+  }
+
+  function stopRecording(button) {
+    recorder && recorder.stop();
+    button.disabled = true;
+    button.previousElementSibling.disabled = false;
+    __log('Stopped recording.');
+
+    // create WAV download link using audio data blob
+    createDownloadLink();
+
+    recorder.clear();
+  }
+
+  function createDownloadLink() {
+    recorder && recorder.exportWAV(function (blob) {
+      var url = URL.createObjectURL(blob);
+      var li = document.createElement('li');
+      var au = document.createElement('audio');
+      var hf = document.createElement('a');
+      console.log(blob);
+
+      au.controls = true;
+      au.src = url;
+      hf.href = url;
+      hf.download = new Date().toISOString() + '.wav';
+      hf.innerHTML = hf.download;
+      li.appendChild(au);
+      li.appendChild(hf);
+      recordingslist.appendChild(li);
+      var filename = new Date().toISOString() + ".wav";
+      var xhr = new XMLHttpRequest();
+      xhr.onload = function (e) {
+        if (this.readyState === 4) {
+          console.log(xhr.response);
+          $('#recordingslist').append('<li>' + xhr.response.transcript + '</li>');
+          $('#recordingslist').append('<li>' + xhr.response.confidence + '</li>');
+        }
+      };
+      var fd = new FormData();
+      fd.append("audio", blob, filename);
+      console.log(fd.getAll('audio'));
+      xhr.open("POST", "/apitest/speech-to-text", true);
+      xhr.send(fd);
+    });
+  }
+  window.onload = function init() {
+    try {
+      // webkit shim
+      window.AudioContext = window.AudioContext || window.webkitAudioContext;
+      navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+      window.URL = window.URL || window.webkitURL;
+
+      audio_context = new AudioContext;
+      __log('Audio context set up.');
+      __log('navigator.getUserMedia ' + (navigator.getUserMedia ? 'available.' : 'not present!'));
+    } catch (e) {
+      alert('No web audio support in this browser!');
+    }
+
+    document.querySelector('body').addEventListener('click', function () {
+      audio_context.resume().then(() => {
+        console.log('Playback resumed successfully');
+      });
+    });
+
+    navigator.getUserMedia({
+      audio: true
+    }, startUserMedia, function (e) {
+      __log('No live audio input: ' + e);
+    });
+  };
+</script> -->
+<link rel="stylesheet" href="/stylesheets/recorder.css">
+<div class="recorder-container">
+  <h1>Simple Recorder demo</h1>
+  <p>Record your voice below. We will capture your voice and let you able to play back and download. </p>
+  <p>Also, we are going to transform your voice into text. If you speak clear enough, the text will show at the bottom.</p>
+  <div id="controls">
+    <button id="recordButton">Record</button>
+    <button id="pauseButton" disabled>Pause</button>
+    <button id="stopButton" disabled>Stop</button>
+  </div>
+  <div id="formats">Format: start recording to see sample rate</div>
+  <h3>Recordings</h3>
+  <ul id="recordingsList">
+  </ul>
+</div>
+
+<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+
+<script type="text/plain" data-cookieconsent="statistics">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-133914-18', 'auto');
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview');
+</script>
+
+<script>
+  //webkitURL is deprecated but nevertheless
+  URL = window.URL || window.webkitURL;
+
+  var gumStream; //stream from getUserMedia()
+  var rec; //Recorder.js object
+  var input; //MediaStreamAudioSourceNode we'll be recording
+
+  // shim for AudioContext when it's not avb. 
+  var AudioContext = window.AudioContext || window.webkitAudioContext;
+  var audioContext //audio context to help us record
+
+  var recordButton = document.getElementById("recordButton");
+  var stopButton = document.getElementById("stopButton");
+  var pauseButton = document.getElementById("pauseButton");
+
+  //add events to those 2 buttons
+  recordButton.addEventListener("click", startRecording);
+  stopButton.addEventListener("click", stopRecording);
+  pauseButton.addEventListener("click", pauseRecording);
+
+  function startRecording() {
+    console.log("recordButton clicked");
+
+    /*
+    	Simple constraints object, for more advanced audio features see
+    	https://addpipe.com/blog/audio-constraints-getusermedia/
+    */
+
+    var constraints = {
+      audio: true,
+      video: false
+    }
+
+    /*
+    	Disable the record button until we get a success or fail from getUserMedia() 
+	*/
+
+    recordButton.disabled = true;
+    stopButton.disabled = false;
+    pauseButton.disabled = false
+
+    /*
+    	We're using the standard promise based getUserMedia() 
+    	https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+	*/
+
+    navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
+      console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
+
+      /*
+      	create an audio context after getUserMedia is called
+      	sampleRate might change after getUserMedia is called, like it does on macOS when recording through AirPods
+      	the sampleRate defaults to the one set in your OS for your playback device
+
+      */
+      audioContext = new AudioContext();
+
+      //update the format 
+      document.getElementById("formats").innerHTML = "Format: 1 channel pcm @ " + audioContext.sampleRate / 1000 +
+        "kHz"
+
+      /*  assign to gumStream for later use  */
+      gumStream = stream;
+
+      /* use the stream */
+      input = audioContext.createMediaStreamSource(stream);
+
+      /* 
+      	Create the Recorder object and configure to record mono sound (1 channel)
+      	Recording 2 channels  will double the file size
+      */
+      rec = new Recorder(input, {
+        numChannels: 1
+      })
+
+      //start the recording process
+      rec.record()
+
+      console.log("Recording started");
+
+    }).catch(function (err) {
+      //enable the record button if getUserMedia() fails
+      recordButton.disabled = false;
+      stopButton.disabled = true;
+      pauseButton.disabled = true
+    });
+  }
+
+  function pauseRecording() {
+    console.log("pauseButton clicked rec.recording=", rec.recording);
+    if (rec.recording) {
+      //pause
+      rec.stop();
+      pauseButton.innerHTML = "Resume";
+    } else {
+      //resume
+      rec.record()
+      pauseButton.innerHTML = "Pause";
+
+    }
+  }
+
+  function stopRecording() {
+    console.log("stopButton clicked");
+
+    //disable the stop button, enable the record too allow for new recordings
+    stopButton.disabled = true;
+    recordButton.disabled = false;
+    pauseButton.disabled = true;
+
+    //reset button just in case the recording is stopped while paused
+    pauseButton.innerHTML = "Pause";
+
+    //tell the recorder to stop the recording
+    rec.stop();
+
+    //stop microphone access
+    gumStream.getAudioTracks()[0].stop();
+
+    //create the wav blob and pass it on to createDownloadLink
+    rec.exportWAV(createDownloadLink);
+  }
+
+  function createDownloadLink(blob) {
+
+    var url = URL.createObjectURL(blob);
+    var au = document.createElement('audio');
+    var li = document.createElement('li');
+    var link = document.createElement('a');
+
+    //name of .wav file to use during upload and download (without extendion)
+    var filename = new Date().toISOString();
+
+    //add controls to the <audio> element
+    au.controls = true;
+    au.src = url;
+
+    //save to disk link
+    link.href = url;
+    link.download = filename + ".wav"; //download forces the browser to donwload the file using the  filename
+    link.innerHTML = "Save to disk";
+
+    //add the new audio element to li
+    li.appendChild(au);
+
+    //add the filename to the li
+    li.appendChild(document.createTextNode(filename + ".wav "))
+
+    //add the save to disk link to li
+    li.appendChild(link);
+
+    document.querySelector('#recordingsList').append(li);
+    $('#recordingsList').append('<li class="result">You said: </li>');
+
+
+    var filename = new Date().toISOString() + ".wav";
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function (e) {
+      if (this.readyState === 4 && this.status == 200) {
+        console.log(xhr.response);
+        let confidence = Number(JSON.parse(xhr.response).confidence);
+        if (confidence >= 0.7) {
+          $('#recordingsList .result').append(JSON.parse(xhr.response).transcript);
+        } else {
+          $('#recordingsList .result').html('Sorry, please say that again.');
+        }
+        $('#recordingsList .result').removeClass('result');
+      }
+    };
+    var fd = new FormData();
+    fd.append("audio", blob, filename);
+    console.log(fd.getAll('audio'));
+    xhr.open("POST", "/apitest/speech-to-text", true);
+    xhr.send(fd);
+
+  }
+</script>
+
+<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+
+<% include partials/footer %>
