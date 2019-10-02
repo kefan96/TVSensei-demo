@@ -235,7 +235,7 @@ app.post("/apitest/speech-to-text", upload.single('audio'), (req, res) => {
         if (event.results.length > 0){
             res.status(200).json(event.results[0].alternatives[0]);
         } else {
-            console.log("something went wrong");
+            res.status(500).json({message: "something went wrong. You might turn on your microphone"});
         }
     });
     recognizeStream.on('error', function (event) {

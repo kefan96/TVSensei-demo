@@ -318,8 +318,11 @@ ga('send', 'pageview');
           $('#recordingsList .result').append(JSON.parse(xhr.response).transcript);
         } else {
           $('#recordingsList .result').html('Sorry, please say that again.');
+          $('#recordingsList').append('<li>We got: ' + JSON.parse(xhr.response).transcript + '</li>')
         }
         $('#recordingsList .result').removeClass('result');
+      } else if (this.status != 200) {
+        $('#recordingsList .result').html(JSON.parse(xhr.response).message);
       }
     };
     var fd = new FormData();
