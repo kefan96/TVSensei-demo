@@ -231,7 +231,6 @@ app.post("/apitest/speech-to-text", upload.single('audio'), (req, res) => {
     */
 
     recognizeStream.on('data', function (event) {
-        onEvent('Data:', event);
         if (event.results.length > 0){
             res.status(200).json(event.results[0].alternatives[0]);
         } else {
@@ -241,9 +240,9 @@ app.post("/apitest/speech-to-text", upload.single('audio'), (req, res) => {
     recognizeStream.on('error', function (event) {
         onEvent('Error:', event);
     });
-    recognizeStream.on('close', function (event) {
-        onEvent('Close:', event);
-    });
+    // recognizeStream.on('close', function (event) {
+    //     onEvent('Close:', event);
+    // });
 });
 
 app.listen(PORT, () => {
