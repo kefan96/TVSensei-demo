@@ -281,9 +281,15 @@ app.post("/apitest/chatbot", (req, res) => {
                 }
             })
             .then(response => {
-                res.status(200).json({
-                    message: response.output.generic[0].text
-                });
+                if (response.output.generic.length > 0) {
+                    res.status(200).json({
+                        message: response.output.generic[0].text
+                    }); 
+                } else {
+                    res.status(200).json({
+                        message: "Sorry, I don't understand"
+                    });
+                }
             })
             .catch(err => {
                 console.log(err);
