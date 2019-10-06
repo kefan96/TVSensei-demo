@@ -48,6 +48,17 @@ function onEvent(name, event) {
     console.log(name, JSON.stringify(event, null, 2));
 };
 
+// IBM Watson assistant API
+const AssistantV2 = require('ibm-watson/assistant/v2');
+
+const assistant = new AssistantV2({
+    iam_apikey: 'almODr_betvKqoOaZOqymbo5Ob_mOTrvCsti6j9zZax7',
+    version: '2019-02-28',
+    url: 'https://gateway.watsonplatform.net/assistant/api/'
+});
+
+
+
 env.config();
 
 var PORT = process.env.PORT || 3000;
@@ -231,10 +242,12 @@ app.post("/apitest/speech-to-text", upload.single('audio'), (req, res) => {
     */
 
     recognizeStream.on('data', function (event) {
-        if (event.results.length > 0){
+        if (event.results.length > 0) {
             res.status(200).json(event.results[0].alternatives[0]);
         } else {
-            res.status(500).json({message: "something went wrong. You might turn on your microphone"});
+            res.status(500).json({
+                message: "something went wrong. You might turn on your microphone"
+            });
         }
     });
     recognizeStream.on('error', function (event) {
@@ -244,6 +257,42 @@ app.post("/apitest/speech-to-text", upload.single('audio'), (req, res) => {
     //     onEvent('Close:', event);
     // });
 });
+
+// chatbot routings
+
+app.get("/apitest/chatbot", (req, res) => {
+    res.render("chatbot");
+});
+
+app.post("/apitest/chatbot", (req, res) => {
+    var SESSION_ID = '';
+    assistant.createSession({
+            assistant_id: 'a1447468-3404-4f51-be8d-e88047961c38'
+        })
+        .then(session => {
+            SESSION_ID = session.session_id;
+            // console.log("session_id: " + SESSION_ID);
+            assistant.message({
+                assistant_id: 'a1447468-3404-4f51-be8d-e88047961c38',
+                session_id: SESSION_ID,
+                input: {
+                    'message_type': 'text',
+                    'text': req.body.text,
+                }
+            })
+            .then(response => {
+                res.status(200).json({
+                    message: response.output.generic[0].text
+                });
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        })
+        .catch(err => {
+            console.log(err.message);
+        });
+})
 
 app.listen(PORT, () => {
     console.log("TVSensei Listen on Port " + PORT);

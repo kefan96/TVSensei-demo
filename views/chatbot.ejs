@@ -1,0 +1,155 @@
+<% include partials/header %>
+
+<style>
+    .chatbox {
+        max-width: 40rem;
+        margin: 5rem auto;
+        border: 1px solid #c0c0c0;
+        border-radius: 7px 7px 0 0;
+        padding: 0;
+    }
+
+    #chat {
+        height: 50vh;
+        overflow-y: scroll;
+        background: #f0f0f0;
+    }
+
+    .speech-bubble {
+        background: #98fb98;
+        position: relative;
+        text-align: center;
+        padding: 15px 0;
+        margin: 10px 30px;
+        width: 150px;
+        border-radius: 10px;
+    }
+
+    .speech-bubble:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 100%;
+        margin-top: -10px;
+        width: 0;
+        height: 0;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid #98fb98;
+    }
+
+    .speech-bubble-bot {
+        background: #fff;
+        position: relative;
+        text-align: center;
+        padding: 15px 0;
+        margin: 10px 30px;
+        width: 150px;
+        border-radius: 10px;
+    }
+
+    .speech-bubble-bot:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 50%;
+        right: 100%;
+        margin-top: -10px;
+        width: 0;
+        height: 0;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid #fff;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    .card-header {
+        background: white;
+        border-radius: 7px 7px 0 0 !important;
+    }
+
+    .card-footer {
+        height: 4rem;
+    }
+
+    #text {
+        border: none;
+        border-bottom: 1px solid #c0c0c0;
+        border-right: 1px solid #c0c0c0;
+    }
+
+    .btn {
+        background: white;
+        border-bottom: 1px solid #c0c0c0;
+    }
+
+    .btn:hover i {
+        font-weight: bold;
+    }
+
+    .btn:focus {
+        box-shadow: none;
+    }
+</style>
+
+<div class="container chatbox card">
+    <div class="card-header">
+        <h4>Bot Sensei</h4>
+    </div>
+    <div id="chat" class="card-body"></div>
+    <form action="/apitest/chatbot" method="POST" id="sendMessage">
+        <div class="card-footer" style="padding: 0;">
+            <div class="row" style="width: 100%; margin: 0;">
+                <div class="col-10" style="padding: 0;">
+                    <input name="text" id="text" placeholder="Send your message" style="width:100%; height: 4rem; padding: 0 10px;"/>
+                </div>
+                <div class="col-2" style="padding: 0;">
+                    <button class="btn" style="border-radius: 0; width: 100%; height: 4rem"><i class="far fa-paper-plane" style="font-size: 1.6rem;"></i></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $('#sendMessage').submit(function (event) {
+        event.preventDefault();
+        $('#chat').append('<div class="d-flex justify-content-end message"><div class="speech-bubble">' + $(
+            '#text').val() + '</div></div>');
+        var scroll = document.getElementById('chat').scrollHeight - $('#chat').height();
+        $('#chat').animate({
+            scrollTop: scroll
+        }, 500);
+        var post_url = $(this).attr("action");
+        var method = $(this).attr("method");
+        var form_data = $(this).serialize();
+
+        $.ajax({
+            url: post_url,
+            type: method,
+            data: form_data,
+            success: function (data) {
+                $('#chat').append(
+                    '<div class="d-flex justify-content-start message"><div class="speech-bubble-bot">' +
+                    data.message + '</div></div>');
+                scroll = document.getElementById('chat').scrollHeight - $('#chat').height();
+                $('#chat').animate({
+                    scrollTop: scroll
+                }, 500);
+            },
+            error: function (xhr, textStatus, error) {
+                console.log(error.message);
+            }
+        });
+    });
+</script>
+
+<% include partials/footer %>
