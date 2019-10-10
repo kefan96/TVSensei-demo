@@ -87,6 +87,20 @@ function toDigits(num) {
     }
 }
 
+function show_bubbles() {
+    console.log(myPlayer.currentTime());
+    if (myPlayer.currentTime() > 5) {
+        if (myPlayer.currentTime() < 10) {
+            $('.oval-thought').css('opacity', '0.8');
+        } else if (myPlayer.currentTime() > 33 && myPlayer.currentTime() < 36){
+            $('.oval-thought').text('No, I don\'t want to go at all. I\'m tired already.');
+            $('.oval-thought').css('opacity', '0.8');
+        } else {
+            $('.oval-thought').css('opacity', '0');
+        }
+    }
+}
+
 
 $('#submit_note').on('click', () => {
     let currentTime = myPlayer.currentTime();

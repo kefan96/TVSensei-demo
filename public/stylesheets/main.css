@@ -479,3 +479,77 @@ button.close:hover {
   color: #000a17;
   border-bottom: 2px solid #000a17;
 }
+
+/* thought bubble*/
+/* ============================================================================================================================
+== OVAL THOUGHT BUBBLE (more CSS3)
+** ============================================================================================================================ */
+
+.videoPlayer {
+  position: relative;
+}
+
+.oval-thought {
+  position:absolute;
+  left: 55%;
+  top: .5%;
+  width: 200px;
+  padding:20px 40px;
+  text-align:center;
+  color:#fff;
+  background:#075698;
+  /* css3 */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
+  background:-moz-linear-gradient(#2e88c4, #075698);
+  background:-o-linear-gradient(#2e88c4, #075698);
+  background:linear-gradient(#2e88c4, #075698);
+  /*
+  NOTES:
+  -webkit-border-radius:220px 120px; // produces oval in safari 4 and chrome 4
+  -webkit-border-radius:220px / 120px; // produces oval in chrome 4 (again!) but not supported in safari 4
+  Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+  */
+  -webkit-border-top-left-radius:220px 120px;
+  -webkit-border-top-right-radius:220px 120px;
+  -webkit-border-bottom-right-radius:220px 120px;
+  -webkit-border-bottom-left-radius:220px 120px;
+  -moz-border-radius:220px / 120px;
+  border-radius:220px / 120px;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.oval-thought p {
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+/* creates the larger circle */
+.oval-thought:before {
+  content:"";
+  position:absolute;
+  bottom:-30px;
+  left:50px;
+  width:30px;
+  height:30px;
+  background:#075698;
+  /* css3 */
+  -webkit-border-radius:30px;
+  -moz-border-radius:30px;
+  border-radius:30px;
+}
+
+/* creates the smaller circle */
+.oval-thought:after {
+  content:"";
+  position:absolute;
+  bottom:-35px;
+  left:30px;
+  width:15px;
+  height:15px;
+  background:#075698;
+  /* css3 */
+  -webkit-border-radius:15px;
+  -moz-border-radius:15px;
+  border-radius:15px;
+}

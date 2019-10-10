@@ -6,13 +6,16 @@
         <div class="col-md-8 col-12">
             <div class="row">
                 <div class="col-12">
-                    <div>
+                    <div class="videoPlayer">
                         <video class="video-js vjs-big-play-centered effect1" id="currentVideo"
-                            onloadstart="initializeVid([[68,72.5],[77,86],[91,97],[138,147],[165,170]]);"
+                            ontimeupdate="show_bubbles()"
                             style="margin-bottom: 5px;">
                             <source src="/media/video_Test.mp4" type="video/mp4" />
                             <track kink="captions" src="/assets/text_subtitle.vtt" srclang="en" label="English" default>
                         </video>
+                        <blockquote class="oval-thought">
+                            <p>Hello world! I'm a thought bubble.</p>
+                        </blockquote>
                     </div>
                     <ul class="nav nav-tabs mt-2" id="myTab" role="tablist" style="background: #000a17;">
                         <li class="nav-item">
@@ -29,26 +32,71 @@
                         </li>
                     </ul>
                     <div class="tab-content effect1" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Bacon ipsum dolor amet tail doner chuck turducken, capicola shankle biltong meatball chicken shank swine. Tenderloin shoulder jowl alcatra frankfurter kevin turkey chuck drumstick meatball. Pastrami kevin pork, corned beef drumstick porchetta shank bacon. Cow jowl meatball tenderloin fatback ribeye porchetta buffalo short ribs. Doner pig bacon jowl t-bone burgdoggen, fatback chuck beef ribs.
-                            Pork belly meatloaf beef ribs short ribs, drumstick alcatra fatback doner tri-tip andouille hamburger burgdoggen. Strip steak kevin leberkas, burgdoggen porchetta cow tail tongue pancetta prosciutto beef ribs brisket ground round. Short loin porchetta pork chop cow andouille sausage boudin meatball pork belly bacon kielbasa. Tri-tip porchetta leberkas prosciutto boudin tongue bresaola. Capicola filet mignon pork loin jowl ground round picanha turducken t-bone alcatra ham hock biltong frankfurter pork.
-                            Andouille tongue pastrami short ribs ground round corned beef pancetta pork boudin hamburger tenderloin. Meatloaf drumstick shankle, turkey sirloin bacon tongue chicken ham hock rump pastrami frankfurter ball tip beef ribs porchetta. Prosciutto andouille hamburger beef ribs. Sausage meatball biltong burgdoggen ground round hamburger drumstick ball tip t-bone swine turkey. Jerky pork belly pig ham hock beef, shoulder turducken capicola tail.
-                            Pig burgdoggen swine buffalo, ball tip shank filet mignon kielbasa pork brisket cupim kevin porchetta bacon pancetta. Prosciutto turducken shankle, picanha brisket ground round corned beef. Alcatra pork shankle beef, meatloaf frankfurter short ribs filet mignon burgdoggen tenderloin beef ribs capicola porchetta sausage ham. Buffalo chuck capicola pastrami.
-                            Ham pork belly jerky burgdoggen pig chicken picanha pork chop short ribs tail short loin. Andouille corned beef rump shankle pork belly kevin, spare ribs pancetta boudin beef ribs ham hock beef swine. Rump kevin shoulder venison. Burgdoggen pork belly bresaola, rump flank andouille tenderloin tri-tip ribeye drumstick. Frankfurter beef ribs meatball andouille turducken pancetta kevin pastrami rump.
-                            Does your lorem ipsum text long for something a little meatier? Give our generator a try… it’s tasty!
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            Bacon ipsum dolor amet tail doner chuck turducken, capicola shankle biltong meatball chicken
+                            shank swine. Tenderloin shoulder jowl alcatra frankfurter kevin turkey chuck drumstick
+                            meatball. Pastrami kevin pork, corned beef drumstick porchetta shank bacon. Cow jowl
+                            meatball tenderloin fatback ribeye porchetta buffalo short ribs. Doner pig bacon jowl t-bone
+                            burgdoggen, fatback chuck beef ribs.
+                            Pork belly meatloaf beef ribs short ribs, drumstick alcatra fatback doner tri-tip andouille
+                            hamburger burgdoggen. Strip steak kevin leberkas, burgdoggen porchetta cow tail tongue
+                            pancetta prosciutto beef ribs brisket ground round. Short loin porchetta pork chop cow
+                            andouille sausage boudin meatball pork belly bacon kielbasa. Tri-tip porchetta leberkas
+                            prosciutto boudin tongue bresaola. Capicola filet mignon pork loin jowl ground round picanha
+                            turducken t-bone alcatra ham hock biltong frankfurter pork.
+                            Andouille tongue pastrami short ribs ground round corned beef pancetta pork boudin hamburger
+                            tenderloin. Meatloaf drumstick shankle, turkey sirloin bacon tongue chicken ham hock rump
+                            pastrami frankfurter ball tip beef ribs porchetta. Prosciutto andouille hamburger beef ribs.
+                            Sausage meatball biltong burgdoggen ground round hamburger drumstick ball tip t-bone swine
+                            turkey. Jerky pork belly pig ham hock beef, shoulder turducken capicola tail.
+                            Pig burgdoggen swine buffalo, ball tip shank filet mignon kielbasa pork brisket cupim kevin
+                            porchetta bacon pancetta. Prosciutto turducken shankle, picanha brisket ground round corned
+                            beef. Alcatra pork shankle beef, meatloaf frankfurter short ribs filet mignon burgdoggen
+                            tenderloin beef ribs capicola porchetta sausage ham. Buffalo chuck capicola pastrami.
+                            Ham pork belly jerky burgdoggen pig chicken picanha pork chop short ribs tail short loin.
+                            Andouille corned beef rump shankle pork belly kevin, spare ribs pancetta boudin beef ribs
+                            ham hock beef swine. Rump kevin shoulder venison. Burgdoggen pork belly bresaola, rump flank
+                            andouille tenderloin tri-tip ribeye drumstick. Frankfurter beef ribs meatball andouille
+                            turducken pancetta kevin pastrami rump.
+                            Does your lorem ipsum text long for something a little meatier? Give our generator a try…
+                            it’s tasty!
                         </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Bacon ipsum dolor amet tail doner chuck turducken, capicola shankle biltong meatball chicken shank swine. Tenderloin shoulder jowl alcatra frankfurter kevin turkey chuck drumstick meatball. Pastrami kevin pork, corned beef drumstick porchetta shank bacon. Cow jowl meatball tenderloin fatback ribeye porchetta buffalo short ribs. Doner pig bacon jowl t-bone burgdoggen, fatback chuck beef ribs.
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Bacon
+                            ipsum dolor amet tail doner chuck turducken, capicola shankle biltong meatball chicken shank
+                            swine. Tenderloin shoulder jowl alcatra frankfurter kevin turkey chuck drumstick meatball.
+                            Pastrami kevin pork, corned beef drumstick porchetta shank bacon. Cow jowl meatball
+                            tenderloin fatback ribeye porchetta buffalo short ribs. Doner pig bacon jowl t-bone
+                            burgdoggen, fatback chuck beef ribs.
 
-                            Pork belly meatloaf beef ribs short ribs, drumstick alcatra fatback doner tri-tip andouille hamburger burgdoggen. Strip steak kevin leberkas, burgdoggen porchetta cow tail tongue pancetta prosciutto beef ribs brisket ground round. Short loin porchetta pork chop cow andouille sausage boudin meatball pork belly bacon kielbasa. Tri-tip porchetta leberkas prosciutto boudin tongue bresaola. Capicola filet mignon pork loin jowl ground round picanha turducken t-bone alcatra ham hock biltong frankfurter pork.
-                            
-                            Andouille tongue pastrami short ribs ground round corned beef pancetta pork boudin hamburger tenderloin. Meatloaf drumstick shankle, turkey sirloin bacon tongue chicken ham hock rump pastrami frankfurter ball tip beef ribs porchetta. Prosciutto andouille hamburger beef ribs. Sausage meatball biltong burgdoggen ground round hamburger drumstick ball tip t-bone swine turkey. Jerky pork belly pig ham hock beef, shoulder turducken capicola tail.
-                            
-                            Pig burgdoggen swine buffalo, ball tip shank filet mignon kielbasa pork brisket cupim kevin porchetta bacon pancetta. Prosciutto turducken shankle, picanha brisket ground round corned beef. Alcatra pork shankle beef, meatloaf frankfurter short ribs filet mignon burgdoggen tenderloin beef ribs capicola porchetta sausage ham. Buffalo chuck capicola pastrami.
-                            
-                            Ham pork belly jerky burgdoggen pig chicken picanha pork chop short ribs tail short loin. Andouille corned beef rump shankle pork belly kevin, spare ribs pancetta boudin beef ribs ham hock beef swine. Rump kevin shoulder venison. Burgdoggen pork belly bresaola, rump flank andouille tenderloin tri-tip ribeye drumstick. Frankfurter beef ribs meatball andouille turducken pancetta kevin pastrami rump.
-                            
-                            Does your lorem ipsum text long for something a little meatier? Give our generator a try… it’s tasty!
-                            </div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Bacon ipsum dolor amet doner ham shankle pig venison bresaola. Short ribs rump
+                            Pork belly meatloaf beef ribs short ribs, drumstick alcatra fatback doner tri-tip andouille
+                            hamburger burgdoggen. Strip steak kevin leberkas, burgdoggen porchetta cow tail tongue
+                            pancetta prosciutto beef ribs brisket ground round. Short loin porchetta pork chop cow
+                            andouille sausage boudin meatball pork belly bacon kielbasa. Tri-tip porchetta leberkas
+                            prosciutto boudin tongue bresaola. Capicola filet mignon pork loin jowl ground round picanha
+                            turducken t-bone alcatra ham hock biltong frankfurter pork.
+
+                            Andouille tongue pastrami short ribs ground round corned beef pancetta pork boudin hamburger
+                            tenderloin. Meatloaf drumstick shankle, turkey sirloin bacon tongue chicken ham hock rump
+                            pastrami frankfurter ball tip beef ribs porchetta. Prosciutto andouille hamburger beef ribs.
+                            Sausage meatball biltong burgdoggen ground round hamburger drumstick ball tip t-bone swine
+                            turkey. Jerky pork belly pig ham hock beef, shoulder turducken capicola tail.
+
+                            Pig burgdoggen swine buffalo, ball tip shank filet mignon kielbasa pork brisket cupim kevin
+                            porchetta bacon pancetta. Prosciutto turducken shankle, picanha brisket ground round corned
+                            beef. Alcatra pork shankle beef, meatloaf frankfurter short ribs filet mignon burgdoggen
+                            tenderloin beef ribs capicola porchetta sausage ham. Buffalo chuck capicola pastrami.
+
+                            Ham pork belly jerky burgdoggen pig chicken picanha pork chop short ribs tail short loin.
+                            Andouille corned beef rump shankle pork belly kevin, spare ribs pancetta boudin beef ribs
+                            ham hock beef swine. Rump kevin shoulder venison. Burgdoggen pork belly bresaola, rump flank
+                            andouille tenderloin tri-tip ribeye drumstick. Frankfurter beef ribs meatball andouille
+                            turducken pancetta kevin pastrami rump.
+
+                            Does your lorem ipsum text long for something a little meatier? Give our generator a try…
+                            it’s tasty!
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Bacon
+                            ipsum dolor amet doner ham shankle pig venison bresaola. Short ribs rump
                             pork belly, ground round fatback chuck leberkas. Frankfurter swine chicken
                             prosciutto bresaola pork chop fatback tri-tip. Pork loin beef ribs short ribs,
                             pork chop cupim andouille alcatra chicken. Sirloin t-bone turkey strip steak
