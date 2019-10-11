@@ -87,6 +87,7 @@ function toDigits(num) {
     }
 }
 
+let show_question = true;
 function show_bubbles() {
     console.log(myPlayer.currentTime());
     if (myPlayer.currentTime() > 5) {
@@ -98,6 +99,33 @@ function show_bubbles() {
         } else {
             $('.oval-thought').css('opacity', '0');
         }
+    }
+
+    if (Math.floor(myPlayer.currentTime()) == 3 && show_question) {
+        $('.popup-question').css('visibility', 'visible');
+        $('.popup-question').css('opacity', '1');
+        myPlayer.pause();
+        $('.popup-question .correct').on('click', function(){
+            $(this).css('background', '#50c878');
+            $('.popup-question .wrong').css('background', '#ff8484');
+            show_question = false;
+            setTimeout(() => {
+                $('.popup-question').css('opacity', '0');
+                $('.popup-question').css('visibility', 'hidden');
+                myPlayer.play();
+            }, 2000);
+        });
+        $('.popup-question .wrong').on('click', function(){
+            $('.popup-question .correct').css('background', '#50c878');
+            $('.popup-question .wrong').css('background', '#ff8484');
+            $(this).css('background', '#ce2029');
+            show_question = false;
+            setTimeout(() => {
+                $('.popup-question').css('opacity', '0');
+                $('.popup-question').css('visibility', 'hidden');
+                myPlayer.play();
+            }, 2000);
+        });
     }
 }
 

@@ -553,3 +553,38 @@ button.close:hover {
   -moz-border-radius:15px;
   border-radius:15px;
 }
+
+.popup-question {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(7, 86, 152, 0.6);
+  padding: 3rem;
+  opacity: 0;
+  visibility: hidden; 
+  transition: all 1s ease;
+}
+
+.popup-question h4, .popup-question p {
+  color: white;
+}
+
+.popup-question p {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.popup-question .choice {
+  background-color: rgba(5, 5, 5, 0.8);
+  height: 8rem;
+  border: 2px solid #f0f0f0;
+  border-radius: 5px;
+  padding: 3rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.popup-question .choice:hover {
+  border: 3px solid #f0f0f0;
+}
