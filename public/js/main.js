@@ -110,6 +110,7 @@ function show_bubbles() {
             $(this).css('background', '#4bb543');
             $('.popup-question .wrong').css('background', '#ff4e49');
             show_question = false;
+            $('.popup-question .choice').off('click');
             setTimeout(() => {
                 $('.popup-question').css('opacity', '0');
                 $('.popup-question').css('visibility', 'hidden');
@@ -121,6 +122,7 @@ function show_bubbles() {
             $('.popup-question .wrong').css('background', '#ff4e49');
             $(this).css('background', '#ce2029');
             show_question = false;
+            $('.popup-question .choice').off('click');
             setTimeout(() => {
                 $('.popup-question').css('opacity', '0');
                 $('.popup-question').css('visibility', 'hidden');
@@ -141,6 +143,7 @@ function progress(timeleft, timetotal, $element) {
         show_question = false;
         $('.popup-question .correct').css('background', '#4bb543');
         $('.popup-question .wrong').css('background', '#ff4e49');
+        $('.popup-question .choice').off('click');
         setTimeout(() => {
             $('.popup-question').css('opacity', '0');
             $('.popup-question').css('visibility', 'hidden');
