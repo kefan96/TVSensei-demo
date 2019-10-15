@@ -89,7 +89,7 @@ function toDigits(num) {
 
 let show_question = true;
 function show_bubbles() {
-    console.log(myPlayer.currentTime());
+    // console.log(myPlayer.currentTime());
     if (myPlayer.currentTime() > 5) {
         if (myPlayer.currentTime() < 10) {
             $('.oval-thought').css('opacity', '0.8');
@@ -105,9 +105,10 @@ function show_bubbles() {
         $('.popup-question').css('visibility', 'visible');
         $('.popup-question').css('opacity', '1');
         myPlayer.pause();
+        progress(7000, 7000, $('#progressBar'));
         $('.popup-question .correct').on('click', function(){
-            $(this).css('background', '#50c878');
-            $('.popup-question .wrong').css('background', '#ff8484');
+            $(this).css('background', '#4bb543');
+            $('.popup-question .wrong').css('background', '#ff4e49');
             show_question = false;
             setTimeout(() => {
                 $('.popup-question').css('opacity', '0');
@@ -116,8 +117,8 @@ function show_bubbles() {
             }, 2000);
         });
         $('.popup-question .wrong').on('click', function(){
-            $('.popup-question .correct').css('background', '#50c878');
-            $('.popup-question .wrong').css('background', '#ff8484');
+            $('.popup-question .correct').css('background', '#4bb543');
+            $('.popup-question .wrong').css('background', '#ff4e49');
             $(this).css('background', '#ce2029');
             show_question = false;
             setTimeout(() => {
@@ -128,6 +129,25 @@ function show_bubbles() {
         });
     }
 }
+
+function progress(timeleft, timetotal, $element) {
+    var progressBarWidth = timeleft * $element.width() / timetotal;
+    $element.find('div').animate({ width: progressBarWidth }, 0).html("<p>" + (timeleft / 1000).toFixed(2) + "</p>");
+    if(timeleft > 0) {
+        setTimeout(function() {
+            progress(timeleft - 10, timetotal, $element);
+        }, 10);
+    } else {
+        show_question = false;
+        $('.popup-question .correct').css('background', '#4bb543');
+        $('.popup-question .wrong').css('background', '#ff4e49');
+        setTimeout(() => {
+            $('.popup-question').css('opacity', '0');
+            $('.popup-question').css('visibility', 'hidden');
+            myPlayer.play();
+        }, 1000);
+    }
+};
 
 
 $('#submit_note').on('click', () => {
@@ -233,3 +253,5 @@ $('tbody').on('keypress', 'td.editing', function(event){
         $(this).addClass('created');
     }
 });
+
+
