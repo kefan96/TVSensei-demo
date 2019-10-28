@@ -22,6 +22,7 @@ section p, section li {
   width: 100%;
   opacity: 1;
   object-fit: cover;
+  transition: all 1s ease;
 }
 
 #landing-header {

@@ -57,8 +57,7 @@
     function scrollFunction() {
         if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
             document.getElementById("navbar").style.padding = "1rem 1rem";
-            document.getElementById("navbar").style.backgroundColor = "#001531";
-            document.getElementById("navbar").style.opacity = "0.7";
+            document.getElementById("navbar").style.backgroundColor = "rgba(0, 10, 17, 0.7)";
             $("#lesson").removeClass("mt-1");
             $("#exercise-header").css("background", "#f0f0f0");
             $("#exercise-header").css("border-radius", "0");
@@ -66,7 +65,6 @@
         } else {
             document.getElementById("navbar").style.padding = ".5rem 1rem";
             document.getElementById("navbar").style.backgroundColor = "#000a17";
-            document.getElementById("navbar").style.opacity = "1";
             $("#lesson").addClass("mt-1");
             $("#exercise-header").css("background", "#000a17");
             $("#exercise-header").css("border-radius", "5px 5px 0 0");

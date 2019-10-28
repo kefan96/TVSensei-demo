@@ -8,7 +8,7 @@
                 <div class="col-12">
                     <div class="videoPlayer my-3" style="height: 85vh; width: 100%;"> 
                         <video class="video-js vjs-big-play-centered effect1" id="currentVideo"
-                            ontimeupdate="show_bubbles()" style="height: 100%; width: 100%; border-radius: 7px;">
+                            ontimeupdate="update()" style="height: 100%; width: 100%; border-radius: 7px;">
                             <source src="/media/video_Test.mp4" type="video/mp4" />
                             <track kink="captions" src="/assets/text_subtitle.vtt" srclang="en" label="English" default>
                         </video>
@@ -35,6 +35,13 @@
                                 <div class="col-5 choice text-center wrong">
                                     <p>Duolingo( Seriously? )</p>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="card effect1" style="width:100%;min-height:20vh;">
+                            <div class="card-body text-center" id="subtitle">
+                                <h2 name="subTestJapanese" class="videoText" id="jpsub">Lesson 1</h2>
+                                <h3 name="subTestEnglish" class="videoText" id="ensub">Lesson 1</h3>
                             </div>
                         </div>
                     </div>
@@ -154,12 +161,6 @@
                                 chicken t-bone filet mignon.</div>
                         </div>
                     </div>
-                    <!-- <div class="card effect1" style="width:100%;min-height:20vh;">
-                        <div class="card-body text-center" id="subtitle">
-                            <h2 name="subTestJapanese" class="videoText" id="jpsub">Lesson 1</h2>
-                            <h3 name="subTestEnglish" class="videoText" id="ensub">Lesson 1</h3>
-                        </div>
-                    </div> -->
                 </div>
 
             </div>

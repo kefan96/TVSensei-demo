@@ -88,6 +88,11 @@ function toDigits(num) {
 }
 
 let show_question = true;
+
+function update() {
+    show_bubbles();
+}
+
 function show_bubbles() {
     // console.log(myPlayer.currentTime());
     if (myPlayer.currentTime() > 5) {
@@ -139,7 +144,7 @@ function progress(timeleft, timetotal, $element) {
         setTimeout(function() {
             progress(timeleft - 10, timetotal, $element);
         }, 10);
-    } else {
+    } else if (show_question == true) {
         show_question = false;
         $('.popup-question .correct').css('background', '#4bb543');
         $('.popup-question .wrong').css('background', '#ff4e49');

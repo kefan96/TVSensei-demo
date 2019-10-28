@@ -10,6 +10,7 @@ const Profile = require("./models/profile")
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const fs = require('fs');
+const webvtt = require('node-webvtt');
 
 // file uploading
 const multer = require('multer');
@@ -114,7 +115,11 @@ app.get("/lesson", isLoggedIn, (req, res) => {
 });
 
 app.get("/lesson/1", isLoggedIn, (req, res) => {
-    res.render("lesson_1");
+    fs.readFile('public/assets/text_subtitle.vtt', 'utf8', function(err, data) {
+        const parsed = webvtt.parse(data);
+        console.log(parsed);
+        res.render("lesson_1", {vtt: parsed});
+    });
 });
 
 app.get("/signup", (req, res) => {
