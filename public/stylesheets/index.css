@@ -8,7 +8,7 @@ section p, section li {
 }
 
 .cover {
-  z-index: 0;
+  z-index: -2;
   background-color: #020017;
   position: absolute;
   width: 100%;
@@ -16,15 +16,12 @@ section p, section li {
 }
 
 .background {
-  position: absolute;
-  z-index: 1;
+  position: fixed;
+  z-index: -1;
   height: 90vh;
-  background-image: url(https://trello-attachments.s3.amazonaws.com/5d141ce010119b0c8d02ddd1/5d657819665097410f3916a0/4733c43f588904510c0b8f1622b38b40/tv-3774381_1920.jpg);
-  background-size: cover;
-  background-position: top 60%;
-  background-attachment: fixed;
   width: 100%;
-  opacity: 0.8;
+  opacity: 1;
+  object-fit: cover;
 }
 
 #landing-header {
@@ -230,15 +227,20 @@ span.nav-link {
   color: #f0f0f0;
   position: absolute;
   transition: all 0.8s ease;
-  animation: sloganslide 15s linear infinite;
+  animation: sloganslide 25s linear infinite;
 }
 
 #landing-header li:nth-child(2) {
   animation-delay: 5s;
 }
-
 #landing-header li:nth-child(3) {
   animation-delay: 10s;
+}
+#landing-header li:nth-child(4) {
+  animation-delay: 15s;
+}
+#landing-header li:nth-child(5) {
+  animation-delay: 20s;
 }
 
 #landing-header li {
@@ -250,14 +252,14 @@ span.nav-link {
     opacity: 0; 
     animation-timing-function: ease-in;
   }
-  10% {
+  7% {
     opacity: 1;
     animation-timing-function: ease-out;
   }
-  20% {
+  14% {
     opacity: 1
   }
-  30% {
+  21% {
     opacity: 0
   }
 }

@@ -2,13 +2,13 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
 <!--  Body -->
 <div class="container-fluid mt-1" id="lesson">
-    <div class="row">
-        <div class="col-md-8 col-12">
+    <div class="row d-dlex justify-content-center">
+        <div class="col-md-11 col-12">
             <div class="row">
                 <div class="col-12">
-                    <div class="videoPlayer">
+                    <div class="videoPlayer my-3" style="height: 85vh; width: 100%;"> 
                         <video class="video-js vjs-big-play-centered effect1" id="currentVideo"
-                            ontimeupdate="show_bubbles()" style="margin-bottom: 5px;">
+                            ontimeupdate="show_bubbles()" style="height: 100%; width: 100%; border-radius: 7px;">
                             <source src="/media/video_Test.mp4" type="video/mp4" />
                             <track kink="captions" src="/assets/text_subtitle.vtt" srclang="en" label="English" default>
                         </video>
@@ -38,91 +38,121 @@
                             </div>
                         </div>
                     </div>
-                    <ul class="nav nav-tabs mt-2" id="myTab" role="tablist" style="background: #000a17;">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                                aria-controls="home" aria-selected="true">Overview</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                                aria-controls="profile" aria-selected="false">Comments</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                                aria-controls="contact" aria-selected="false">Q & A</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content effect1" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            Bacon ipsum dolor amet tail doner chuck turducken, capicola shankle biltong meatball chicken
-                            shank swine. Tenderloin shoulder jowl alcatra frankfurter kevin turkey chuck drumstick
-                            meatball. Pastrami kevin pork, corned beef drumstick porchetta shank bacon. Cow jowl
-                            meatball tenderloin fatback ribeye porchetta buffalo short ribs. Doner pig bacon jowl t-bone
-                            burgdoggen, fatback chuck beef ribs.
-                            Pork belly meatloaf beef ribs short ribs, drumstick alcatra fatback doner tri-tip andouille
-                            hamburger burgdoggen. Strip steak kevin leberkas, burgdoggen porchetta cow tail tongue
-                            pancetta prosciutto beef ribs brisket ground round. Short loin porchetta pork chop cow
-                            andouille sausage boudin meatball pork belly bacon kielbasa. Tri-tip porchetta leberkas
-                            prosciutto boudin tongue bresaola. Capicola filet mignon pork loin jowl ground round picanha
-                            turducken t-bone alcatra ham hock biltong frankfurter pork.
-                            Andouille tongue pastrami short ribs ground round corned beef pancetta pork boudin hamburger
-                            tenderloin. Meatloaf drumstick shankle, turkey sirloin bacon tongue chicken ham hock rump
-                            pastrami frankfurter ball tip beef ribs porchetta. Prosciutto andouille hamburger beef ribs.
-                            Sausage meatball biltong burgdoggen ground round hamburger drumstick ball tip t-bone swine
-                            turkey. Jerky pork belly pig ham hock beef, shoulder turducken capicola tail.
-                            Pig burgdoggen swine buffalo, ball tip shank filet mignon kielbasa pork brisket cupim kevin
-                            porchetta bacon pancetta. Prosciutto turducken shankle, picanha brisket ground round corned
-                            beef. Alcatra pork shankle beef, meatloaf frankfurter short ribs filet mignon burgdoggen
-                            tenderloin beef ribs capicola porchetta sausage ham. Buffalo chuck capicola pastrami.
-                            Ham pork belly jerky burgdoggen pig chicken picanha pork chop short ribs tail short loin.
-                            Andouille corned beef rump shankle pork belly kevin, spare ribs pancetta boudin beef ribs
-                            ham hock beef swine. Rump kevin shoulder venison. Burgdoggen pork belly bresaola, rump flank
-                            andouille tenderloin tri-tip ribeye drumstick. Frankfurter beef ribs meatball andouille
-                            turducken pancetta kevin pastrami rump.
-                            Does your lorem ipsum text long for something a little meatier? Give our generator a try…
-                            it’s tasty!
+                    <div class="effect1">
+                        <ul class="nav nav-tabs mt-2" id="myTab" role="tablist" style="background: #000a17;">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    aria-controls="home" aria-selected="true">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                    aria-controls="profile" aria-selected="false">Comments</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                                    aria-controls="contact" aria-selected="false">Q & A</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                Bacon ipsum dolor amet tail doner chuck turducken, capicola shankle biltong meatball
+                                chicken
+                                shank swine. Tenderloin shoulder jowl alcatra frankfurter kevin turkey chuck drumstick
+                                meatball. Pastrami kevin pork, corned beef drumstick porchetta shank bacon. Cow jowl
+                                meatball tenderloin fatback ribeye porchetta buffalo short ribs. Doner pig bacon jowl
+                                t-bone
+                                burgdoggen, fatback chuck beef ribs.
+                                Pork belly meatloaf beef ribs short ribs, drumstick alcatra fatback doner tri-tip
+                                andouille
+                                hamburger burgdoggen. Strip steak kevin leberkas, burgdoggen porchetta cow tail tongue
+                                pancetta prosciutto beef ribs brisket ground round. Short loin porchetta pork chop cow
+                                andouille sausage boudin meatball pork belly bacon kielbasa. Tri-tip porchetta leberkas
+                                prosciutto boudin tongue bresaola. Capicola filet mignon pork loin jowl ground round
+                                picanha
+                                turducken t-bone alcatra ham hock biltong frankfurter pork.
+                                Andouille tongue pastrami short ribs ground round corned beef pancetta pork boudin
+                                hamburger
+                                tenderloin. Meatloaf drumstick shankle, turkey sirloin bacon tongue chicken ham hock
+                                rump
+                                pastrami frankfurter ball tip beef ribs porchetta. Prosciutto andouille hamburger beef
+                                ribs.
+                                Sausage meatball biltong burgdoggen ground round hamburger drumstick ball tip t-bone
+                                swine
+                                turkey. Jerky pork belly pig ham hock beef, shoulder turducken capicola tail.
+                                Pig burgdoggen swine buffalo, ball tip shank filet mignon kielbasa pork brisket cupim
+                                kevin
+                                porchetta bacon pancetta. Prosciutto turducken shankle, picanha brisket ground round
+                                corned
+                                beef. Alcatra pork shankle beef, meatloaf frankfurter short ribs filet mignon burgdoggen
+                                tenderloin beef ribs capicola porchetta sausage ham. Buffalo chuck capicola pastrami.
+                                Ham pork belly jerky burgdoggen pig chicken picanha pork chop short ribs tail short
+                                loin.
+                                Andouille corned beef rump shankle pork belly kevin, spare ribs pancetta boudin beef
+                                ribs
+                                ham hock beef swine. Rump kevin shoulder venison. Burgdoggen pork belly bresaola, rump
+                                flank
+                                andouille tenderloin tri-tip ribeye drumstick. Frankfurter beef ribs meatball andouille
+                                turducken pancetta kevin pastrami rump.
+                                Does your lorem ipsum text long for something a little meatier? Give our generator a
+                                try…
+                                it’s tasty!
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Bacon
+                                ipsum dolor amet tail doner chuck turducken, capicola shankle biltong meatball chicken
+                                shank
+                                swine. Tenderloin shoulder jowl alcatra frankfurter kevin turkey chuck drumstick
+                                meatball.
+                                Pastrami kevin pork, corned beef drumstick porchetta shank bacon. Cow jowl meatball
+                                tenderloin fatback ribeye porchetta buffalo short ribs. Doner pig bacon jowl t-bone
+                                burgdoggen, fatback chuck beef ribs.
+
+                                Pork belly meatloaf beef ribs short ribs, drumstick alcatra fatback doner tri-tip
+                                andouille
+                                hamburger burgdoggen. Strip steak kevin leberkas, burgdoggen porchetta cow tail tongue
+                                pancetta prosciutto beef ribs brisket ground round. Short loin porchetta pork chop cow
+                                andouille sausage boudin meatball pork belly bacon kielbasa. Tri-tip porchetta leberkas
+                                prosciutto boudin tongue bresaola. Capicola filet mignon pork loin jowl ground round
+                                picanha
+                                turducken t-bone alcatra ham hock biltong frankfurter pork.
+
+                                Andouille tongue pastrami short ribs ground round corned beef pancetta pork boudin
+                                hamburger
+                                tenderloin. Meatloaf drumstick shankle, turkey sirloin bacon tongue chicken ham hock
+                                rump
+                                pastrami frankfurter ball tip beef ribs porchetta. Prosciutto andouille hamburger beef
+                                ribs.
+                                Sausage meatball biltong burgdoggen ground round hamburger drumstick ball tip t-bone
+                                swine
+                                turkey. Jerky pork belly pig ham hock beef, shoulder turducken capicola tail.
+
+                                Pig burgdoggen swine buffalo, ball tip shank filet mignon kielbasa pork brisket cupim
+                                kevin
+                                porchetta bacon pancetta. Prosciutto turducken shankle, picanha brisket ground round
+                                corned
+                                beef. Alcatra pork shankle beef, meatloaf frankfurter short ribs filet mignon burgdoggen
+                                tenderloin beef ribs capicola porchetta sausage ham. Buffalo chuck capicola pastrami.
+
+                                Ham pork belly jerky burgdoggen pig chicken picanha pork chop short ribs tail short
+                                loin.
+                                Andouille corned beef rump shankle pork belly kevin, spare ribs pancetta boudin beef
+                                ribs
+                                ham hock beef swine. Rump kevin shoulder venison. Burgdoggen pork belly bresaola, rump
+                                flank
+                                andouille tenderloin tri-tip ribeye drumstick. Frankfurter beef ribs meatball andouille
+                                turducken pancetta kevin pastrami rump.
+
+                                Does your lorem ipsum text long for something a little meatier? Give our generator a
+                                try…
+                                it’s tasty!
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Bacon
+                                ipsum dolor amet doner ham shankle pig venison bresaola. Short ribs rump
+                                pork belly, ground round fatback chuck leberkas. Frankfurter swine chicken
+                                prosciutto bresaola pork chop fatback tri-tip. Pork loin beef ribs short ribs,
+                                pork chop cupim andouille alcatra chicken. Sirloin t-bone turkey strip steak
+                                kielbasa shoulder chuck. Shoulder hamburger bresaola ham, boudin meatloaf
+                                chicken t-bone filet mignon.</div>
                         </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Bacon
-                            ipsum dolor amet tail doner chuck turducken, capicola shankle biltong meatball chicken shank
-                            swine. Tenderloin shoulder jowl alcatra frankfurter kevin turkey chuck drumstick meatball.
-                            Pastrami kevin pork, corned beef drumstick porchetta shank bacon. Cow jowl meatball
-                            tenderloin fatback ribeye porchetta buffalo short ribs. Doner pig bacon jowl t-bone
-                            burgdoggen, fatback chuck beef ribs.
-
-                            Pork belly meatloaf beef ribs short ribs, drumstick alcatra fatback doner tri-tip andouille
-                            hamburger burgdoggen. Strip steak kevin leberkas, burgdoggen porchetta cow tail tongue
-                            pancetta prosciutto beef ribs brisket ground round. Short loin porchetta pork chop cow
-                            andouille sausage boudin meatball pork belly bacon kielbasa. Tri-tip porchetta leberkas
-                            prosciutto boudin tongue bresaola. Capicola filet mignon pork loin jowl ground round picanha
-                            turducken t-bone alcatra ham hock biltong frankfurter pork.
-
-                            Andouille tongue pastrami short ribs ground round corned beef pancetta pork boudin hamburger
-                            tenderloin. Meatloaf drumstick shankle, turkey sirloin bacon tongue chicken ham hock rump
-                            pastrami frankfurter ball tip beef ribs porchetta. Prosciutto andouille hamburger beef ribs.
-                            Sausage meatball biltong burgdoggen ground round hamburger drumstick ball tip t-bone swine
-                            turkey. Jerky pork belly pig ham hock beef, shoulder turducken capicola tail.
-
-                            Pig burgdoggen swine buffalo, ball tip shank filet mignon kielbasa pork brisket cupim kevin
-                            porchetta bacon pancetta. Prosciutto turducken shankle, picanha brisket ground round corned
-                            beef. Alcatra pork shankle beef, meatloaf frankfurter short ribs filet mignon burgdoggen
-                            tenderloin beef ribs capicola porchetta sausage ham. Buffalo chuck capicola pastrami.
-
-                            Ham pork belly jerky burgdoggen pig chicken picanha pork chop short ribs tail short loin.
-                            Andouille corned beef rump shankle pork belly kevin, spare ribs pancetta boudin beef ribs
-                            ham hock beef swine. Rump kevin shoulder venison. Burgdoggen pork belly bresaola, rump flank
-                            andouille tenderloin tri-tip ribeye drumstick. Frankfurter beef ribs meatball andouille
-                            turducken pancetta kevin pastrami rump.
-
-                            Does your lorem ipsum text long for something a little meatier? Give our generator a try…
-                            it’s tasty!
-                        </div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Bacon
-                            ipsum dolor amet doner ham shankle pig venison bresaola. Short ribs rump
-                            pork belly, ground round fatback chuck leberkas. Frankfurter swine chicken
-                            prosciutto bresaola pork chop fatback tri-tip. Pork loin beef ribs short ribs,
-                            pork chop cupim andouille alcatra chicken. Sirloin t-bone turkey strip steak
-                            kielbasa shoulder chuck. Shoulder hamburger bresaola ham, boudin meatloaf
-                            chicken t-bone filet mignon.</div>
                     </div>
                     <!-- <div class="card effect1" style="width:100%;min-height:20vh;">
                         <div class="card-body text-center" id="subtitle">
@@ -135,104 +165,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-12">
-            <div id="accordion">
-                <!-- Collapsable -->
-                <!-- Contains the rest of the tvs-includes -->
-
-                <div class="card effect1" id="exercise-card">
-                    <div class="card-header p-0" id="exercise-header">
-                        <div id="exercises" class="dropdown nav nav-tabs">
-                            <button class="btn dropdown-toggle" style="font-size: 20px; height: 6vh;" type="button"
-                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                Instruction
-                            </button>
-                            <div class="dropdown-menu effect1" aria-labelledby="dropdownMenuButton" role="tablist"
-                                id="dropdown-menu">
-                                <a id="instruction-dropdown" class="dropdown-item nav-link active show"
-                                    data-toggle="tab" href="#tab-instruction">instruction</a>
-                                <a id="vocabulary-dropdown" class="dropdown-item nav-link" data-toggle="tab"
-                                    href="#tab-vocabulary">vocabulary</a>
-                                <a id="speaking-dropdown" class="dropdown-item nav-link" data-toggle="tab"
-                                    href="#tab-speaking">speaking</a>
-                                <a id="grammar-dropdown" class="dropdown-item nav-link" data-toggle="tab"
-                                    href="#tab-grammar">grammar</a>
-                                <a id="quiz-dropdown" class="dropdown-item nav-link" data-toggle="tab"
-                                    href="#tab-quiz">quiz</a>
-                                <a id="notes-dropdown" class="dropdown-item nav-link" data-toggle="tab"
-                                    href="#tab-notes">notes</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body p-0 m-0 overflow-auto" id="exercise-body" style="height: 84vh">
-                        <div class="alert-success text-center message-hide py-2" id="loop-message">Video is looping. <a
-                                href='#' id="unloop">Click Here</a> to undo</div>
-                        <div class="tab-content" style="padding: 0;">
-                            <div id="tab-instruction" class="tab-pane container text-dark active show text-center"><br>
-                                <div class="d-flex justify-content-between mx-1">
-                                    <small><span id="exercise-back"></span></small>
-                                    <small onclick="checkout('vocabulary')"><span id="exercise-next">vocabulary</span>
-                                        →</small>
-                                </div>
-                                <div class="container">
-                                    <h3>Welcome to this lesson!</h3>
-                                    <hr>
-                                    <p>Bacon ipsum dolor amet doner ham shankle pig venison bresaola. Short ribs rump
-                                        pork belly, ground round fatback chuck leberkas. Frankfurter swine chicken
-                                        prosciutto bresaola pork chop fatback tri-tip. Pork loin beef ribs short ribs,
-                                        pork chop cupim andouille alcatra chicken. Sirloin t-bone turkey strip steak
-                                        kielbasa shoulder chuck. Shoulder hamburger bresaola ham, boudin meatloaf
-                                        chicken t-bone filet mignon.</p>
-                                    <ul>
-                                        <li onclick="checkout('vocabulary')">Vocabulary</li>
-                                        <li onclick="checkout('speaking')">Speaking</li>
-                                        <li onclick="checkout('grammar')">Grammar</li>
-                                        <li onclick="checkout('quiz')">Quiz</li>
-                                        <li onclick="checkout('notes')">Notes</li>
-                                    </ul>
-                                    <p>Cow boudin pork turkey. Shank biltong bacon t-bone. Landjaeger bacon tenderloin,
-                                        frankfurter hamburger ham hock buffalo beef salami pig meatball leberkas brisket
-                                        capicola prosciutto. Pork belly shankle kevin doner.</p>
-                                </div>
-                            </div>
-                            <div id="tab-vocabulary" class="tab-pane container text-dark fade">
-                                <% include ./tests/vocab_test %>
-                            </div>
-                            <div id="tab-speaking" class="tab-pane container text-dark fade"><br>
-                                <% include ./tests/speaking_test %>
-                            </div>
-                            <div id="tab-grammar" class="tab-pane container text-dark fade"><br>
-                                <% include ./tests/grammar_test %>
-                            </div>
-                            <div id="tab-quiz" class="tab-pane container text-dark fade"><br>
-                                <% include ./tests/quiz_test %>
-                            </div>
-                            <div id="tab-notes" class="tab-pane container text-dark fade"><br>
-                                <div class="d-flex justify-content-between mx-1 mb-4">
-                                    <small onclick="checkout('quiz')">← <span id="exercise-back">quiz</span></small>
-                                    <small><span id="exercise-next"></span></small>
-                                </div>
-                                <div class="container">
-                                    <ul id="notes">My Notes:</ul>
-                                </div>
-                                <div class="container text-center">
-                                    <textarea placeholder="Take notes here" class="ui-autocomplete-input" rows="10"
-                                        id="note_input" style="outline: none;" autocomplete="off" role="textbox"
-                                        aria-autocomplete="list" aria-haspopup="true"></textarea>
-                                    <button id="submit_note" class="btn my-2" type="submit"
-                                        style="background: #00152e; color: white;">Save Notes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
         <!-- The Video. -->
-
-
 
     </div>
 </div>

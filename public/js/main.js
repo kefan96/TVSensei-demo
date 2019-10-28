@@ -1,6 +1,6 @@
 var exercises = ['instruction', 'vocabulary', 'speaking', 'grammar', 'quiz', 'notes'];
 var myPlayer = videojs('currentVideo', {
-    fluid: true,
+    fluid: false,
     controls: true,
     autoplay: false,
     preload: 'auto',
@@ -115,7 +115,7 @@ function show_bubbles() {
                 $('.popup-question').css('opacity', '0');
                 $('.popup-question').css('visibility', 'hidden');
                 myPlayer.play();
-            }, 2000);
+            }, 1500);
         });
         $('.popup-question .wrong').on('click', function(){
             $('.popup-question .correct').css('background', '#4bb543');
@@ -127,7 +127,7 @@ function show_bubbles() {
                 $('.popup-question').css('opacity', '0');
                 $('.popup-question').css('visibility', 'hidden');
                 myPlayer.play();
-            }, 2000);
+            }, 1500);
         });
     }
 }

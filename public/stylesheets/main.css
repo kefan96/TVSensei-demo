@@ -18,6 +18,10 @@
   background-image: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
 } */
 
+body {
+  background-color: #f0f0f0;
+}
+
 .dropdown-item.nav-link.active.show {
     background: #b4d5ff;
     color: #020017;
@@ -319,6 +323,15 @@
   margin-left: -1.5em;
 }
 
+.vjs-poster {
+  border-radius: 7px;
+}
+
+.vjs-control-bar {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
 #downloadButton {
   margin-top: 7px;
 }
@@ -564,6 +577,7 @@ button.close:hover {
   opacity: 0;
   visibility: hidden; 
   transition: all 1s ease;
+  border-radius: 7px;
 }
 
 .popup-question h4 {
