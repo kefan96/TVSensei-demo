@@ -38,14 +38,14 @@ var myPlayer = videojs('currentVideo', {
 
 myPlayer.ready(function() {
 
-    var settings = this.textTrackSettings;
-    settings.setValues({
-        "backgroundColor": "#555", 
-        "backgroundOpacity": "0.5",
-        "edgeStyle": "uniform",
-        "fontPercent": "0.75"
-    });
-    settings.updateDisplay();
+    // var settings = this.textTrackSettings;
+    // settings.setValues({
+    //     "backgroundColor": "#555", 
+    //     "backgroundOpacity": "0.5",
+    //     "edgeStyle": "uniform",
+    //     "fontPercent": "0.75"
+    // });
+    // settings.updateDisplay();
 
     this.hotkeys({
         volumeStep: 0.1,
@@ -90,7 +90,35 @@ function toDigits(num) {
 let show_question = true;
 
 function update() {
+    show_subtitles();
     show_bubbles();
+}
+let i=1;
+
+function show_subtitles() {
+    $.ajax({
+        url: '/lesson/1/subtitle',
+        type: 'POST',
+        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+        data: {"time": myPlayer.currentTime()},
+        success: function(data) {
+            if (data.subtitle == '') {
+                $('#subtitle-card').css('visibility', 'hidden');
+            } else if ($('#ensub').text() != data.subtitle && $('#ensub').text() != (data.subtitle + ' ')) {
+                $('#subtitle-card').css('visibility', 'visible');
+                $('#ensub').html('');
+                let words = data.subtitle.split(' ');
+                words.forEach(function(word){
+                    $('#ensub').append('<span class="sub-words" data-toggle = "tooltip" title="Vocab will goes here">'+ word + ' </span>')
+                });
+            } else {
+                $('#subtitle-card').css('visibility', 'visible');
+            }
+        },
+        error: function (xhr, textStatus, error) {
+            console.log(error.message);
+        }
+    });
 }
 
 function show_bubbles() {
@@ -261,5 +289,6 @@ $('tbody').on('keypress', 'td.editing', function(event){
         $(this).addClass('created');
     }
 });
+
 
 

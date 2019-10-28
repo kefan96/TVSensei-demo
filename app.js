@@ -115,10 +115,21 @@ app.get("/lesson", isLoggedIn, (req, res) => {
 });
 
 app.get("/lesson/1", isLoggedIn, (req, res) => {
+    res.render("lesson_1");
+});
+
+app.post("/lesson/1/subtitle", (req, res) => {
+    let time = Number(req.body.time);
     fs.readFile('public/assets/text_subtitle.vtt', 'utf8', function(err, data) {
         const parsed = webvtt.parse(data);
-        console.log(parsed);
-        res.render("lesson_1", {vtt: parsed});
+        // should have better algorithm
+        let text = '';
+        parsed.cues.forEach(function(cue){
+            if (time >= Number(cue.start) && time < Number(cue.end)) {
+                text = cue.text;
+            }
+        });
+        res.status(200).json({subtitle: text});
     });
 });
 

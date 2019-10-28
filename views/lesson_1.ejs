@@ -6,16 +6,16 @@
         <div class="col-md-11 col-12">
             <div class="row">
                 <div class="col-12">
-                    <div class="videoPlayer my-3" style="height: 85vh; width: 100%;"> 
+                    <div class="videoPlayer my-3 d-flex justify-content-center" style="height: 85vh; width: 100%;"> 
                         <video class="video-js vjs-big-play-centered effect1" id="currentVideo"
                             ontimeupdate="update()" style="height: 100%; width: 100%; border-radius: 7px;">
                             <source src="/media/video_Test.mp4" type="video/mp4" />
-                            <track kink="captions" src="/assets/text_subtitle.vtt" srclang="en" label="English" default>
+                            <!-- <track kink="captions" src="/assets/text_subtitle.vtt" srclang="en" label="English" default> -->
                         </video>
                         <blockquote class="oval-thought">
                             <p>Hello world! I'm a thought bubble.</p>
                         </blockquote>
-                        <div class="popup-question">
+                        <div class="popup-question" style="z-index: 500;">
                             <div id="progressBar">
                                 <div class="bar"></div>
                             </div>
@@ -38,10 +38,10 @@
                             </div>
                         </div>
 
-                        <div class="card effect1" style="width:100%;min-height:20vh;">
-                            <div class="card-body text-center" id="subtitle">
-                                <h2 name="subTestJapanese" class="videoText" id="jpsub">Lesson 1</h2>
-                                <h3 name="subTestEnglish" class="videoText" id="ensub">Lesson 1</h3>
+                        <div class="card effect1" style="position: absolute; bottom: 6%; background: rgba(0, 0, 0, 0.5);" id="subtitle-card">
+                            <div class="card-body text-center" id="subtitle" style="background: rgba(0, 0, 0, 0.5); color: white">
+                                <!-- <h2 name="subTestJapanese" class="videoText" id="jpsub">Lesson 1</h2> -->
+                                <h2 name="subTestEnglish" class="videoText" id="ensub"></h3>
                             </div>
                         </div>
                     </div>
