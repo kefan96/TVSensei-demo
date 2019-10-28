@@ -109,7 +109,7 @@ function show_subtitles() {
                 $('#ensub').html('');
                 let words = data.subtitle.split(' ');
                 words.forEach(function(word){
-                    $('#ensub').append('<span class="sub-words" data-toggle = "tooltip" title="Vocab will goes here">'+ word + ' </span>')
+                    $('#ensub').append('<span class="sub-words">'+ word + '</span><span> </span>')
                 });
             } else {
                 $('#subtitle-card').css('visibility', 'visible');
