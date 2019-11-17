@@ -526,10 +526,10 @@ button.close:hover {
   -webkit-border-radius:220px / 120px; // produces oval in chrome 4 (again!) but not supported in safari 4
   Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
   */
-  -webkit-border-top-left-radius:220px 120px;
+  /* -webkit-border-top-left-radius:220px 120px;
   -webkit-border-top-right-radius:220px 120px;
   -webkit-border-bottom-right-radius:220px 120px;
-  -webkit-border-bottom-left-radius:220px 120px;
+  -webkit-border-bottom-left-radius:220px 120px; */
   -moz-border-radius:220px / 120px;
   border-radius:220px / 120px;
   opacity: 0;

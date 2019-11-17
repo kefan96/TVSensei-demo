@@ -118,6 +118,10 @@ app.get("/lesson/1", isLoggedIn, (req, res) => {
     res.render("lesson_1");
 });
 
+app.get("/lesson/2", (req, res) => {
+    res.render("lesson_2");
+});
+
 app.post("/lesson/1/subtitle", (req, res) => {
     let time = Number(req.body.time);
     fs.readFile('public/assets/text_subtitle.vtt', 'utf8', function(err, data) {
@@ -314,7 +318,8 @@ app.post("/apitest/chatbot", (req, res) => {
         .catch(err => {
             console.log(err.message);
         });
-})
+});
+
 
 app.listen(PORT, () => {
     console.log("TVSensei Listen on Port " + PORT);

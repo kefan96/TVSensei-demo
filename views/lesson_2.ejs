@@ -1,0 +1,29 @@
+<% include ./partials/header %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+
+<div class="container-fluid mt-2">
+    <div class="row d-flex justify-content-center">
+        <div class="col-11">
+            <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+            <div id="player" style="height: 86vh; width: 100%; border-radius: 8px;"></div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // Load the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            videoId: 'x-D6b1MXogE',
+        });
+    }
+</script>
+
+<% include ./partials/footer %>
