@@ -290,8 +290,13 @@ section:not(#landing-header):nth-of-type(odd) {
   margin-left: auto;
   margin-right: auto;
   border-radius: 50%;
-  height: auto;
+  height: 300px;
   width: 300px;
+  object-fit: cover;
+}
+
+.sectionPic.logo {
+  object-fit: contain;
 }
 
 /* footer section */
